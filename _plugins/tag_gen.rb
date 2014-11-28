@@ -40,6 +40,7 @@ module Jekyll
 
       if site.layouts.key? 'tag_index'
         dir = 'tag'
+        write_tag_index(site, dir, "all_tags")
         site.tags.keys.each do |tag|
           write_tag_index(site, File.join(dir, tag), tag)
         end
@@ -47,6 +48,7 @@ module Jekyll
     end
 
     def write_tag_index(site, dir, tag)
+      $logger.debug "new tagindex for #{site.source} in dir #{dir} for tag #{tag}"
       index = TagIndex.new(site, site.source, dir, tag)
       index.render(site.layouts, site.site_payload)
       index.write(site.dest)
