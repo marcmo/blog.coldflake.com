@@ -1,5 +1,3 @@
-require 'set'
-
 module Jekyll
 
   class TagOverviewIndex < Page
@@ -27,13 +25,18 @@ module Jekyll
     end
 
     def write_tag_index(site, dir, tag)
-      alltags = Set.new
+      alltags = []
       site.posts.each do |p|
         p.tags.each do |t|
-          alltags.add t
+          alltags << t
         end
       end
-      index = TagOverviewIndex.new(site, site.source, dir, tag, alltags.to_a)
+      counts = Hash.new(0)
+      alltags.each do |t|
+        counts[t] += 1
+      end
+      sorted = counts.sort { |a,b| b[1] <=> a[1] }
+      index = TagOverviewIndex.new(site, site.source, dir, tag, sorted)
       index.render(site.layouts, site.site_payload)
       index.write(site.dest)
       site.pages << index

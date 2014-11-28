@@ -4,6 +4,8 @@ layout: default_no_navbar
 <h2 class="post_title">{{page.title}}</h2>
 <ul>
 	{% for tag in page.alltags %}
-  <li class="archive_list"><a class="tag_list_link" href="/tag/{{ tag }}">{{ tag }}</a></li>
+  <li class="archive_list">
+  <a class="tag_list_link" href="/tag/{{ tag[0] }}">{{ tag[0] }} ({{ tag[1] }})</a>
+  </li>
 	{% endfor %}
 </ul>
