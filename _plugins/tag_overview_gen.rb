@@ -12,6 +12,7 @@ module Jekyll
       self.data['tag'] = tag
       self.data['title'] = "Tags"
       self.data['alltags'] = all
+      self.data['type'] = "tag_overview_type"
     end
   end
 
