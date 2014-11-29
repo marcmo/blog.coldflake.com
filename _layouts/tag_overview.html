@@ -1,11 +1,35 @@
 ---
-layout: default_no_navbar
+layout: default
+header-img: "img/string-lights.jpg"
 ---
-<h2 class="post_title">{{page.title}}</h2>
-<ul>
-	{% for tag in page.alltags %}
-  <li class="archive_list">
-  <a class="tag_list_link" href="/tag/{{ tag[0] }}">{{ tag[0] }} ({{ tag[1] }})</a>
-  </li>
-	{% endfor %}
-</ul>
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <h2 class="post_title"><i class="icon-tags"></i> Tags by frequency</h2>
+      <ul class="list-group">
+        {% for tag in page.alltags %}
+        <a href="/tag/{{ tag[0] }}" class="list-group-item">
+          <span class="badge">{{ tag[1] }}</span>{{ tag[0] }}
+        </a>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr>
