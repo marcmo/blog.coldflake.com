@@ -3,7 +3,7 @@ layout:     post
 title: Good Bye Tumblr - Welcome Hakyll
 subtitle: Moving away from mum-style blogging to more hacker-style blogging.
 header-img: "img/hirsch.jpg"
-categories: programming
+future_categories: programming
 tags: [blogging, git]
 ---
 

@@ -4,8 +4,8 @@ title: Android Style Message Passing
 subtitle: Communicating between Threads using Message Queues.
 date:       2014-02-01 12:00:00
 author:     "Oliver Mueller"
-header-img: "img/backandwhitebeach.jpg"
-categories: programming
+header-img: "img/snowtrain.jpg"
+future_categories: programming
 tags:       [android, C++, concurrency, ipc]
 ---
 

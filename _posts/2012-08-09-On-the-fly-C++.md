@@ -4,7 +4,7 @@ title: On-The-Fly C++
 subtitle: Using cling to interpret C++ code
 date:       2012-08-09 12:00:00
 author:     "Oliver Mueller"
-categories: programming
+future_categories: programming
 header-img: "img/blackbird.jpg"
 tags: [C++, llvm, clang]
 ---

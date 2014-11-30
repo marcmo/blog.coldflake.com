@@ -2,7 +2,7 @@
 layout:     post
 title: Encouraging performance results
 subtitle: First results after introducing cxxproject on a large scale, quite promising.
-categories: programming
+future_categories: programming
 header-img: "img/hirsch.jpg"
 tags: [C++, ruby, rake, performance, dsl]
 ---

@@ -1,15 +1,17 @@
 require 'logger'
 require 'pp'
 
-File.delete('logfile.log')
 $logger = Logger.new('logfile.log')
 $logger.level = Logger::DEBUG
+$logger.formatter = proc do |s, d, progname, msg|
+   "tag_gen: #{d}: #{msg}\n"
+end
 
 module Jekyll
 
   class TagIndex < Page
     def initialize(site, base, dir, tag)
-      $logger.debug("TagIndex initialize with:#{site}, tag=#{tag}")
+      $logger.debug("TagIndex:: initialize tag=#{tag}")
       @site = site
       @base = base
       @dir = dir
@@ -28,16 +30,11 @@ module Jekyll
 
     def generate(site)
 
-      foo = StringIO.new
-      $stdout = foo
+      $stdout = StringIO.new
       site.posts.each do |p|
-        pp p
         pp "p.name: #{p.name}"
-        pp "p.tags: #{p.tags}"
       end
-      s = $stdout.string
-
-      $logger.debug "generator running, site:#{s}"
+      $logger.debug "TagGenerator::generator running, site:#{$stdout.string}"
 
       if site.layouts.key? 'tag_index'
         dir = 'tag'
@@ -49,7 +46,6 @@ module Jekyll
     end
 
     def write_tag_index(site, dir, tag)
-      $logger.debug "new tagindex for #{site.source} in dir #{dir} for tag #{tag}"
       index = TagIndex.new(site, site.source, dir, tag)
       index.render(site.layouts, site.site_payload)
       index.write(site.dest)

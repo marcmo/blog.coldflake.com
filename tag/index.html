@@ -12,7 +12,7 @@ layout: default_no_navbar
 		<p class="summary">Summary: <em>{{post.subtitle}}</em>
 		<ul class="tag_list">
 			{% for tag in post.tags %}
-			<li class="inline archive_list"><a class="tag_list_link" href="/tag/{{ tag }}">{{ tag }}</a></li>
+			<li class="inline archive_list"><a class="tag_list_link" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
 			{% endfor %}
 		</ul>
 	</li>

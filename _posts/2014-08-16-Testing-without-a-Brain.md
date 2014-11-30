@@ -4,7 +4,7 @@ title: Testing Without A Brain
 subtitle: How much Testing is good for your Development Process?
 date: 2014-08-16 12:00:00
 author:     "Oliver Mueller"
-categories: programming
+future_categories: programming
 header-img: "img/hirsch.jpg"
 tags: [testing, rant]
 ---

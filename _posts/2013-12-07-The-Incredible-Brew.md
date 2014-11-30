@@ -4,7 +4,7 @@ title: The Incredible Brew
 subtitle: The missing package manager for OS X which solves a lot of headaches.
 date:       2013-12-07 12:00:00
 author:     "Oliver Mueller"
-categories: unix
+future_categories: unix
 header-img: "img/rusty-cog.jpg"
 tags: [unix, osx, tool, git, ruby, bash]
 ---

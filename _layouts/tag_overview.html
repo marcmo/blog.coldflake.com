@@ -23,7 +23,7 @@ header-img: "img/string-lights.jpg"
       <h2 class="post_title"><i class="icon-tags"></i> Tags by frequency</h2>
       <ul class="list-group">
         {% for tag in page.alltags %}
-        <a href="/tag/{{ tag[0] }}" class="list-group-item">
+        <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="list-group-item">
           <span class="badge">{{ tag[1] }}</span>{{ tag[0] }}
         </a>
         {% endfor %}

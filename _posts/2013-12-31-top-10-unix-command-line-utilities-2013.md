@@ -5,7 +5,7 @@ subtitle: Again a selection of the some useful unix commands.
 date:       2013-12-31 12:00:00
 author:     "Oliver Mueller"
 header-img: "img/tools.jpg"
-categories: unix
+future_categories: unix
 tags: [unix, bash]
 ---
 

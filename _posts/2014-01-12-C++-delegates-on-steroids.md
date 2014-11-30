@@ -5,7 +5,7 @@ subtitle: Generic version of impossibly fast delegate using C++11 variadic templ
 date:       2014-01-12 12:00:00
 author:     "Oliver Mueller"
 header-img: "img/shuttlestart.jpg"
-categories: programming
+future_categories: programming
 tags: [C++, templates, lua]
 ---
 

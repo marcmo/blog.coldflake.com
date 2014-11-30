@@ -5,7 +5,7 @@ subtitle: Another selection of the some useful unix commands which I found usefu
 date:       2012-12-30 12:00:00
 author:     "Oliver Mueller"
 resource: true
-categories: unix
+future_categories: unix
 header-img: "img/walltools.jpg"
 tags: [unix, bash]
 ---

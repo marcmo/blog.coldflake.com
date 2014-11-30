@@ -2,9 +2,9 @@
 layout:     post
 title: The Wonders of xargs
 subtitle: Exploring the goodness of xargs, one of the most versatile unix utilities.
-header-img: "img/hirsch.jpg"
+header-img: "img/wood.jpg"
 tags: [unix, bash]
-categories: bash
+future_categories: bash
 ---
 
 [xargs](http://www.gnu.org/software/findutils/manual/html_node/find_html/Invoking-xargs.html) is a nice little utility for the command line that I use quite a lot. The basic usecases are pretty simple and it might even be so simple that the wonders of xargs go unnoticed for quite some time.  

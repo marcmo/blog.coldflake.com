@@ -1,7 +1,17 @@
+require 'logger'
+require 'pp'
+
+$logger = Logger.new('logfile.log')
+$logger.level = Logger::DEBUG
+$logger.formatter = proc do |s, d, progname, msg|
+   "tag_overview_gen: #{d}: #{msg}\n"
+end
+
 module Jekyll
 
   class TagOverviewIndex < Page
     def initialize(site, base, dir, tag, all)
+      $logger.debug("TagOverviewIndex:: tag=#{tag}")
       @site = site
       @base = base
       @dir = dir
@@ -20,6 +30,7 @@ module Jekyll
     safe true
 
     def generate(site)
+      $logger.debug "TagOverviewGenerator:: generator running, site: #{site}"
       if site.layouts.key? 'tag_overview'
         write_tag_index(site, 'tag', "all_tags")
       end

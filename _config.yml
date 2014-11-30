@@ -12,4 +12,5 @@ markdown: kramdown
 highlighter: pygments
 permalink: pretty
 paginate: 8
-exclude: ["node_modules","sass","*.log","package.json","Gemfile*","Gruntfile.js","README.md"]
+exclude: ["node_modules","sass","*.log","package.json","Gemfile*","Gruntfile.js","README.md","rakefile.rb"]
+permalink: /posts/:year-:month-:day-:title.html

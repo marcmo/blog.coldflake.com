@@ -4,7 +4,7 @@ title: Start of Year with Shunting Yard
 subtitle: Applying dijkstras shunting yard algorithm for expression evaluation.
 date:       2013-01-09 12:00:00
 author:     "Oliver Mueller"
-categories: programming
+future_categories: programming
 header-img: "img/shuntingyard.jpg"
 tags: [haskell, puzzle, algorithm, lua]
 ---
