@@ -3,10 +3,10 @@
   <channel>
     <title>Coldflake Blog</title>
     <description>Exploring software technologies</description>
-    <link>http://blog.dahoam.in/</link>
-    <atom:link href="http://blog.dahoam.in/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Dec 2014 22:25:58 +0100</pubDate>
-    <lastBuildDate>Mon, 01 Dec 2014 22:25:58 +0100</lastBuildDate>
+    <link>http://blog.coldflake.com/</link>
+    <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 01 Dec 2014 22:45:30 +0100</pubDate>
+    <lastBuildDate>Mon, 01 Dec 2014 22:45:30 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -407,8 +407,8 @@ implement the requirements of the application, just use it.&lt;/p&gt;
 &lt;/div&gt;
 </description>
         <pubDate>Sun, 31 Aug 2014 14:00:00 +0200</pubDate>
-        <link>http://blog.dahoam.in/posts/choosing-the-Type-of-your-Types</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/choosing-the-Type-of-your-Types</guid>
+        <link>http://blog.coldflake.com/posts/choosing-the-Type-of-your-Types</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/choosing-the-Type-of-your-Types</guid>
         
         <category>types</category>
         
@@ -544,8 +544,8 @@ effective way to show the presence of bugs, but is hopelessly inadequate for sho
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 16 Aug 2014 14:00:00 +0200</pubDate>
-        <link>http://blog.dahoam.in/posts/Testing-without-a-Brain</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/Testing-without-a-Brain</guid>
+        <link>http://blog.coldflake.com/posts/Testing-without-a-Brain</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/Testing-without-a-Brain</guid>
         
         <category>testing</category>
         
@@ -1025,8 +1025,8 @@ bringing this approach to my attention and providing such a nice native implemen
 
 </description>
         <pubDate>Sat, 01 Feb 2014 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/Android-style-Message-Passing</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/Android-style-Message-Passing</guid>
+        <link>http://blog.coldflake.com/posts/Android-style-Message-Passing</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/Android-style-Message-Passing</guid>
         
         <category>android</category>
         
@@ -1478,8 +1478,8 @@ to my eyes thanks to C++11’s variadic templates.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 12 Jan 2014 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/C++-delegates-on-steroids</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/C++-delegates-on-steroids</guid>
+        <link>http://blog.coldflake.com/posts/C++-delegates-on-steroids</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/C++-delegates-on-steroids</guid>
         
         <category>C++</category>
         
@@ -2051,8 +2051,8 @@ be glad to hear it!&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 31 Dec 2013 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/top-10-unix-command-line-utilities-2013</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/top-10-unix-command-line-utilities-2013</guid>
+        <link>http://blog.coldflake.com/posts/top-10-unix-command-line-utilities-2013</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/top-10-unix-command-line-utilities-2013</guid>
         
         <category>unix</category>
         
@@ -2194,8 +2194,8 @@ future installs!&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 07 Dec 2013 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/The-Incredible-Brew</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/The-Incredible-Brew</guid>
+        <link>http://blog.coldflake.com/posts/The-Incredible-Brew</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/The-Incredible-Brew</guid>
         
         <category>unix</category>
         
@@ -2378,8 +2378,8 @@ should consider allowing for such fun events!&lt;/p&gt;
 &lt;/div&gt;
 </description>
         <pubDate>Sun, 25 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://blog.dahoam.in/posts/Simple-Networking</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/Simple-Networking</guid>
+        <link>http://blog.coldflake.com/posts/Simple-Networking</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/Simple-Networking</guid>
         
         <category>udp</category>
         
@@ -2609,8 +2609,8 @@ sys	0m0.055s
 
 </description>
         <pubDate>Wed, 09 Jan 2013 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/happy-new-year-with-shunting-yard</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/happy-new-year-with-shunting-yard</guid>
+        <link>http://blog.coldflake.com/posts/happy-new-year-with-shunting-yard</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/happy-new-year-with-shunting-yard</guid>
         
         <category>haskell</category>
         
@@ -2936,8 +2936,8 @@ exactly what I need.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 30 Dec 2012 13:00:00 +0100</pubDate>
-        <link>http://blog.dahoam.in/posts/Top-10-Unix-Command-Line-Utilities-2012</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/Top-10-Unix-Command-Line-Utilities-2012</guid>
+        <link>http://blog.coldflake.com/posts/Top-10-Unix-Command-Line-Utilities-2012</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/Top-10-Unix-Command-Line-Utilities-2012</guid>
         
         <category>unix</category>
         
@@ -3114,8 +3114,8 @@ Using the C-wrapper these events will end up triggering the C++ implementation. 
 
 </description>
         <pubDate>Thu, 11 Oct 2012 00:00:00 +0200</pubDate>
-        <link>http://blog.dahoam.in/posts/quickcheck-testing-c++</link>
-        <guid isPermaLink="true">http://blog.dahoam.in/posts/quickcheck-testing-c++</guid>
+        <link>http://blog.coldflake.com/posts/quickcheck-testing-c++</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/quickcheck-testing-c++</guid>
         
         <category>haskell</category>
         

@@ -1,327 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.dahoam.in/posts/choosing-the-Type-of-your-Types</loc>
+    <loc>http://blog.coldflake.com/posts/choosing-the-Type-of-your-Types</loc>
     <lastmod>2014-08-31T14:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/Testing-without-a-Brain</loc>
+    <loc>http://blog.coldflake.com/posts/Testing-without-a-Brain</loc>
     <lastmod>2014-08-16T14:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/Android-style-Message-Passing</loc>
+    <loc>http://blog.coldflake.com/posts/Android-style-Message-Passing</loc>
     <lastmod>2014-02-01T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/C++-delegates-on-steroids</loc>
+    <loc>http://blog.coldflake.com/posts/C++-delegates-on-steroids</loc>
     <lastmod>2014-01-12T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/top-10-unix-command-line-utilities-2013</loc>
+    <loc>http://blog.coldflake.com/posts/top-10-unix-command-line-utilities-2013</loc>
     <lastmod>2013-12-31T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/The-Incredible-Brew</loc>
+    <loc>http://blog.coldflake.com/posts/The-Incredible-Brew</loc>
     <lastmod>2013-12-07T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/Simple-Networking</loc>
+    <loc>http://blog.coldflake.com/posts/Simple-Networking</loc>
     <lastmod>2013-08-25T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/happy-new-year-with-shunting-yard</loc>
+    <loc>http://blog.coldflake.com/posts/happy-new-year-with-shunting-yard</loc>
     <lastmod>2013-01-09T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/Top-10-Unix-Command-Line-Utilities-2012</loc>
+    <loc>http://blog.coldflake.com/posts/Top-10-Unix-Command-Line-Utilities-2012</loc>
     <lastmod>2012-12-30T13:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/quickcheck-testing-c++</loc>
+    <loc>http://blog.coldflake.com/posts/quickcheck-testing-c++</loc>
     <lastmod>2012-10-11T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/On-the-fly-C++</loc>
+    <loc>http://blog.coldflake.com/posts/On-the-fly-C++</loc>
     <lastmod>2012-08-09T14:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/bash-features-of-the-year</loc>
+    <loc>http://blog.coldflake.com/posts/bash-features-of-the-year</loc>
     <lastmod>2011-12-31T00:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/tumblr-no-more</loc>
+    <loc>http://blog.coldflake.com/posts/tumblr-no-more</loc>
     <lastmod>2011-12-29T00:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/cxxproject-first-results</loc>
+    <loc>http://blog.coldflake.com/posts/cxxproject-first-results</loc>
     <lastmod>2011-12-11T00:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/tool-for-a-fool</loc>
+    <loc>http://blog.coldflake.com/posts/tool-for-a-fool</loc>
     <lastmod>2011-11-22T00:00:00+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/haskell-expression-mode-with-git</loc>
+    <loc>http://blog.coldflake.com/posts/haskell-expression-mode-with-git</loc>
     <lastmod>2011-10-28T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/brainfuck</loc>
+    <loc>http://blog.coldflake.com/posts/brainfuck</loc>
     <lastmod>2011-10-11T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/first-nonrepeating-char</loc>
+    <loc>http://blog.coldflake.com/posts/first-nonrepeating-char</loc>
     <lastmod>2011-08-21T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/word-break-problem</loc>
+    <loc>http://blog.coldflake.com/posts/word-break-problem</loc>
     <lastmod>2011-08-15T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/hettsProblem</loc>
+    <loc>http://blog.coldflake.com/posts/hettsProblem</loc>
     <lastmod>2011-08-09T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/the-wonders-of-xargs</loc>
+    <loc>http://blog.coldflake.com/posts/the-wonders-of-xargs</loc>
     <lastmod>2011-07-31T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/gtest</loc>
+    <loc>http://blog.coldflake.com/posts/gtest</loc>
     <lastmod>2011-07-11T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/posts/cxxproject</loc>
+    <loc>http://blog.coldflake.com/posts/cxxproject</loc>
     <lastmod>2011-06-12T00:00:00+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/about.html</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/about.html</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/C++/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/C++/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/ruby/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/ruby/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/rake/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/rake/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/dsl/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/dsl/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/gtest/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/gtest/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/testing/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/testing/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/unix/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/unix/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/bash/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/bash/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/haskell/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/haskell/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/puzzle/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/puzzle/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/algorithm/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/algorithm/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/git/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/git/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/ghc/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/ghc/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/tool/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/tool/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/datastructure/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/datastructure/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/performance/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/performance/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/blogging/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/blogging/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/llvm/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/llvm/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/clang/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/clang/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/quickcheck/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/quickcheck/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/lua/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/lua/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/udp/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/udp/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/networking/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/networking/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/osx/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/osx/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/templates/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/templates/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/android/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/android/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/concurrency/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/concurrency/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/ipc/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/ipc/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/rant/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/rant/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/types/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/types/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://blog.dahoam.in/tag/</loc>
-    <lastmod>2014-12-01T22:25:58+01:00</lastmod>
+    <loc>http://blog.coldflake.com/tag/</loc>
+    <lastmod>2014-12-01T22:45:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
