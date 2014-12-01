@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>Lunch break coding - brainfuck - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/brainfuck">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Lunch break coding - brainfuck</h1>
+                    
+                    <h2 class="subheading">Implementing a brainfuck interpreter in haskell.</h2>
+                    
+                    <span class="meta">Posted on October 11, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/puzzle">puzzle</a>, 
+                      
+                      <a href="/tag/algorithm">algorithm</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>This is probably the worst name for a programming language after Javascript… but it’s a really fun little language! The task is to <a href="http://programmingpraxis.com/2011/10/04/brainfuck/">write an interpreter for it</a>.</p>
+
+<p>Usually I’d resort back to the trusty <a href="http://legacy.cs.uu.nl/daan/parsec.html">parsec</a> library but it seems that this language is simple enough to do without.
+This is the specification taken from the <a href="http://en.wikipedia.org/wiki/Brainfuck">wikipedia page</a>:</p>
+
+<blockquote>
+  <p>Character	Meaning</p>
+
+  <p><code>&gt;</code>	increment the data pointer (to point to the next cell to the right).<br />
+<code>&lt;</code>	decrement the data pointer (to point to the next cell to the left).<br />
+<code>+</code>	increment (increase by one) the byte at the data pointer.<br />
+<code>-</code>	decrement (decrease by one) the byte at the data pointer.<br />
+<code>.</code>	output a character, the ASCII value of which being the byte at the data pointer.<br />
+<code>,</code>	accept one byte of input, storing its value in the byte at the data pointer.<br />
+<code>[</code>	if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command<code>*</code>.<br />
+<code>]</code>	if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command<code>*</code>.</p>
+</blockquote>
+
+<p>So let’s add a few module imports and data types that we will need:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.IntMap</span> <span class="k">as</span> <span class="n">M</span>
+<span class="kr">import</span> <span class="nn">Data.Char</span><span class="p">(</span><span class="n">chr</span><span class="p">,</span><span class="n">ord</span><span class="p">)</span>
+<span class="kr">import</span> <span class="nn">Data.Array</span>
+
+<span class="kr">type</span> <span class="kt">State</span> <span class="ow">=</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">M</span><span class="o">.</span><span class="kt">IntMap</span> <span class="kt">Int</span><span class="p">)</span>
+<span class="nf">maxsize</span> <span class="ow">=</span> <span class="mi">30000</span>
+<span class="kr">data</span> <span class="kt">Dir</span> <span class="ow">=</span>  <span class="kt">Up</span> <span class="o">|</span> <span class="kt">Down</span></code></pre></div>
+
+<p>The main algorithm is just a loop that consumes the instruction input string one character at a time and acts upon the data area. Thus we need to keep track of both the current instruction (<code>instructions!pI</code>) and the state of the data area (the content <code>dat</code> and our position <code>pD</code>).<br />
+We keep the instructions in an array and use an <code>IntMap</code> to represent the data-area in a way so we can easily update and traverse it. The <code>State</code> that we keep for the recursive invocations always tells us the current data-cell and date-area.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">interprete</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="nf">interprete</span> <span class="n">input</span> <span class="ow">=</span> <span class="n">f</span> <span class="mi">0</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="kt">M</span><span class="o">.</span><span class="n">fromList</span> <span class="o">$</span> <span class="n">zip</span> <span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="p">]</span> <span class="p">(</span><span class="n">replicate</span> <span class="n">maxsize</span> <span class="mi">0</span><span class="p">))</span> <span class="kr">where</span>
+  <span class="n">f</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">State</span> <span class="ow">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+  <span class="n">f</span> <span class="n">pI</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">pI</span> <span class="o">==</span> <span class="n">length</span> <span class="n">input</span> <span class="ow">=</span> <span class="n">print</span> <span class="s">&quot;done!&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">return</span> <span class="nb">()</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">&gt;</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">&lt;</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pred</span> <span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">+</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">update</span> <span class="n">succ</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">-</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">update</span> <span class="n">pred</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">.</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">putChar</span> <span class="p">(</span><span class="n">chr</span> <span class="o">$</span> <span class="n">dat</span> <span class="kt">M</span><span class="o">.!</span> <span class="n">pD</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">,</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">getChar</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="n">c</span> <span class="ow">-&gt;</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">update</span> <span class="p">(</span><span class="n">const</span> <span class="p">(</span><span class="n">ord</span> <span class="n">c</span><span class="p">)))</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">[</span><span class="n">&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">dat</span> <span class="kt">M</span><span class="o">.!</span> <span class="n">pD</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="p">(</span><span class="n">matchUpTable</span> <span class="kt">M</span><span class="o">.!</span> <span class="n">pI</span><span class="p">))</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">[</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">]</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">matchDownTable</span> <span class="kt">M</span><span class="o">.!</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">f</span> <span class="p">(</span><span class="n">succ</span> <span class="n">pI</span><span class="p">)</span> <span class="p">(</span><span class="n">pD</span><span class="p">,</span><span class="n">dat</span><span class="p">)</span>
+    <span class="kr">where</span> <span class="n">instructions</span> <span class="ow">=</span> <span class="n">listArray</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span> <span class="n">input</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">input</span>
+          <span class="n">x</span> <span class="ow">=</span> <span class="n">instructions</span><span class="o">!</span><span class="n">pI</span>
+          <span class="n">update</span> <span class="n">f</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="n">update</span> <span class="p">(</span><span class="kt">Just</span> <span class="o">.</span> <span class="n">f</span><span class="p">)</span> <span class="n">pD</span> <span class="n">dat</span>
+          <span class="n">matchUpTable</span> <span class="ow">=</span> <span class="n">buildTable</span> <span class="kt">Up</span> <span class="n">&#39;</span><span class="p">[</span><span class="n">&#39;</span> <span class="n">instructions</span>
+          <span class="n">matchDownTable</span> <span class="ow">=</span> <span class="n">buildTable</span> <span class="kt">Down</span> <span class="n">&#39;</span><span class="p">]</span><span class="n">&#39;</span> <span class="n">instructions</span></code></pre></div>
+
+<p>The only tricky part here is to find out where to jump to in case we need to execute a code jump to a matching bracket. Since those jumps will potentially over and over again we lazily build up a table that keeps track of matching brackets.<br />
+The <code>matching</code> function calculates the position of an opening or closing bracket.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">buildTable</span> <span class="n">dir</span> <span class="n">start</span> <span class="n">instructions</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="n">fromList</span>
+  <span class="p">[(</span><span class="n">p</span><span class="p">,</span><span class="n">matching</span> <span class="n">dir</span> <span class="n">instructions</span> <span class="n">p</span><span class="p">)</span> <span class="o">|</span> <span class="n">p</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="n">snd</span> <span class="o">$</span> <span class="n">bounds</span> <span class="n">instructions</span><span class="p">],</span>
+                                     <span class="n">instructions</span><span class="o">!</span><span class="n">p</span> <span class="o">==</span> <span class="n">start</span><span class="p">]</span>
+
+<span class="nf">matching</span> <span class="ow">::</span> <span class="kt">Dir</span> <span class="ow">-&gt;</span> <span class="kt">Array</span> <span class="kt">Int</span> <span class="kt">Char</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> 
+<span class="nf">matching</span> <span class="kt">Up</span> <span class="n">instructions</span> <span class="n">p</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">succ</span> <span class="n">p</span><span class="p">)</span> <span class="mi">0</span>
+  <span class="kr">where</span> <span class="n">m</span> <span class="n">p</span> <span class="n">depth</span>
+          <span class="o">|</span> <span class="n">instructions</span><span class="o">!</span><span class="n">p</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">[</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">succ</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="o">|</span> <span class="n">instructions</span><span class="o">!</span><span class="n">p</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">]</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">p</span> <span class="kr">else</span> <span class="n">m</span> <span class="p">(</span><span class="n">succ</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">depth</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">succ</span> <span class="n">p</span><span class="p">)</span> <span class="n">depth</span>
+<span class="nf">matching</span> <span class="kt">Down</span> <span class="n">instructions</span> <span class="n">p</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">pred</span> <span class="n">p</span><span class="p">)</span> <span class="mi">0</span>
+  <span class="kr">where</span> <span class="n">m</span> <span class="n">p</span> <span class="n">depth</span>
+          <span class="o">|</span> <span class="n">instructions</span><span class="o">!</span><span class="n">p</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">]</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">pred</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="o">|</span> <span class="n">instructions</span><span class="o">!</span><span class="n">p</span> <span class="o">==</span> <span class="n">&#39;</span><span class="p">[</span><span class="n">&#39;</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="mi">0</span> <span class="kr">then</span> <span class="n">p</span> <span class="kr">else</span> <span class="n">m</span> <span class="p">(</span><span class="n">pred</span> <span class="n">p</span><span class="p">)</span> <span class="p">(</span><span class="n">depth</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+          <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">m</span> <span class="p">(</span><span class="n">pred</span> <span class="n">p</span><span class="p">)</span> <span class="n">depth</span></code></pre></div>
+
+<p>The last bit is to provide a main function so we can easily test the implementation:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">main</span> <span class="ow">=</span> <span class="n">getContents</span> <span class="o">&gt;&gt;=</span> <span class="n">interprete</span></code></pre></div>
+
+<p>So let’s do some tests. First an easy one, HelloWorld.bf:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="o">++++++++++</span><span class="p">[</span><span class="o">&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-</span><span class="p">]</span><span class="o">&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;++</span>
+<span class="o">+++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</span></code></pre></div>
+
+<p>Running this will give us:</p>
+
+<pre class="terminal">
+$ ./interpreter &lt; HelloWorld.bf
+Hello World!
+"done!"
+</pre>
+
+<p>And one more, a little less trivial, factorial.bf:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="o">+++++++++++++++++++++++++++++++++&gt;++++++++++++++++++++++++++++++++++++</span>
+<span class="o">+++++++++++++++++++++++++&gt;++++++++++&gt;+++++++++&gt;&gt;+&lt;&lt;</span><span class="p">[</span><span class="o">&gt;+++++++++++++++++</span>
+<span class="o">+++++++++++++++++++++++++++++++.--------------------------------------</span>
+<span class="c1">----------&lt;&lt;&lt;&lt;.-.&gt;.&lt;.+&gt;&gt;&gt;&gt;&gt;&gt;&gt;++++++++++&lt;&lt;[-&gt;+&gt;-[&gt;+&gt;&gt;]&gt;[+[-&lt;+&gt;]&gt;+&gt;&gt;]&lt;&lt;&lt;</span>
+<span class="o">&lt;&lt;&lt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;+&gt;-</span><span class="p">]</span><span class="o">&gt;</span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="o">&gt;&gt;&gt;++++++++++&lt;</span><span class="p">[</span><span class="o">-&gt;-</span><span class="p">[</span><span class="o">&gt;+&gt;&gt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">[</span><span class="o">+</span><span class="p">[</span><span class="o">-&lt;+&gt;</span><span class="p">]</span><span class="o">&gt;+&gt;&gt;</span><span class="p">]</span><span class="o">&lt;&lt;&lt;&lt;&lt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">[</span><span class="o">++++</span>
+<span class="o">++++++++++++++++++++++++++++++++++++++++++++.</span><span class="p">[</span><span class="o">-</span><span class="p">]]</span><span class="o">&lt;</span><span class="p">[</span><span class="o">+++++++++++++++++++</span>
+<span class="o">+++++++++++++++++++++++++++++.</span><span class="p">[</span><span class="o">-</span><span class="p">]]</span><span class="o">&lt;&lt;&lt;+++++++++++++++++++++++++++++++++</span>
+<span class="o">+++++++++++++++.</span><span class="p">[</span><span class="o">-</span><span class="p">]</span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;.&gt;&gt;+&gt;</span><span class="p">[</span><span class="o">&gt;&gt;+&lt;&lt;-</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">[</span><span class="o">&lt;&lt;&lt;</span><span class="p">[</span><span class="o">&gt;+&gt;+&lt;&lt;-</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="p">[</span><span class="o">&lt;&lt;+&gt;&gt;-</span><span class="p">]</span><span class="o">&gt;-</span><span class="p">]</span><span class="o">&lt;&lt;&lt;&lt;</span>
+<span class="o">-</span><span class="p">]</span></code></pre></div>
+
+<p>will result in:</p>
+
+<pre class="terminal">
+$ time ./interpreter &lt; factorial.bf
+0! = 1
+1! = 1
+2! = 2
+3! = 6
+4! = 24
+5! = 120
+6! = 720
+7! = b40
+8! = ǃ20
+"done!"
+0.96user 0.01system 0:00.97elapsed 99%CPU
+</pre>
+
+<p>If anybody is interested in how these examples work I can recommend the javascript powered <a href="http://www.lordalcol.com/brainfuckjs/">brainfuck interpreter &amp; debugger</a>.<br />
+Good for today…  </p>
+
+<p>Full source-code is available <a href="/code/brainfuck/interpreter.hs">here</a>.</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/first-nonrepeating-char" data-toggle="tooltip" data-placement="top" title="Lunch break coding - First Nonrepeating Character"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/haskell-expression-mode-with-git" data-toggle="tooltip" data-placement="top" title="Scripting Git with Ghc Evaluation Mode">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>

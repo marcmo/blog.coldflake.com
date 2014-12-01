@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>C++ Delegates On Steroids - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/C++-delegates-on-steroids">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/shuttlestart.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>C++ Delegates On Steroids</h1>
+                    
+                    <h2 class="subheading">Generic version of impossibly fast delegate using C++11 variadic templates.</h2>
+                    
+                    <span class="meta">Posted on January 12, 2014
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/C++">C++</a>, 
+                      
+                      <a href="/tag/templates">templates</a>, 
+                      
+                      <a href="/tag/lua">lua</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Yesterday I came across an <a href="http://www.jeremyong.com/blog/2014/01/10/interfacing-lua-with-templates-in-c-plus-plus-11/">excellent article</a> from <a href="https://github.com/jeremyong">Jeremy Ong</a> that introduces
+an extremely nice solution for integrating C++ and Lua code. Jeremy used a
+technique based on C++ meta-programming in conjunction with C++11 variadic
+templates to call Lua functions from C++ code.<br />
+That reminded me of some other example where variadic templates have been a joy
+to work with: coding delegates in C++.</p>
+
+<h2 id="why-delegates">Why Delegates?</h2>
+
+<div class="jumbotron">
+
+<h3>"Don't call us, we'll call you"</h3>
+
+Delegates enable you to pass around callable entities without introducing a too
+tight coupling that is usually the case when using interfaces in form of
+abstract base classes. They are a little like function pointers in C but in a
+more type-safe manner and do not only work for free functions but also for
+member functions. As such they are well suited e.g. for systems that communicate
+through events.
+
+</div>
+
+<p>So why use delegates when you can also pass around objects that offer the
+required virtual functions in their interface? This works but introduces too
+many dependencies for my taste. What if you cannot change the interface of the
+object you are using? By using delegates instead of an explicit interface the
+requirements for client code are minimized. If you are implementing some kind of
+asynchronous service, it’s always a good idea to assume the least possible
+amount about your users. The result is a more functional rather then object
+oriented API.<br />
+Further more, no virtual functions are needed whatsoever which can be important
+when memory is scarce. The delegates I am talking about have a compile time
+interface only.</p>
+
+<h2 id="first-implementation">First Implementation</h2>
+
+<p>Before starting of I’d like to mention that the whole idea behind this delegate
+implementation originates from <a href="http://www.codeproject.com/Members/Sergey-Ryazanov">Sergey Ryazanov</a> who wrote an excellent article
+about <a href="http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates">the impossibly fast c++ delegate</a>. It is by no means complete but
+hopefully conveys the underlying ideas as well as the motivation for using
+variadic templates.<br />
+The goals for Sergey’s implementation were:</p>
+
+<ul>
+  <li>performance (the faster the better)</li>
+  <li>no dynamic memory allocation</li>
+  <li>compatible with the C++ Standard</li>
+</ul>
+
+<p>Exactly the things that were also important to my usage (mainly in embedded
+systems programming) where dynamic memory allocation is often not possible.<br />
+The trick for a Delegate implementation is that the code that will end up
+calling back your delegate must not have any type dependencies to the code that
+implements the callback function. In Sergeys implementation a Delegate will
+store an <em>untyped pointer to an object</em> and a <em>member-function-pointer</em>.<br />
+Here is a first sketch for a fixed return type and a fixed parameter:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Delegate</span>
+<span class="p">{</span>
+    <span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">Type</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Delegate</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">Type</span> <span class="n">function</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">fpCallee</span><span class="p">(</span><span class="n">callee</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">fpCallbackFunction</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">Delegate</span> <span class="n">from_function</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">callee</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Delegate</span> <span class="n">d</span><span class="p">(</span><span class="n">callee</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">methodCaller</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TMethod</span><span class="o">&gt;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">fpCallbackFunction</span><span class="p">)(</span><span class="n">fpCallee</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="kt">void</span><span class="o">*</span> <span class="n">fpCallee</span><span class="p">;</span>
+    <span class="n">Type</span> <span class="n">fpCallbackFunction</span><span class="p">;</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="kt">void</span> <span class="n">methodCaller</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">T</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">callee</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+<p>The <code>Delegate</code> class provides two public functions: the static <code>from_function</code>
+is used to construct the delegate. Here the instance itself is stored along with
+a <code>methodCaller</code> function pointer that casts the untyped stored pointer back to
+it’s original type. The function call operator will be used to invoke the
+delegate.<br />
+Notice that the compiler will bake in the type information about <code>T</code> so that
+when the delegate is invoked it knows exactly about the types involved. Thus the
+<code>static_cast</code> in the <code>methodCaller</code> is by no means unsafe.</p>
+
+<h3 id="checking-equality">Checking Equality</h3>
+
+<p>Delegates can freely be passed around and copied since the data is only 2
+pointers. Checking if one delegate corresponds to another can be easily
+achieved.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Delegate</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fpCallee</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">fpCallee</span><span class="p">)</span>
+           <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">fpCallbackFunction</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">fpCallbackFunction</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="usage">Usage</h3>
+
+<p>How can this implementation be used in real code? Say you have a class <code>A</code> with
+a function <code>foo</code> that you want to pass to some other code.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;foo called with x=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">Delegate</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Delegate</span><span class="o">::</span><span class="n">from_function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">foo</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">d</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;d==d: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d</span> <span class="o">==</span> <span class="n">d</span> <span class="o">?</span> <span class="s">&quot;True&quot;</span> <span class="o">:</span> <span class="s">&quot;False&quot;</span><span class="p">);</span>
+    <span class="n">Delegate</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">Delegate</span><span class="o">::</span><span class="n">from_function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">bar</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;d==d2: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d</span> <span class="o">==</span> <span class="n">d2</span> <span class="o">?</span> <span class="s">&quot;True&quot;</span> <span class="o">:</span> <span class="s">&quot;False&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>First you of course need an object of <code>A</code> (<code>a</code>). Constructing the delegate
+involves a call to the <code>from_function</code> function that takes the type of <code>a</code> and
+the member function pointer as template arguments plus <code>a</code> as a normal argument.
+Then the delegate is ready to be passed around and used.</p>
+
+<h2 id="a-more-generic-version">A more Generic Version</h2>
+
+<p>Our first implementation has one severe drawback: It only works for a very
+special function signature for the delegate function.<br />
+What we would like to have is a delegate for all possible combinations of return
+values and argument types.</p>
+
+<h3 id="parameter-for-return-type-and-argument">Parameter for Return Type and Argument</h3>
+
+<p>As a first step, let’s make the <code>Delegate</code> class a template so that we can vary
+the return type and one parameter type.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">return_type</span><span class="p">,</span> <span class="k">typename</span> <span class="n">param_type</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Delegate</span>
+<span class="p">{</span>
+    <span class="k">typedef</span> <span class="n">return_type</span> <span class="p">(</span><span class="o">*</span><span class="n">Type</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">param_type</span><span class="p">);</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Delegate</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">Type</span> <span class="n">function</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">fpCallee</span><span class="p">(</span><span class="n">callee</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">fpCallbackFunction</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">param_type</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">Delegate</span> <span class="n">from_function</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">callee</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Delegate</span> <span class="n">d</span><span class="p">(</span><span class="n">callee</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">methodCaller</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TMethod</span><span class="o">&gt;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">return_type</span> <span class="k">operator</span><span class="p">()(</span><span class="n">param_type</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">fpCallbackFunction</span><span class="p">)(</span><span class="n">fpCallee</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="kt">void</span><span class="o">*</span> <span class="n">fpCallee</span><span class="p">;</span>
+    <span class="n">Type</span> <span class="n">fpCallbackFunction</span><span class="p">;</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">param_type</span><span class="p">)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">return_type</span> <span class="n">methodCaller</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">param_type</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">T</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">callee</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+<h3 id="usage-1">Usage</h3>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">typedef</span> <span class="n">Delegate</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">IntDelegate</span><span class="p">;</span>
+    <span class="n">IntDelegate</span> <span class="n">d</span> <span class="o">=</span> <span class="n">IntDelegate</span><span class="o">::</span><span class="n">from_function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">foo</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;calling delegate with return value: d(42)=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>While this is a little more flexible, we are still not at our goal for a truly generic delegate implementation.</p>
+
+<h2 id="meet-variadic-templates">Meet Variadic Templates</h2>
+
+<p>Variadic templates solve a long standing problem in C++ when working with templates. They finally allow the user to define template-classes and template-functions that can work with an arbitrarily long list of template arguments. Previously you had to write or pre-generate template specializations for multiple arguments, s.th. that for example needed to be done excessively in template-heavy boost libraries. Using variadic templates things can now be written much more smoothly.<br />
+This new feature shows up in form of <em>parameter packs</em> in your template definitions:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">A</span>
+<span class="p">{};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">foo</span><span class="p">(</span><span class="n">Ts</span><span class="p">...</span> <span class="n">vs</span><span class="p">)</span>
+<span class="p">{}</span></code></pre></div>
+
+<p>Here, <code>Ts</code> is a synonym for a <em>list of types</em> (not a single type!) and <code>vs</code> stands for a <em>list of values</em>. To work with them you can re-expand those lists in your code.</p>
+
+<h3 id="expansions">Expansions</h3>
+
+<p>To help to understand what parameter packs get expanded to, it’s easiest to look at the following expansions that the compiler will take care of:</p>
+
+<table class="table borderless">
+  <tbody>
+    <tr class="odd">
+      <td align="left"><code>Ts...</code></td>
+      <td align="left">→</td>
+      <td align="left">T<sub>1</sub>,…T<sub>n</sub></td>
+    </tr>
+    <tr class="even">
+      <td align="left"><code>x&lt;Ts, Y&gt;::z...</code></td>
+      <td align="left">→</td>
+      <td align="left">x&lt;T<sub>1</sub>, Y&gt;::z,… x&lt;T<sub>n</sub>, Y&gt;::z</td>
+    </tr>
+    <tr class="odd">
+      <td align="left"><code>x&lt;Ts&amp;, Us&gt;...</code></td>
+      <td align="left">→</td>
+      <td align="left">x&lt;T<sub>1</sub>&amp;, U<sub>1</sub>&gt;,… x&lt;T<sub>n</sub>&amp;, U<sub>n</sub>&gt;</td>
+    </tr>
+    <tr class="even">
+      <td align="left"><code>foo(vs)...</code></td>
+      <td align="left">→</td>
+      <td align="left">foo(v1),… foo(vn)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code>...</code> ellipsis makes the compiler look to its left side to figure out what
+can be expanded. In the first case it’s just a list of types. More interesting
+in the second case, here <code>Ts</code> is expandable but not <code>Y</code> so the whole expression
+will be expanded for the <code>Ts</code>.<br />
+When there is more than one possibility to expand, all possible matches will be
+expanded together (T<sub>1</sub> with U<sub>1</sub>, T<sub>2</sub> with
+U<sub>2</sub> and so on).<br />
+Expansion also works for lists of values when e.g. calling a function with every
+element in a list.</p>
+
+<h3 id="example">Example</h3>
+
+<p><a href="http://erdani.com/">Andrei</a> had a nice little example in <a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Variadic-Templates-are-Funadic">his talk at GoingNative 2012</a> that shows
+a simple function that makes use of variadic templates.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T2</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">isOneOf</span><span class="p">(</span><span class="n">T1</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">T2</span><span class="o">&amp;&amp;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T2</span><span class="p">,</span> <span class="n">class</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">isOneOf</span><span class="p">(</span><span class="n">T1</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">T2</span><span class="o">&amp;&amp;</span> <span class="n">b</span><span class="p">,</span> <span class="n">Ts</span><span class="o">&amp;&amp;</span> <span class="p">...</span> <span class="n">vs</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">||</span> <span class="n">isOneOf</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">vs</span><span class="p">...);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="kt">bool</span> <span class="n">res</span> <span class="o">=</span> <span class="n">isOneOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span></code></pre></div>
+
+<p>This function takes a list of arguments (at least 2) and checks if the first
+argument gets repeated somewhere.</p>
+
+<h2 id="truly-generic-delegate">Truly Generic Delegate</h2>
+
+<p>Now with the nice addition of variadic templates it’s possible to write a true
+generic version for our delegate, i.e. a delegate that is both parameterized in
+it’s return type and it’s argument types.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">return_type</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">params</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Delegate</span>
+<span class="p">{</span>
+    <span class="k">typedef</span> <span class="n">return_type</span> <span class="p">(</span><span class="o">*</span><span class="n">Type</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">params</span><span class="p">...);</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Delegate</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">Type</span> <span class="n">function</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">fpCallee</span><span class="p">(</span><span class="n">callee</span><span class="p">)</span>
+        <span class="p">,</span> <span class="n">fpCallbackFunction</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">params</span><span class="p">...)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">Delegate</span> <span class="n">from_function</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">callee</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Delegate</span> <span class="n">d</span><span class="p">(</span><span class="n">callee</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">methodCaller</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TMethod</span><span class="o">&gt;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">d</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">return_type</span> <span class="k">operator</span><span class="p">()(</span><span class="n">params</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">fpCallbackFunction</span><span class="p">)(</span><span class="n">fpCallee</span><span class="p">,</span> <span class="n">xs</span><span class="p">...);</span>
+    <span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+
+    <span class="kt">void</span><span class="o">*</span> <span class="n">fpCallee</span><span class="p">;</span>
+    <span class="n">Type</span> <span class="n">fpCallbackFunction</span><span class="p">;</span>
+
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">params</span><span class="p">...)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">return_type</span> <span class="n">methodCaller</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">callee</span><span class="p">,</span> <span class="n">params</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">T</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">callee</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;*</span><span class="n">TMethod</span><span class="p">)(</span><span class="n">xs</span><span class="p">...);</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+<h3 id="usage-2">Usage</h3>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">char</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Delegate</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;::</span><span class="n">from_function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">foo</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">Delegate</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;::</span><span class="n">from_function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">bar</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;delegate with return value: d(42)=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;for d2: d2(42, 2, &#39;a&#39;)=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">));</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Finally we have Delegate available for all the function types we want to use on
+our delegate objects. Ok, the syntax might be a little verbose but that can be
+amended somewhat using a factory function for our delegates in combination with
+a little C macro.</p>
+
+<h3 id="syntactic-sugar-please">Syntactic Sugar please!</h3>
+
+<p>Let’s see what we can do to make delegates a little more pleasing to the eye:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">return_type</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">params</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Delegate</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">return_type</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">params</span><span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">DelegateMaker</span>
+<span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">foo</span><span class="p">)(</span><span class="n">params</span><span class="p">...)</span><span class="o">&gt;</span>
+    <span class="k">static</span> <span class="n">return_type</span> <span class="n">methodCaller</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">o</span><span class="p">,</span> <span class="n">params</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="o">-&gt;*</span><span class="n">foo</span><span class="p">)(</span><span class="n">xs</span><span class="p">...);</span>
+    <span class="p">}</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="n">foo</span><span class="p">)(</span><span class="n">params</span><span class="p">...)</span><span class="o">&gt;</span>
+    <span class="kr">inline</span> <span class="k">static</span> <span class="n">Delegate</span><span class="o">&lt;</span><span class="n">return_type</span><span class="p">,</span> <span class="n">params</span><span class="p">...</span><span class="o">&gt;</span> <span class="n">Bind</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">o</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Delegate</span><span class="o">&lt;</span><span class="n">return_type</span><span class="p">,</span>
+               <span class="n">params</span><span class="p">...</span><span class="o">&gt;</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">DelegateMaker</span><span class="o">::</span><span class="n">methodCaller</span><span class="o">&lt;</span><span class="n">foo</span><span class="o">&gt;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">return_type</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">params</span><span class="o">&gt;</span>
+<span class="n">DelegateMaker</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">params</span><span class="p">...</span> <span class="o">&gt;</span>
+<span class="n">makeDelegate</span><span class="p">(</span><span class="n">return_type</span> <span class="p">(</span><span class="n">T</span><span class="o">::*</span><span class="p">)(</span><span class="n">params</span><span class="p">...))</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">DelegateMaker</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">params</span><span class="p">...</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">#define DELEGATE(foo, thisPrt) (makeDelegate(foo).Bind&lt;foo&gt;(thisPrt))</span></code></pre></div>
+
+<p>Puuhh…looks worse than it is since this is only library code that users of our
+delegate implementation will never need to look at. The <code>DelegateMaker</code> together
+with the <code>makeDelegate</code> function is needed to make use of C++’s template
+argument deduction which unfortunately only works on template functions and not
+class templates. But now we can easily have our cake and eat it, too.</p>
+
+<h3 id="usage-3">Usage</h3>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">A</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">deadSimple</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;no params whatsoever</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">bar</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">char</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="sc">&#39;a&#39;</span> <span class="o">?</span> <span class="n">x</span><span class="o">+</span><span class="nl">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">crazy</span><span class="p">(</span><span class="kt">int</span> <span class="n">I</span><span class="p">,</span> <span class="kt">char</span> <span class="n">wanna</span><span class="p">,</span> <span class="kt">float</span> <span class="n">go</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">crazy</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;I=%d, wanna=%c, go=%f, crazy=%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+               <span class="n">I</span><span class="p">,</span> <span class="n">wanna</span><span class="p">,</span> <span class="n">go</span><span class="p">,</span> <span class="n">crazy</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">DELEGATE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">foo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">DELEGATE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">bar</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">DELEGATE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">crazy</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">d4</span> <span class="o">=</span> <span class="n">DELEGATE</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">deadSimple</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;d(42)=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;d2(42, 2, &#39;a&#39;)=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">d2</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">));</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;sheeeet!&quot;</span><span class="p">;</span>
+    <span class="n">d3</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+    <span class="n">d4</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>There you go. An extremely fast delegate implementation that looks quite usable
+to my eyes thanks to C++11’s variadic templates.</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/top-10-unix-command-line-utilities-2013" data-toggle="tooltip" data-placement="top" title="Top 10 Unix Command Line Utilities 2013"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/Android-style-Message-Passing" data-toggle="tooltip" data-placement="top" title="Android Style Message Passing">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>

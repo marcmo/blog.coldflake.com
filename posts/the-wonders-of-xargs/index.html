@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>The Wonders of xargs - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/the-wonders-of-xargs">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,126 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/wood.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>The Wonders of xargs</h1>
+                    
+                    <h2 class="subheading">Exploring the goodness of xargs, one of the most versatile unix utilities.</h2>
+                    
+                    <span class="meta">Posted on July 31, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/unix">unix</a>, 
+                      
+                      <a href="/tag/bash">bash</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p><a href="http://www.gnu.org/software/findutils/manual/html_node/find_html/Invoking-xargs.html">xargs</a> is a nice little utility for the command line that I use quite a lot. The basic usecases are pretty simple and it might even be so simple that the wonders of xargs go unnoticed for quite some time.<br />
+<em>xargs</em> is useful whenever you want to apply a command to a list of items in the shell. One really simple example:</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<pre class="terminal">
+$ find . -type f | xargs md5
+</pre>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>will calculate the md5 checksum of each file in the current directory:</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<pre class="terminal">
+MD5 (1.txt) = dfb5cfe29927bb659c380f553eb43131
+MD5 (2.txt) = fd97581244bf2ff3241f977c432f2c0b
+MD5 (3.txt) = 63a79bfa8ff94b772f16a6fea311b9a7
+MD5 (4.txt) = 2e848e59c3a2abe9dd0fe250af7ac2dc
+MD5 (5.txt) = 2098d6fce034058709de9120bd366bee
+</pre>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Here <em>xargs</em> will simply take the output of the <code>find</code> command and feed it to the <code>md5</code> command.<br />
+The output will be fed as one chunk so the md5 command will be invoked like this:</p>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
+<pre class="terminal">
+$ md5 1.txt 2.txt 3.txt 4.txt 5.txt
+</pre>
 
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>If you want xargs to split up the string and feed it one by one to the md5 command, you would need to use the <code>-n</code> option:</p>
+
+<pre class="terminal">
+$ find . -type f -print0 | xargs -0 -n1 md5
+</pre>
+
+<p>Note that <em>xargs</em> will take any string and by default interpret spaces, tabs and newlines as delimiters.</p>
+
+<p>A little more complicated form shows how <em>xargs</em> can take a command where the first parameter is already bound.</p>
+
+<pre class="terminal">
+$ find . -name "*.h" | xargs grep assert
+</pre>
+
+<p>Up to here it’s pretty straight forward since we only had to supply the the last parameter to the command after xargs. But it’s a little more involved when the parameter is not a the end, e.g. in a copy command:</p>
+
+<pre class="terminal">
+$ mkdir tmp
+$ find . -type f -name "*.txt" | xargs -I xxx cp xxx tmp
+</pre>
+
+<p>This will find all files ending in “.txt” and copy them into a temporary directory.<br />
+Here the <code>-I</code> option allows to define a replacement string for the following command. So each input is bound to the variable <code>xxx</code> and can then be used in the copy command.<br />
+Note that this will not work for files that contain spaces! To make it work with such nasty filenames we have to use the <code>-0</code> option:</p>
+
+<pre class="terminal">
+$ find . -type f -name "*.txt" -print0 | xargs -0 -I xxx cp xxx tmp
+</pre>
+
+<p>One very useful option is <code>-p</code>. This will prompt the user before executing each command invocation which sometimes is what you want.</p>
+
+<pre class="terminal">
+$ find old -type f -name "*.txt" -print0 | xargs -0 -n1 -p rm
+</pre>
+<p>will find all textfiles in the <code>old</code> directory, feed each of these to xargs (using the <code>-n1</code> option) and remove them after prompting the user.</p>
+
+<p>It’s good to know about <em>xargs</em> and how to use it… It definitely WILL come in handy in lot’s of situations.<br />
+One final example (‘cause it’s kind of a favorite of mine):</p>
+
+<pre class="terminal">
+$ find . -type d -name '.svn' -print0 | xargs -0 rm -rdf
+</pre>
+
+<p>Will delete all the @*#!%-.svn folders recursivly from the current directory! Gone and forever!<br />
+Long live the git!</p>
 
 
-<!-- Pager -->
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
+                <hr>
 
-
-		</div>
-	</div>
-</div>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/gtest" data-toggle="tooltip" data-placement="top" title="Testing is fun again"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/hettsProblem" data-toggle="tooltip" data-placement="top" title="Lunch break coding">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

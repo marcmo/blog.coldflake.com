@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Testing Without A Brain - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/Testing-without-a-Brain">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,173 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Testing Without A Brain</h1>
+                    
+                    <h2 class="subheading">How much Testing is good for your Development Process?</h2>
+                    
+                    <span class="meta">Posted on August 16, 2014
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/testing">testing</a>, 
+                      
+                      <a href="/tag/rant">rant</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p>Testing software is perhaps one of the most controversial topics among programmers. Opinions range
+from “test first and test everything” to “tests slow us down”. As with so many things, the truth
+lies somewhere in between. After making my own experiences in a lot of different projects, I have to
+admit to myself that finding the perfect balance is still a hard a lot of times.</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Starting out in a new project, time pressure usually is low and we programmers are highly
+motivated to get our hands dirty with coding rather than eliciting yet another requirement. I found
+that people tend to write unit tests more readily at this stage. And arguably the code quality seems
+to be better than when working under tight deadlines. But that’s not necessarily related to the
+tests, it could very well be attributed to the relative freshness of the people on the project.<br />
+As projects get into a more intense phase the ratio between test-code and production-code usually
+takes a hit. So is this a bad thing?</p>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<h2 id="how-much-is-too-much">How much is too much</h2>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Kent Beck, the originator of the term <em>Test Driven Development</em> for sure has a ton of experience
+in writing software and in testing it. It might come as a surprise for many that he draws a pretty
+tight line between what is actually too much testing<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>:</p>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<blockquote>
+  <p>I get paid for code that works, not for tests, so my philosophy is to test as little as possible
+to reach a given level of confidence…</p>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
+  <p>If I don’t typically make a kind of mistake … I don’t
+test for it.</p>
+</blockquote>
 
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>To me that sounds very reasonable. Blindly striving for a high test coverage just doesn’t cut it. On
+the contrary: if a programmer is just guided by his coverage report, he will probably write some
+hard to maintain test code. And hard-to-maintain test code will eventually lead to reduced testing
+since the damn tests require more and more work to keep them in sync with changes made to the
+software. Those tests will get kicked out – and that with good reason!</p>
 
+<p>There is another issue I found with some of my unit testing: Overuse of abstractions. While I’d
+consider abstractions in general a desirable and good thing, they really only make sense when there
+is the actual need for an abstraction. If you only have one implementation of some functionality in
+your code, why go through the effort of generalizing? Since by definition there is only one thing to
+abstract about, your abstraction will probably have to be refined when introducing a second
+implementation.<br />
+But writing unit-tests mandates the use of abstractions since you only want to test some piece of
+code in isolation of the rest of the system – for which some kind of interface definitions come in
+handy. So you bite the bullet and create your interfaces, change the code around, build mocks and
+other scaffolding and hours later start writing your tests…while at the same time you could have
+cranked out this extra feature or stomped this nasty bug. Sounds like a tough choice to me.</p>
 
-<!-- Pager -->
+<h2 id="the-kind-of-software">The kind of software</h2>
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
+<p>When people show me their incredibly cool new test framework or preach about the absolute imperative
+of having thoroughly unit-tested code, the examples they come up with usually lend themselves to a
+unit-test centric approach. But we rarely have to write the next sorting algorithm or code to
+serialize and de-serialize data.<br />
+The day-to-day stuff often involves database access, updating a UI,
+network code a.s.o. Those things are by far harder to cover by unit-tests and tend to involve some
+heavy machinery. Time spent with setting up unit-tests might be spent more effectively otherwise.  </p>
+
+<h2 id="the-kind-of-testing">The kind of testing</h2>
+
+<p>I still consider testing my software with due diligence an integral part of the job. For some code
+this might very well be exhaustive unit testing, in other cases a different strategy might prove
+the better choice – like moving more into a more global approach where the functionality is tested
+as part of a bigger use-case. This kind of testing – often called integration-testing – is much
+harder to automate and thus does not always allow for regression testing, but it can be the right
+choice and help you to implement <em>and</em> test your code more quickly.<br />
+There is another very different flavor of testing I so far omitted: the kind of testing in a
+dynamically typed language that makes sure that trivial (or not so trivial) changes do not completely
+mess up your code-base. Those tests – I’d rather call them <em>syntactic checks</em> – are a
+prerequisite to stay sane. I did a couple of larger ruby programs and it was really painful to come
+back to the code at some point later: to find out I had a hard time to introduce changes just
+because I broke the code in unintended ways and my test coverage was not high enough to detect it.</p>
+
+<h2 id="striking-a-balance">Striking a balance</h2>
+
+<p>So what would be good advice for that new guy that started in your C++ department yesterday. Test
+everything? Strive for high coverage? I’d say yes – but as with every advice this should be taken
+with a grain of salt. If you end up with double the amount of code and possibly a different design
+I’d say you clearly overshot. In the end it’s not the unit-tests that are responsible for great
+software – it’s the talent and the ability of the developer.<br />
+On the other hand if the new guy writes your next rails application, the answer is much simpler:
+test the shit out of the code!</p>
+
+<h2 id="the-feedback-loop">The Feedback Loop</h2>
+
+<p>[Edit] After some discussion I had at my office I realized I forgot to mention a very important detail that
+might well favor the <em>test first and test everything</em> approach – the feedback loop. No matter if you
+use unit-tests, integration tests or any other kind of process that helps you validate your software
+behaves as expected: you absolutely got to have some way of harvesting feedback.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">ready</span><span class="p">)</span>
+  <span class="n">change</span> <span class="n">code</span>
+  <span class="n">compile</span> <span class="c1"># if you program in a compiled language</span>
+  <span class="n">deploy</span>
+  <span class="n">run</span></code></pre></div>
+
+<p>Developing a smartphone app might incur enough of a delay in this cycle to make you fly blind for a
+prolonged period of time. I find that less of a problem since this loop can usually be optimized
+pretty well (even though I mostly develop for embedded targets). But it’s not unheard of that in
+some organizations (e.g. an unnamed company I was working for in the past) not every developer has
+the luxury of his own setup and sometimes even has to share the license for the compiler. If you are
+stuck in such a situation a comprehensive suite of unittests will definitely make your life easier!</p>
+
+<hr />
+
+<p>[Edit 2] I just found a nice little <a href="http://stoneship.org/essays/tdd-bypasses-your-brain/">article on software testing</a> that contains some very true points
+and one really nice quote <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html">from Edsger W. Dijkstra</a>:</p>
+
+<blockquote>
+  <p>Today a usual technique is to make a program and then to test it. But: program testing can be a very
+effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.</p>
+</blockquote>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>see Kent Beck’s reply on stackoverflow to <a href="http://stackoverflow.com/questions/153234/how-deep-are-your-unit-tests">“How deep are unit tests”</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
-    
-</ul>
-
-
-		</div>
-	</div>
+  </ol>
 </div>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/Android-style-Message-Passing" data-toggle="tooltip" data-placement="top" title="Android Style Message Passing"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/choosing-the-Type-of-your-Types" data-toggle="tooltip" data-placement="top" title="Choosing the Type of your Types">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

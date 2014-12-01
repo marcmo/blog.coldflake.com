@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Building C/C++ Projects with Cxxproject - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/cxxproject">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,131 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/blue-metal-rust.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Building C/C++ Projects with Cxxproject</h1>
+                    
+                    <h2 class="subheading">Intro to a Build Tool for C/C++ projects that is based on rake, the ruby task dependency DSL</h2>
+                    
+                    <span class="meta">Posted on June 12, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/C++">C++</a>, 
+                      
+                      <a href="/tag/ruby">ruby</a>, 
+                      
+                      <a href="/tag/rake">rake</a>, 
+                      
+                      <a href="/tag/dsl">dsl</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p><img class="img-responsive" src="/img/cxxproject/cxx_buildingblocks3.png" alt="" /></p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Why are IDE’s like <a href="http://www.eclipse.org">eclipse</a> or Visual Studio so popular with many software developers? Yes, they offer an abundance of features and support to make it bearable to program in even the most verbose languages like Java and C++. Ok, the abundance of add-ons and plugins does allow for a nice integration of additional features and customization of the work environment.</p>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Another advantage for many is the ability to have managed projects. This will allow you to just create a project (let’s take C++ as an example) and will pretty much take care of setting up a build environment. Easy.</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p>But this approach has some inherent drawbacks that might not be apparent at first:</p>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
+<ul>
+  <li>you are restricted to the options that were invisioned by the IDE/plugin creators</li>
+  <li>you cannot change the internal build details (build succession, priorities etc.)</li>
+  <li>you might have to deal with impenetrable xml (or other “binary”) configuration files</li>
+  <li>you are stuck with the toolchain your IDE offers (and thus probably with your IDE)</li>
 </ul>
 
+<p>Of course in most cases you are not bound to stick with this <em>one-size-fits-all</em> approach. Often you can use a custom makefile to describe your build.
+This is by far the more flexible solution but requires you to maintain makefiles… . But makefiles are so general it might turn out to be quite challenging for non-make-gurus to setup and maintain a well structured make-based build-system.</p>
 
-		</div>
-	</div>
-</div>
+<p>About a year ago a <a href="http://gizmomogwai.tumblr.com">friend of mine</a> was working on a quite large C++ project that was built using Visual Studio. Since he is mostly working Mac and Linux he wanted to port the build system to s.th. less platform-dependent. That turned out to be quite a challenge and he ended up with a collection of rakefiles that he could now use on every platform.</p>
+
+<p><a href="http://rake.rubyforge.org">Rake</a> is the ruby version of make and once you tried it you will love it. Since I was doing a lot of rake at the time and also quite often wrote rakefiles for my C/C++ projects we joined in the quest to find a suitable solution for this reoccurring task.
+This was our wishlist for such a build system:</p>
+
+<ul>
+  <li>command-line tool</li>
+  <li>platform independent</li>
+  <li>easy to set up and maintain a build-configuration for C/C++ projects</li>
+  <li>support for scripting</li>
+  <li>fast builds</li>
+  <li>tool for programmers</li>
+</ul>
+
+<p>We created an initial version of <em><a href="http://marcmo.github.com/cxxproject/index.html">a build-system targeted towards C/C++ projects</a></em>. The result was quite usable but not very polished. It was based on rake and used ruby as a scripting language.
+…and it worked quite well! I ended up doing all my C++ projects with this and even bigger projects where quite easy to set up.</p>
+
+<p>The basic idea is that you have <em>building blocks</em> that depend on each other. Take an executable as an example: in order to build an executable, you might need several libraries the executable links to.</p>
+
+<p><img class="img-responsive" src="/img/cxxproject/cxx_buildingblocks1.png" alt="" /></p>
+
+<p>The executable itself needs to be modeled as a building block that depends on several library-building blocks. Of course this view is rather simplistic since the executable will also depend on some source files and header files that themselves will depend on header files a.s.o. In order to describe a build scenario those dependencies need to be captured so that they can be transformed into a precise succession of build instructions.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">exe</span> <span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+  <span class="ss">:dependencies</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;libA&#39;</span><span class="p">,</span> <span class="s1">&#39;libB&#39;</span><span class="p">,</span> <span class="s1">&#39;libC&#39;</span><span class="o">]</span></code></pre></div>
+
+<p>You kind a get the idea. This is a sample of what a building block description looks like…and it’s vanilla ruby code. Valid ruby code can easily be included. Say we want to add all source files that reside in any subdirectory to our building block description. A <code>FileList</code> is just what we can use here:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">exe</span> <span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+  <span class="ss">:sources</span> <span class="o">=&gt;</span> <span class="no">FileList</span><span class="o">[</span><span class="s1">&#39;**/*.cpp&#39;</span><span class="o">]</span><span class="p">,</span>
+  <span class="ss">:dependencies</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;libA&#39;</span><span class="p">,</span> <span class="s1">&#39;libB&#39;</span><span class="p">,</span> <span class="s1">&#39;libC&#39;</span><span class="o">]</span></code></pre></div>
+
+<p>Other building blocks can be described in a similar manner. Check out the <a href="http://marcmo.github.com/cxxproject/docs/tutorial.html">tutorial</a> to see some more complete examples.</p>
+
+<p>Recently the project gained a lot of speed and we got some great new committers. We thought about how to improve our build-system at work (we are using eclipse and CDT). At first it was more of a case-study of what could be done with the cxxproject approach.<br />
+After some experiments and some tuning (introducing multi-threaded builds a la <code>make -j</code>) we where able to build even huge projects (we are talking about building and linking more than 100 libraries) in a very efficient manner.</p>
+
+<p>Working with this much bigger use-case we introduced a lot of little but nice improvements, e.g.:</p>
+
+<ul>
+  <li>optional multi-threaded builds</li>
+  <li>command line progress bar</li>
+  <li>live-visualization of the build graph</li>
+  <li>support for including make-files as steps</li>
+  <li>support for custom building blocks</li>
+</ul>
+
+<p>Currently we only support 3 different compiler-toolchains but more will follow:</p>
+
+<ul>
+  <li>gcc</li>
+  <li>clang</li>
+  <li>diab</li>
+</ul>
+
+<p>More features are on our road map. But the goal will always be to maintain a very <strong>simplistic</strong> system to configure C/C++ builds and do that well. We will soon see how this plays out when we get some more experience on bigger projects.</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/gtest" data-toggle="tooltip" data-placement="top" title="Testing is fun again">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

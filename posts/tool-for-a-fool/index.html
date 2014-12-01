@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>A Tool for a Fool - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/tool-for-a-fool">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>A Tool for a Fool</h1>
+                    
+                    <h2 class="subheading">A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.</h2>
+                    
+                    <span class="meta">Posted on November 22, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/C++">C++</a>, 
+                      
+                      <a href="/tag/tool">tool</a>, 
+                      
+                      <a href="/tag/algorithm">algorithm</a>, 
+                      
+                      <a href="/tag/datastructure">datastructure</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>It has been a while since I was foolish enough to convince some of my colleagues to use Linux as their primary OS instead of Windows. By now it has become much easier to ensure everything important runs on the Linux boxes. But the development team of a recent project was quite large (&gt;80 devs!) and most of those still work in a Windows environment.<br />
+So it should be no surprise that there will be incompatibilities in the source code, namely the spelling. Why is it so difficult to accept that <code>flash/flashdriver.h</code> is <strong>not</strong> the same as <code>flash/FlashDriver.h</code>?? I got sick of manually correcting those glitches so I wrote a tool for myself that will correct this automatically.</p>
+
+<p>What the program basically does is it will go through each source file and correct any wrongly spelled include path it finds. To do that it will need to know of all available header files. Of course the include path itself can always be relative so it’s mandatory that an include line like <code>#include "testA.h"</code> will match against a header file <code>one/two/testA.h</code>. You get the idea. Kind of like matching up the suffixes of strings.</p>
+
+<h2 id="trying-tries">Trying Tries</h2>
+
+<p>In order to store the available header files I need some kind of a map which allows me to quickly determine if an include path exists with a different case or not. A data-structure that seems suitable for this (described in Chris Okasaki’s excellent <a href="http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504">book about purely functional data structures</a>) is a Trie. Tries are based on ordered trees and can function as associative arrays where the keys are represented bye strings of tokens. Sounds kind of useful my scenario…yes it’s also possible to use regular Hashmaps but what the heck…let’s implement it with tries, just for the fun of it.
+All found paths will be stored in the trie in reverse order so that the first level of edges will match the headerfile names. Descending further into the tree each edge will represent a path element (directory).</p>
+
+<p><img class="img-responsive" src="/img/toolforfool/trie_c.png" alt="" /></p>
+
+<p>This example represents the entries <code>["a.h","a/a.h","s/a.h","b.h","u/b.h","c.h","u/c.h"]</code> where we store the correctly spelled path along the edges to a node inside the node.<br />
+This is the datatype definition for our trie, where we store the path in the nodes if it is valid.  </p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">type</span> <span class="kt">TrieMap</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="kt">Map</span> <span class="n">a</span> <span class="p">(</span><span class="kt">Trie</span> <span class="n">a</span><span class="p">)</span>
+<span class="kr">data</span> <span class="kt">Trie</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">Empty</span> <span class="o">|</span> <span class="kt">Node</span> <span class="p">(</span><span class="kt">Maybe</span> <span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="p">(</span><span class="kt">TrieMap</span> <span class="n">a</span><span class="p">)</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span></code></pre></div>
+
+<p>To insert a list of elements into the trie, we consecutively let each element trickle down the nodes until all elements are in.<br />
+Building a trie from a list of elements just needs folding over the elements and inserting them.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">insert</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Eq</span> <span class="n">a</span><span class="p">,</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="n">a</span>
+<span class="nf">insert</span> <span class="n">ss</span> <span class="n">t</span> <span class="ow">=</span> <span class="n">insert&#39;</span> <span class="kt">[]</span> <span class="n">ss</span> <span class="n">t</span> <span class="kr">where</span>
+  <span class="n">insert&#39;</span> <span class="n">rs</span> <span class="n">c</span> <span class="kt">Empty</span> <span class="ow">=</span> <span class="n">insert&#39;</span> <span class="n">rs</span> <span class="n">c</span> <span class="p">(</span><span class="kt">Node</span> <span class="kt">Nothing</span> <span class="kt">M</span><span class="o">.</span><span class="n">empty</span><span class="p">)</span> 
+  <span class="n">insert&#39;</span> <span class="n">rs</span> <span class="kt">[]</span> <span class="p">(</span><span class="kt">Node</span> <span class="kr">_</span> <span class="n">d</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">Node</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">rs</span><span class="p">)</span> <span class="n">d</span>
+  <span class="n">insert&#39;</span> <span class="n">rs</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="n">n</span><span class="o">@</span><span class="p">(</span><span class="kt">Node</span> <span class="n">b</span> <span class="n">dic</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="p">`</span><span class="kt">M</span><span class="o">.</span><span class="n">member</span><span class="p">`</span> <span class="n">dic</span> <span class="ow">=</span> <span class="kt">Node</span> <span class="n">b</span> <span class="p">(</span><span class="kt">M</span><span class="o">.</span><span class="n">adjust</span> <span class="p">(</span><span class="n">insert&#39;</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">rs</span><span class="p">)</span> <span class="n">xs</span><span class="p">)</span> <span class="n">x</span> <span class="n">dic</span><span class="p">)</span>
+    <span class="o">|</span> <span class="kt">True</span> <span class="ow">=</span> <span class="kt">Node</span> <span class="n">b</span> <span class="p">(</span><span class="kt">M</span><span class="o">.</span><span class="n">insert</span> <span class="n">x</span> <span class="p">(</span><span class="n">insert&#39;</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">rs</span><span class="p">)</span> <span class="n">xs</span> <span class="kt">Empty</span><span class="p">)</span> <span class="n">dic</span><span class="p">)</span>
+
+<span class="nf">fromList</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="n">insert</span> <span class="kt">Empty</span></code></pre></div>
+
+<p>Finally we need to be able to find out if a certain path (list of path-elements) is a member of the trie:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">member</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">,</span><span class="kt">Show</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="nf">member</span> <span class="kr">_</span> <span class="kt">Empty</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+<span class="nf">member</span> <span class="kt">[]</span> <span class="p">(</span><span class="kt">Node</span> <span class="n">b</span> <span class="kr">_</span><span class="p">)</span> <span class="ow">=</span> <span class="n">b</span>
+<span class="nf">member</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="n">n</span><span class="o">@</span><span class="p">(</span><span class="kt">Node</span> <span class="n">b</span> <span class="n">tr</span><span class="p">)</span> <span class="ow">=</span> <span class="n">maybe</span> <span class="kt">Nothing</span> <span class="p">(</span><span class="n">member</span> <span class="n">xs</span><span class="p">)</span> <span class="p">(</span><span class="kt">M</span><span class="o">.</span><span class="n">lookup</span> <span class="n">x</span> <span class="n">tr</span><span class="p">)</span></code></pre></div>
+
+<h2 id="making-the-case">Making the Case</h2>
+
+<p>The question our trie has to answer is whether an include path is actually present (even if spelled incorrectly) or not. Is any form of the path <code>foo/bar.h</code> available? Maybe <code>FOO/BAR.h</code>? And if it is, what is the correct spelling?<br />
+So the <code>member</code> predicate has to return <code>True</code> even if we got the case wrong. Seems we need some kind of case-insensitive path representation:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">newtype</span> <span class="kt">CaseInsensitive</span> <span class="ow">=</span> <span class="kt">CI</span> <span class="p">{</span> <span class="n">content</span> <span class="ow">::</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span> <span class="p">}</span>
+<span class="kr">instance</span> <span class="kt">Eq</span> <span class="kt">CaseInsensitive</span> <span class="kr">where</span>
+  <span class="p">(</span><span class="o">==</span><span class="p">)</span> <span class="p">(</span><span class="kt">CI</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="kt">CI</span> <span class="n">b</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">toCaseFold</span> <span class="n">a</span> <span class="o">==</span> <span class="kt">T</span><span class="o">.</span><span class="n">toCaseFold</span> <span class="n">b</span>
+<span class="kr">instance</span> <span class="kt">Ord</span> <span class="kt">CaseInsensitive</span> <span class="kr">where</span>
+  <span class="n">compare</span> <span class="p">(</span><span class="kt">CI</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="kt">CI</span> <span class="n">b</span><span class="p">)</span> <span class="ow">=</span> <span class="n">compare</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">toCaseFold</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">toCaseFold</span> <span class="n">b</span><span class="p">)</span></code></pre></div>
+
+<p>To build up the initial trie and a list of files that potentially need to be fixed we can make use of the excellent <code>FileManipCompat</code> package. It makes it easy to find all header and source files that are available.<br />
+The headers will be used for the trie in such a way that s.th. like <code>a/b/c.h</code> will result in 3 valid paths: <code>c.h</code>, <code>b/c.h</code> and <code>a/b/c.h</code>.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">headerFiles</span> <span class="ow">=</span> <span class="n">find</span> <span class="n">always</span> <span class="p">(</span><span class="n">extension</span> <span class="o">==?</span> <span class="s">&quot;.h&quot;</span><span class="p">)</span>
+<span class="nf">headerAndSourceFiles</span> <span class="ow">=</span> <span class="n">find</span> <span class="n">always</span> <span class="p">(</span><span class="n">extension</span> <span class="o">==?</span> <span class="s">&quot;.h&quot;</span> <span class="o">||?</span> <span class="n">extension</span> <span class="o">==?</span> <span class="s">&quot;.c&quot;</span><span class="p">)</span>
+
+<span class="nf">toTrie</span> <span class="ow">::</span>  <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="kt">CaseInsensitive</span>
+<span class="nf">toTrie</span> <span class="n">hss</span> <span class="ow">=</span> <span class="n">fromList</span> <span class="p">[</span><span class="n">map</span> <span class="kt">CI</span> <span class="n">ts</span> <span class="o">|</span> <span class="n">ts</span> <span class="ow">&lt;-</span> <span class="n">validPaths</span><span class="p">]</span>
+  <span class="kr">where</span> <span class="n">allPaths</span> <span class="ow">=</span> <span class="n">map</span> <span class="kt">T</span><span class="o">.</span><span class="n">pack</span> <span class="n">hss</span>
+        <span class="n">validPaths</span> <span class="ow">=</span> <span class="n">concatMap</span> <span class="n">reverseSplitAll</span> <span class="n">allPaths</span>
+        <span class="n">reverseSplitAll</span> <span class="ow">=</span> <span class="n">map</span> <span class="n">reverse</span> <span class="o">.</span> <span class="kt">L</span><span class="o">.</span><span class="n">tails</span> <span class="o">.</span> <span class="n">splitP</span>
+        <span class="n">splitP</span> <span class="ow">=</span> <span class="n">map</span> <span class="kt">T</span><span class="o">.</span><span class="n">pack</span> <span class="o">.</span> <span class="n">splitDirectories</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">unpack</span></code></pre></div>
+
+<p>Now everything is in place that we can actually go ahead and try to fix broken include lines. This can be implemented as a pure function that takes the content of a file, filters out all <code>#include</code> lines and tries to find a more correct version for the include path.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">fixIncludes</span> <span class="ow">::</span> <span class="kt">BSC</span><span class="o">.</span><span class="kt">ByteString</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="kt">CaseInsensitive</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">BSC</span><span class="o">.</span><span class="kt">ByteString</span>
+<span class="nf">fixIncludes</span> <span class="n">content</span> <span class="n">availablePaths</span>
+  <span class="o">|</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+  <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="o">$</span> <span class="kt">BSC</span><span class="o">.</span><span class="n">unlines</span> <span class="o">$</span> <span class="n">reverse</span> <span class="n">finalLines</span>
+  <span class="kr">where</span> <span class="n">allLines</span> <span class="ow">=</span> <span class="kt">BSC</span><span class="o">.</span><span class="n">lines</span> <span class="n">content</span>
+        <span class="p">(</span><span class="n">finalLines</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="ow">=</span> <span class="n">foldl&#39;</span> <span class="n">maybeFixLine</span> <span class="p">(</span><span class="kt">[]</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="n">allLines</span>
+        <span class="n">maybeFixLine</span> <span class="p">(</span><span class="n">acc</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span> <span class="n">x</span> <span class="ow">=</span>
+          <span class="n">maybe</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">acc</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span>
+                <span class="p">(</span><span class="nf">\</span><span class="n">f</span><span class="ow">-&gt;</span><span class="p">(</span><span class="kt">E</span><span class="o">.</span><span class="n">encodeUtf8</span> <span class="n">f</span><span class="kt">:</span><span class="n">acc</span><span class="p">,</span><span class="n">nn</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+                <span class="p">(</span><span class="n">fixForLine</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">fixForLine</span> <span class="n">x</span> 
+          <span class="o">|</span> <span class="kt">BSC</span><span class="o">.</span><span class="n">unpack</span> <span class="n">x</span> <span class="o">=~</span> <span class="s">&quot;^#include[ ]{1,}[&lt;</span><span class="se">\&quot;</span><span class="s">]&quot;</span> <span class="ow">=</span>
+              <span class="n">m</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="n">s</span> <span class="ow">-&gt;</span> <span class="n">return</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">concat</span> <span class="p">[</span><span class="s">&quot;#include &quot;</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">end</span><span class="p">])</span>
+          <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+          <span class="kr">where</span> <span class="n">m</span> <span class="ow">=</span> <span class="n">bestMatch</span> <span class="n">cut</span> <span class="n">availablePaths</span>
+                <span class="p">(</span><span class="n">cut</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">)</span> <span class="ow">=</span> <span class="n">cutIncludePath</span> <span class="p">(</span><span class="kt">E</span><span class="o">.</span><span class="n">decodeUtf8</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="nf">cutIncludePath</span> <span class="ow">::</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="kt">Text</span><span class="p">,</span><span class="kt">T</span><span class="o">.</span><span class="kt">Text</span><span class="p">,</span><span class="kt">T</span><span class="o">.</span><span class="kt">Text</span><span class="p">)</span>
+<span class="nf">cutIncludePath</span> <span class="n">i</span> 
+    <span class="o">|</span> <span class="kt">T</span><span class="o">.</span><span class="n">unpack</span> <span class="n">i</span> <span class="o">=~</span> <span class="s">&quot;^#include[ ]{1,}</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="ow">=</span> <span class="p">((</span><span class="n">head</span> <span class="o">.</span> <span class="n">tail</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">split</span> <span class="p">(</span><span class="o">==</span> <span class="n">&#39;</span><span class="s">&quot;&#39;)) i,&quot;</span><span class="nf">\</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">)</span>                                                     
+    <span class="o">|</span> <span class="kt">T</span><span class="o">.</span><span class="n">unpack</span> <span class="n">i</span> <span class="o">=~</span> <span class="s">&quot;^#include[ ]{1,}&lt;&quot;</span>  <span class="ow">=</span>
+        <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="n">dropAround</span> <span class="p">(</span><span class="nf">\</span><span class="n">c</span><span class="ow">-&gt;</span><span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">&lt;</span><span class="n">&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">&#39;</span><span class="o">&gt;</span><span class="n">&#39;</span><span class="p">))</span> <span class="p">(</span><span class="n">fst</span> <span class="o">$</span> <span class="kt">T</span><span class="o">.</span><span class="n">breakOn</span> <span class="s">&quot;&gt;&quot;</span> <span class="o">$</span> <span class="n">snd</span> <span class="o">$</span> <span class="kt">T</span><span class="o">.</span><span class="n">breakOn</span> <span class="s">&quot;&lt;&quot;</span> <span class="n">i</span><span class="p">),</span><span class="s">&quot;&lt;&quot;</span><span class="p">,</span><span class="s">&quot;&gt;&quot;</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="ne">error</span> <span class="o">$</span> <span class="s">&quot;no match for include path&quot;</span> <span class="o">++</span> <span class="kt">T</span><span class="o">.</span><span class="n">unpack</span> <span class="n">i</span></code></pre></div>
+
+<h2 id="pick-the-correct-version">Pick the Correct Version</h2>
+
+<p>The meat of the algorithm to find the better version will finally make use of the assembled trie. If the path was found, we check if our path is correctly spelled and if not use the correct path that is stored in the node of the trie.</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">bestMatch</span> <span class="ow">::</span>  <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span> <span class="ow">-&gt;</span> <span class="kt">Trie</span> <span class="kt">CaseInsensitive</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Text</span>
+<span class="nf">bestMatch</span> <span class="n">include</span> <span class="n">validCaseTrie</span> <span class="ow">=</span> <span class="n">member</span> <span class="n">reversedIncludeCI</span> <span class="n">validCaseTrie</span> <span class="o">&gt;&gt;=</span>
+    <span class="nf">\</span><span class="n">matchedPath</span> <span class="ow">-&gt;</span> 
+      <span class="kr">if</span> <span class="p">(</span><span class="n">content</span> <span class="o">&lt;$&gt;</span> <span class="n">matchedPath</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">content</span> <span class="o">&lt;$&gt;</span> <span class="n">includeCI</span><span class="p">)</span>
+      	<span class="kr">then</span> <span class="kt">Nothing</span> <span class="c1">-- include path was spelled correctly</span>
+        <span class="kr">else</span> <span class="kt">Just</span> <span class="o">$</span> <span class="kt">T</span><span class="o">.</span><span class="n">intercalate</span> <span class="s">&quot;/&quot;</span> <span class="p">[</span><span class="n">content</span> <span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">matchedPath</span><span class="p">]</span>
+    <span class="kr">where</span>
+      <span class="n">reversedIncludeCI</span> <span class="ow">=</span> <span class="n">map</span> <span class="kt">CI</span> <span class="p">(</span><span class="n">reverse</span> <span class="o">$</span> <span class="n">splitP</span> <span class="n">include</span><span class="p">)</span>
+      <span class="n">includeCI</span> <span class="ow">=</span> <span class="n">map</span> <span class="kt">CI</span> <span class="p">(</span><span class="n">splitP</span> <span class="n">include</span><span class="p">)</span>
+      <span class="n">splitP</span> <span class="ow">=</span> <span class="n">map</span> <span class="kt">T</span><span class="o">.</span><span class="n">pack</span> <span class="o">.</span> <span class="n">splitDirectories</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">unpack</span></code></pre></div>
+
+<p>Is that gonna be fast enough for my code base? Let’s see, how much code are we talking about:</p>
+
+<pre class="terminal">
+$ find . -regex ".*\.\(cpp\|c\|h\|hpp\)" | wc -l
+6639
+$ find . -regex ".*\.\(cpp\|c\|h\|hpp\)" | xargs -n1 wc -l | cut -f1 -d'.' | paste -sd+ - | bc
+1473908
+</pre>
+
+<p>Almost 7000 header and source code files with approximately 1.5 Mio loc. Running the compiled version of the program with this code base takes about 4.5 seconds on my machine (2.40 GHz Quad-Core running Linux kernel 3.0.0). That will do for my part.</p>
+
+<p>Full source code is available as a <a href="https://gist.github.com/1387109">gist</a>.</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/haskell-expression-mode-with-git" data-toggle="tooltip" data-placement="top" title="Scripting Git with Ghc Evaluation Mode"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/cxxproject-first-results" data-toggle="tooltip" data-placement="top" title="Encouraging performance results">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>

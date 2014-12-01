@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>Scripting Git with Ghc Evaluation Mode - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/haskell-expression-mode-with-git">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/yellow_light_spots.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Scripting Git with Ghc Evaluation Mode</h1>
+                    
+                    <h2 class="subheading">Some examples that show the usage of haskell's evaluation mode.</h2>
+                    
+                    <span class="meta">Posted on October 28, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/git">git</a>, 
+                      
+                      <a href="/tag/ghc">ghc</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Processing bits and pieces on the command line has a very functional feel to it. You feed some input to a function which gives you a result that again can be fed to another function and so on. Each of the individual processing steps resembles a pure function that takes some text as input and outputs some text again.<br />
+One nice little command I keep in my <code>.bashrc</code> gives a quick overview of the size of all files and folders in the current directory.</p>
+
+<pre class="terminal">
+$ du -s ./* | sort -n | cut -f 2- | xargs du -sh
+</pre>
+
+<p>What this does is</p>
+
+<ol>
+  <li>get a list of the sizes of all files and folders in the current directory, including their names</li>
+  <li>sort this list by sizes</li>
+  <li>extract only the names (which now are ordered according the size)</li>
+  <li>get a human readable representation of the sizes</li>
+</ol>
+
+<p>The way those processing steps are combined is really similiar to what you do in haskell when composing functions. So it’s actually not too far fetched to do some similar kind of scripting using haskell.<br />
+The <a href="http://www.haskell.org/ghc/">Glasgow Haskell Compiler</a> provides for a very nice way to execute little snippets of haskell code on the fly: the <a href="http://www.haskell.org/ghc/docs/latest/html/users_guide/modes.html#eval-mode">haskell evaluation mode</a>.</p>
+
+<p>On a couple of occasions now I found myself in a situation where I wanted to use haskell to process some text, and do so quickly. Using the evaluation mode was nice but had some drawbacks for me:</p>
+
+<ul>
+  <li>I had to address all functions with their respective namespace, e.g. <code>Data.List.sort</code></li>
+  <li>I didn’t know how to add some custom utilities to allow for a more concise syntax</li>
+</ul>
+
+<p>After posting a <a href="http://stackoverflow.com/questions/7888632/expression-evaluation-mode-in-haskell-for-scripting">question on stackoverflow</a> I received some great feedback that helped me solve my issues. The example I used was this:</p>
+
+<blockquote>
+  <p>“Find out all the folders that contained git diffs between the HEAD and a specific revision”</p>
+</blockquote>
+
+<p>And the initial solution I used looked like this:</p>
+
+<pre class="terminal">
+git diff --stat 9e2b68 | ghc -e \
+  "getContents &gt;&gt;= return.(Data.List.nub).map(fst.break('/'==).head.words).lines" 
+</pre>
+
+<h2 id="enter-the-ghci-dot-file">Enter the <code>ghci-dot-file</code></h2>
+
+<p>It turns out both of the caveats can easily be resolved using a ghci-dot-file. A general description can be found <a href="http://www.haskell.org/ghc/docs/latest/html/users_guide/ghci-dot-files.html">in the ghc docs</a>.<br />
+A minimal <code>.ghci</code> file might just predefine some qualified module imports. But the ghci-dot-files also allow to define some utilities, so mine now looks more like this:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kt">:</span><span class="n">set</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">fwarn</span><span class="o">-</span><span class="n">unused</span><span class="o">-</span><span class="n">binds</span> <span class="o">-</span><span class="n">fwarn</span><span class="o">-</span><span class="n">unused</span><span class="o">-</span><span class="n">imports</span>
+<span class="kr">import</span> <span class="nn">Text.Regex</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.List</span> <span class="k">as</span> <span class="n">L</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Set</span> <span class="k">as</span> <span class="n">S</span>
+<span class="kr">import</span> <span class="nn">Data.List.Split</span>
+<span class="kr">import</span> <span class="nn">Maybe</span><span class="p">(</span><span class="n">isJust</span><span class="p">)</span>
+<span class="kr">import</span> <span class="nn">Control.Arrow</span> <span class="p">((</span><span class="o">&amp;&amp;&amp;</span><span class="p">))</span>
+<span class="kr">import</span> <span class="nn">Data.Function</span><span class="p">(</span><span class="n">on</span><span class="p">)</span>
+<span class="kr">import</span> <span class="nn">System.Directory</span>
+<span class="kr">import</span> <span class="nn">Control.Monad</span><span class="p">(</span><span class="n">filterM</span><span class="p">)</span>
+
+<span class="kr">let</span> <span class="n">script</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">getContents</span> <span class="o">&gt;&gt;=</span> <span class="n">return</span> <span class="o">.</span> <span class="n">f</span>
+<span class="kr">let</span> <span class="p">(</span><span class="o">=~</span><span class="p">)</span> <span class="n">inp</span> <span class="n">pat</span> <span class="ow">=</span> <span class="n">isJust</span> <span class="o">$</span> <span class="n">matchRegex</span> <span class="p">(</span><span class="n">mkRegex</span> <span class="n">pat</span><span class="p">)</span> <span class="n">inp</span> 
+<span class="kr">let</span> <span class="n">uniq</span> <span class="n">xs</span> <span class="ow">=</span> <span class="kt">S</span><span class="o">.</span><span class="n">toList</span> <span class="o">$</span> <span class="kt">S</span><span class="o">.</span><span class="n">fromList</span> <span class="n">xs</span>
+<span class="kr">let</span> <span class="n">eachLine</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">unlines</span> <span class="o">.</span> <span class="n">map</span> <span class="n">f</span> <span class="o">.</span> <span class="n">lines</span>
+<span class="kt">:</span><span class="n">set</span> <span class="n">prompt</span> <span class="s">&quot;List,Set,Split,Regex&gt; &quot;</span></code></pre></div>
+
+<p>Turns out this makes it much nicer to use <code>ghc -e</code>, my initial example now looks like this:</p>
+
+<pre class="terminal">
+git diff --stat 9e2b68 | ghc -e \
+  "script $ L.nub . map(fst.break('/'==).head.words) . lines" 
+</pre>
+
+<p>This version does actually not work properly…since it also lists files and not only folders. But that’s easy to fix:</p>
+
+<pre class="terminal">
+git diff --stat 9e2b68 | ghc -e \
+   "getContents &gt;&gt;= filterM doesDirectoryExist . L.nub . map(fst.break('/'==).head.words) . lines" 
+</pre>
+
+<h2 id="some-scripting-examples">Some scripting examples</h2>
+
+<p>Having set up the <code>.ghci</code> file here are some more examples of how I now use it, especially together with git.</p>
+
+<h3 id="git-committers-in-a-project">git committers in a project</h3>
+
+<p>This is a very simple example of using ghc to process some command output: Combined with a <code>git</code> command, it will list all committers of a project. The haskell part is still pretty modest:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">uniq</span> <span class="o">.</span> <span class="n">lines</span></code></pre></div>
+
+<p>Using this little script on Jasper Van der Jeugt’s <a href="http://github.com/jaspervdj/blaze-html.git">blazeHtml</a> repository will result in s.th. like this:
+&lt;pre class="terminal"&gt;
+blazeJasper.git(master) &gt; git log –format=’%aN’ | ghc -e ‘script $ uniq . lines’
+[“Alex Mason”,”Chris Done”,”Frederick Ross”,”Harald”,”James Whitehead II”,
+“Jasper Van der Jeugt”,”Joeri Samson”,”Michael Snoyman”,”Pieter De Baets”,
+“Sergei Trofimovich”,”Simon Meier”,”Tom Harper”,”Yair Chuchem”,”oliver”,”zeuxis”]
+&lt;/pre&gt;</p>
+
+<p>Not a lot of haskell functionality needed for that one. Let’s look at a more involved example, where we want to find out not only the committers but also rank them according to the number of commits they contributed.  </p>
+
+<h3 id="ranking-committers-in-git">ranking committers in git</h3>
+
+<p>To do that we can</p>
+
+<ol>
+  <li>split the commit log into lines</li>
+  <li>filter out all lines that list an <code>Author</code></li>
+  <li>sort and group the results so we know how many commits we have per author</li>
+  <li>count the commits and cut out only the email</li>
+  <li>sort our items according to the commit count</li>
+  <li>and print them out in reverse order</li>
+</ol>
+
+<p>This can pretty much be transformed into the following haskell code:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">reverse</span> <span class="o">.</span>                          <span class="c1">-- 6</span>
+<span class="kt">L</span><span class="o">.</span><span class="n">sortBy</span><span class="p">(</span><span class="n">compare</span> <span class="p">`</span><span class="n">on</span><span class="p">`</span> <span class="n">snd</span><span class="p">)</span> <span class="o">.</span>       <span class="c1">-- 5</span>
+<span class="nf">map</span> <span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">head</span> <span class="o">&amp;&amp;&amp;</span> <span class="n">length</span><span class="p">)</span> <span class="o">.</span> <span class="c1">-- 4</span>
+<span class="kt">L</span><span class="o">.</span><span class="n">group</span> <span class="o">.</span> <span class="kt">L</span><span class="o">.</span><span class="n">sort</span> <span class="o">.</span>                 <span class="c1">-- 3</span>
+<span class="nf">filter</span><span class="p">((</span><span class="n">flip</span><span class="p">(</span><span class="o">=~</span><span class="p">))</span> <span class="s">&quot;^Author&quot;</span><span class="p">)</span> <span class="o">.</span>     <span class="c1">-- 2</span>
+<span class="nf">lines</span>                              <span class="c1">-- 1</span></code></pre></div>
+
+<p>Running this as a haskell script through <code>ghc -e</code> get’s us what we want:</p>
+
+<pre class="terminal">
+blazeJasper.git(master) &gt; git log | ghc -e \
+  'script $ reverse.L.sortBy(compare `on` snd).map (last.words.head &amp;&amp;&amp; length) . L.group.L.sort.filter((flip(=~)) "^Author").lines'
+[("&lt;jaspervdj@gmail.com&gt;",457),("&lt;iridcode@gmail.com&gt;",91),
+("&lt;jnwhiteh@gmail.com&gt;",25),("&lt;github.20.madhadron@spamgourmet.com&gt;",20),
+("&lt;chrisdone@chris-dones-macbook-pro.local&gt;",13),("&lt;harald@zeuxis.de&gt;",10),
+("&lt;oliver.mueller@gmail.com&gt;",9),("&lt;rtharper@rtharper-laptop.local&gt;",6),
+("&lt;m@jaspervdj.be&gt;",5),("&lt;joeri@xaop.com&gt;",2),("&lt;yairc@tiny.local&gt;",1),
+("&lt;slyfox@gentoo.org&gt;",1),("&lt;pieter.debaets@gmail.com&gt;",1),
+("&lt;michael@snoyman.com&gt;",1),("&lt;harald@harald-linux.(none)&gt;",1),
+("&lt;done@cn-done.(none)&gt;",1),("&lt;axman6@gmail.com&gt;",1)]
+</pre>
+
+<h2 id="adding-io-actions-in-the-mix">Adding IO actions in the mix</h2>
+
+<p>Sometimes you also need your script to perform further IO actions, say, append s.th. to a file.</p>
+
+<h3 id="tell-git-to-ignore-all-txt-files">Tell git to ignore all *.txt files</h3>
+
+<p>An example might be the reoccurring situation that you created some local changes in my working directory and now want to tell git to ignore all *.txt files that are not yet added to the index.</p>
+
+<pre class="terminal">
+test(master) &gt; git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#	.gitignore
+#	foo/
+#	me.txt
+#	readme.txt
+
+</pre>
+
+<p>Again this can easily be accomplished with a little haskell script, this time with the IO action in place.<br />
+To start out we need to tell git to hand us a list of every element that is currently not administered by git. Next steps:</p>
+
+<ol>
+  <li>split all elements (each entry is on it’s on line)</li>
+  <li>filter all *.txt files using a regular expression</li>
+  <li>put the result together</li>
+  <li>append this to the <code>.gitignore</code> file</li>
+</ol>
+
+<p>Taking the output from git we can process the rest with haskell:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="p">(</span><span class="n">appendFile</span> <span class="s">&quot;.gitignore&quot;</span><span class="p">)</span> <span class="o">.</span>  <span class="c1">-- 4</span>
+<span class="nf">unlines</span> <span class="o">.</span>                    <span class="c1">-- 3</span>
+<span class="nf">filter</span><span class="p">((</span><span class="n">flip</span><span class="p">(</span><span class="o">=~</span><span class="p">))</span> <span class="s">&quot;.*txt&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="c1">-- 2</span>
+<span class="nf">lines</span>                        <span class="c1">-- 1</span></code></pre></div>
+
+<p>Try it out on my project:</p>
+
+<pre class="terminal">
+test(master) &gt; git ls-files --others --exclude-standard --directory --no-empty-directory | ghc -e \
+  'getContents &gt;&gt;= (appendFile ".gitignore") . unlines . filter((flip(=~)) ".*txt") . lines'
+test(master) &gt; git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#	.gitignore
+#	foo/
+</pre>
+
+<h2 id="more-about-ghci-dot-files">More about ghci-dot-files</h2>
+
+<p>(<a href="http://neilmitchell.blogspot.com/2010/01/using-ghci-files-to-run-projects.html">This blog post</a> by Neil Mitchell has some nice examples of what you can use .ghci files for as well.)</p>
+
+<p><a href="http://hackage.haskell.org/trac/ghc/ticket/5265">Starting with ghc version 7.4.1</a> it will become possible to specify additional .ghci files. This will allow for a much richer set of imports and definitions for the scripting usecase without polluting the usual ghci setup.</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/brainfuck" data-toggle="tooltip" data-placement="top" title="Lunch break coding - brainfuck"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/tool-for-a-fool" data-toggle="tooltip" data-placement="top" title="A Tool for a Fool">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Lunch break coding - First Nonrepeating Character - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/first-nonrepeating-char">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,92 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Lunch break coding - First Nonrepeating Character</h1>
+                    
+                    <h2 class="subheading">Simple programming puzzle to find the first nonrepeating character in a string.</h2>
+                    
+                    <span class="meta">Posted on August 21, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/puzzle">puzzle</a>, 
+                      
+                      <a href="/tag/algorithm">algorithm</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p>Again a little programming task frome <a href="http://programmingpraxis.com/2011/08/19/first-non-repeating-character/">here</a>:</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<blockquote>
+  <p>Write a function that takes an input string and returns the first character from the string that is not repeated later in the string. For instance, the two letters “d” and “f” in the input string “aabcbcdeef” are non-repeating, and the function should return “d” since “f” appears later in the string. The function should return some indication if there are no non-repeating characters in the string. </p>
+</blockquote>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Seems like <code>Data.List</code> should have everything we need for a simple solution.</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">import</span> <span class="nn">Data.List</span><span class="p">(</span><span class="n">group</span><span class="p">,</span><span class="n">find</span><span class="p">,</span><span class="n">sort</span><span class="p">)</span></code></pre></div>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p>We are given a string of character and first filter out the characters that are unique.<br />
+Once those are assembled, we can recursively walk over the characters in the input string and find the first character that is unique:</p>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">firstNonRepeating</span> <span class="ow">::</span>  <span class="kt">Ord</span> <span class="n">a</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">a</span>
+<span class="nf">firstNonRepeating</span> <span class="n">xs</span> <span class="ow">=</span> <span class="n">walkTill</span> <span class="n">uniques</span> <span class="n">xs</span> <span class="kr">where</span>
+  <span class="n">uniques</span> <span class="ow">=</span> <span class="p">[</span><span class="n">head</span> <span class="n">ys</span> <span class="o">|</span> <span class="n">ys</span> <span class="ow">&lt;-</span> <span class="n">group</span> <span class="o">$</span> <span class="n">sort</span> <span class="n">xs</span>
+                     <span class="p">,</span> <span class="p">((</span><span class="o">==</span><span class="p">)</span> <span class="mi">1</span> <span class="o">.</span> <span class="n">length</span><span class="p">)</span> <span class="n">ys</span> <span class="p">]</span>
+  <span class="n">walkTill</span> <span class="kr">_</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">Nothing</span>
+  <span class="n">walkTill</span> <span class="n">uniques</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="n">uniques</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="n">x</span>
+    <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">walkTill</span> <span class="n">uniques</span> <span class="n">xs</span></code></pre></div>
 
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>A quick test to verify the algorithm:</p>
+
+<pre class="terminal">
+*Main&gt; firstNonRepeating "aabcbcdeef"
+Just 'd'
+*Main&gt; firstNonRepeating "a................b..................c...................d"
+Just 'a'
+*Main&gt; firstNonRepeating "aa....bb.....cc.....dd"
+Nothing
+</pre>
+
+<p>Full source-code is available <a href="/code/firstNonrepeating/algorithm.hs">here</a>.</p>
 
 
-<!-- Pager -->
+                <hr>
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-		</div>
-	</div>
-</div>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/word-break-problem" data-toggle="tooltip" data-placement="top" title="Lunch break coding - Word Break Problem"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/brainfuck" data-toggle="tooltip" data-placement="top" title="Lunch break coding - brainfuck">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

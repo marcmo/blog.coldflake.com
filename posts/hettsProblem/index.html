@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Lunch break coding - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/hettsProblem">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,101 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Lunch break coding</h1>
+                    
+                    <h2 class="subheading">A small prolog problem solved in haskell</h2>
+                    
+                    <span class="meta">Posted on August 9, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/puzzle">puzzle</a>, 
+                      
+                      <a href="/tag/algorithm">algorithm</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p>Found a neat little site on programming puzzles for prolog programmers today in my lunch break. Of course I needed to try one immediately! Just for the fun of it and to see if haskell is suitable for this <em>prolog</em> problems.</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Here is the problem for the <a href="https://sites.google.com/site/prologsite/prolog-problems/1">prolog site</a>:</p>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<blockquote>
+  <p>1.28 (**) Sorting a list of lists according to length of sublists<br />
+a) We suppose that a list (InList) contains elements that are lists themselves. The objective is to sort the elements of InList according to their length. E.g. short lists first, longer lists later, or vice versa.</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+  <p>Example:<br />
+?- lsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L).<br />
+L = [[o], [d, e], [d, e], [m, n], [a, b, c], [f, g, h], [i, j, k, l]]</p>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+</blockquote>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
+<p>That does not seem to be a challenge. Start by importing some modules:</p>
 
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">import</span> <span class="nn">Data.List</span>
+<span class="kr">import</span> <span class="nn">Data.Function</span></code></pre></div>
+
+<p>So the solution to the problem is actually just to find a suitable formulation in haskell:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">lsort</span> <span class="ow">=</span> <span class="n">sortBy</span> <span class="p">(</span><span class="n">compare</span> <span class="p">`</span><span class="n">on</span><span class="p">`</span> <span class="n">length</span><span class="p">)</span></code></pre></div>
+
+<p>Couldn’t be more straight forward! Now move on to the second part:</p>
+
+<blockquote>
+  <p>b) Again, we suppose that a list (InList) contains elements that are lists themselves. But this time the objective is to sort the elements of InList according to their length frequency; i.e. in the default, where sorting is done ascendingly, lists with rare lengths are placed first, others with a more frequent length come later.</p>
+
+  <p>Example:<br />
+?- lfsort([[a,b,c],[d,e],[f,g,h],[d,e],[i,j,k,l],[m,n],[o]],L).<br />
+L = [[i, j, k, l], [o], [a, b, c], [f, g, h], [d, e], [d, e], [m, n]]</p>
+
+  <p>Note that in the above example, the first two lists in the result L have length 4 and 1, both lengths appear just once. The third and forth list have length 3; there are two list of this length. And finally, the last three lists have length 2. This is the most frequent length. </p>
+</blockquote>
+
+<p>Just a little more involved…but again, simple in haskell:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">lfsort</span> <span class="n">xs</span> <span class="ow">=</span> <span class="kr">let</span> <span class="n">ys</span> <span class="ow">=</span> <span class="n">groupBy</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span><span class="n">length</span> <span class="n">x</span> <span class="o">==</span> <span class="n">length</span> <span class="n">y</span><span class="p">)</span> <span class="p">(</span><span class="n">lsort</span> <span class="n">xs</span><span class="p">)</span> <span class="kr">in</span>
+  <span class="n">concat</span> <span class="o">$</span> <span class="n">sortBy</span> <span class="p">(</span><span class="n">compare</span> <span class="p">`</span><span class="n">on</span><span class="p">`</span> <span class="n">length</span><span class="p">)</span> <span class="n">ys</span></code></pre></div>
+
+<p>great! 3 lines in haskell to solve this! now back to work… :)</p>
+
+<p>Full source-code is available <a href="/code/hettsproblem/hett.hs">here</a>.</p>
 
 
-<!-- Pager -->
+                <hr>
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-		</div>
-	</div>
-</div>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/the-wonders-of-xargs" data-toggle="tooltip" data-placement="top" title="The Wonders of xargs"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/word-break-problem" data-toggle="tooltip" data-placement="top" title="Lunch break coding - Word Break Problem">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

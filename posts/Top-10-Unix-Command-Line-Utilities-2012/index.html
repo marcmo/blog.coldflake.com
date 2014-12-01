@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>Top 10 Unix Command Line Utilities 2012 - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/Top-10-Unix-Command-Line-Utilities-2012">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/walltools.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Top 10 Unix Command Line Utilities 2012</h1>
+                    
+                    <h2 class="subheading">Another selection of the some useful unix commands which I found useful.</h2>
+                    
+                    <span class="meta">Posted on December 30, 2012
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/unix">unix</a>, 
+                      
+                      <a href="/tag/bash">bash</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<div class="table-of-contents">
+
+
+<h3 id="content">Content</h3>
+
+<ul>
+  <li><a href="#tr">tr</a></li>
+  <li><a href="#sort">sort</a></li>
+  <li><a href="#uniq">uniq</a></li>
+  <li><a href="#split-and-cat">split and cat</a></li>
+  <li><a href="#substitution-operations">substitution operations</a></li>
+  <li><a href="#calculate-the-size-of-all-files-found-by-find">calculate size of files</a></li>
+  <li><a href="#df">df</a></li>
+  <li><a href="#dd">dd</a></li>
+  <li><a href="#zip">zip</a></li>
+  <li><a href="#hexdump">hexdump</a></li>
+</ul>
+
+
+</div>
+
+<p>This year has been quite busy with lot’s of great but stressful changes in my professional and
+personal life. That’s why I did not find a lot of time to write new blog posts. Now that the year is
+turning to an end I at least want to summarize some of the unix commands I found helpful over the
+year.<br />
+As <a href="/posts/bash-features-of-the-year">last year</a> I’m going to list 10 unix commands out of a larger collection of little examples I
+jotted down. The list has no particular order, just the way they came in handy for me.</p>
+
+<h2 id="tr">1&gt; tr</h2>
+
+<p>Whenever you need to do some small text substitutions <code>tr</code> can come in handy (tr stands for
+<em>translate</em> or <em>transliterate</em>). It will take some input, apply a transformation and spit out the
+result.<br />
+<code>tr</code> takes 2 parameters, the first one is a set of characters that it should translate, the second
+the set of characters that will act as a replacement. So the arguments <strong>“abc”</strong> <strong>“123”</strong> would
+mean that <strong>a</strong> gets replaced by <strong>1</strong>, <strong>b</strong> with <strong>2</strong> and so on.</p>
+
+<p>As a simple example, this line changes the case of the characters ‘a’ through ‘z’:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; echo &quot;Hello&quot; | tr &quot;A-Za-z&quot; &quot;a-zA-Z&quot;
+hELLO
+</pre>
+
+<p>More realistic example: split your $PATH into it’s elements:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; echo $PATH | tr &quot;:&quot; &quot;\n&quot; | sort
+
+    /Users/oliver/.cabal/bin
+    /Users/oliver/.rvm/bin
+    /Users/oliver/.rvm/gems/ruby-1.9.3-p0/bin
+    /Users/oliver/.rvm/gems/ruby-1.9.3-p0@global/bin
+    /Users/oliver/.rvm/rubies/ruby-1.9.3-p0/bin
+    /Users/oliver/local/node/bin
+    /Volumes/macbox_cs/dev/android-sdk-macosx/platform-tools/
+    ...
+</pre>
+
+<h2 id="sort">2&gt; sort</h2>
+
+<p>Simple command to sort input in different manners. By default this in alphabetic order, but using
+the <code>-n</code> option will sort in a numeric fashion:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; du /bin/* | sort -n -r | head -4
+1320	/bin/ksh
+1264	/bin/sh
+1264	/bin/bash
+592	/bin/zsh
+</pre>
+
+<p><code>sort</code> will take multiple files as input and will merge and sort all of the files for you. Some of
+the most used options include <code>-r</code> for sorting in reverse order and <code>-f</code> for sorting
+case-insensitive.</p>
+
+<h2 id="uniq">3&gt; uniq</h2>
+
+<p>Want to get rid of duplicate lines? <code>uniq</code> solves this problem efficiently. Note that it will only
+compare adjacent lines for equality, so you might want to sort before you use <code>uniq</code>.<br />
+Nice options: <code>-c</code> will prepend the count of equal elements before a line, <code>-u</code> will only output
+lines that are <em>not</em> repeated and <code>-i</code> does the whole thing case-insensitive.</p>
+
+<p>Here is an example that combines <strong>tr</strong>, <strong>sort</strong> and <strong>uniq</strong> such that you can get the frequency
+of all words in a wikipedia article:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; curl http://en.wikipedia.org/wiki/Minimum_spanning_tree \
+      | tr -cs &quot;A-Za-z&quot; &quot;\n&quot; | tr &quot;A-Z&quot; &quot;a-z&quot; \
+      | sort | uniq -c | sort -n -r
+
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 93342  100 93342    0     0   279k      0 --:--:-- --:--:-- --:--:--  323k
+1031 a
+ 568 span
+ 442 href
+ 435 class
+ 308 li
+ 300 b
+ 284 title
+ 229 wiki
+ 211 the
+ 209 cite
+ 206 id
+ 192 spanning
+ 184 i
+ 169 tree
+ 166 minimum
+ ...
+</pre>
+
+<p>This fetches an html-page from wikipedia and first does some preprocessing using <code>tr</code>:<br />
+<code>tr -cs "A-Za-z" "\n"</code> — split on all non-alphabetic characters<br />
+<code>tr "A-Z" "a-z"</code> — make everything lowercase<br />
+<code>sort | uniq -c</code> — sort, remove dups but remember the <strong>c</strong>ount<br />
+<code>sort -n -r</code> — sort <strong>n</strong>umerically in <strong>r</strong>everse order</p>
+
+<h2 id="split-and-cat">4&gt; split and cat</h2>
+
+<p>Again a very simple command but can be surprisingly helpful.<br />
+This is an example that splits a huge file into 75 MB chunks:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">split -b 75m input.zip</code></pre></div>
+
+<p>This will result in a bunch of files that are named with 3 letters starting from <code>xaa</code>,<code>xab</code>,…<br />
+To reassemble the lot, all those files have to be con<strong>cat</strong>inated in alphabetic order:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">cat <span class="sb">`</span>ls x*<span class="sb">`</span> &gt; reassembled.zip</code></pre></div>
+
+<p>Just a quick check to make sure we ended up with the same content:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; ls *.zip | xargs md5
+MD5 (input.zip) = d760b448595f844b1162eaa3c04f83d8
+MD5 (reassembled.zip) = d760b448595f844b1162eaa3c04f83d8
+</pre>
+
+<h2 id="substitution-operations">5&gt; substitution operations</h2>
+
+<p>Operations on multiple files are very frequent. Some situation I found myself in several times was
+that I needed to extract audio from a bunch of mp4 files.<br />
+I <a href="http://www.debian-administration.org/articles/150">found</a> 2 good ways to solve this: my prefered one makes use of <em>substitution operations</em>:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&quot;$i&quot;</span> <span class="s2">&quot;${i%.mp4}.mp3&quot;</span><span class="p">;</span> <span class="k">done</span></code></pre></div>
+
+<p>Here the subtitution operator <code>${i%.mp4}</code> deletes the shortest possible match from the right side.<br />
+This is nice and terse…but there is another variant that might even be a little more explicit: using <em>basename</em></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in *.mp4<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&quot;$i&quot;</span> <span class="s2">&quot;`basename $i .mp4`.mp3&quot;</span><span class="p">;</span> <span class="k">done</span></code></pre></div>
+
+<h2 id="calculate-the-size-of-all-files-found-by-find">6&gt; calculate the size of all files found by find</h2>
+
+<p>There are for sure hundreds of ways to achieve this…I liked the combination of a simple <code>find</code>
+with a short and sweet <code>awk</code> function:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; find . -iname &quot;*.png&quot; -ls | awk &#39;{s += $7} END {print s}&#39;
+2076723
+</pre>
+
+<p>As some people on <a href="http://news.ycombinator.com/item?id=4985393">hn</a> pointed out <em>awk</em> is probably not the simplest solution for summing up space
+usage. So I include an example inspired from <a href="http://mrnugget.github.com/blog/2012/10/24/command-line-ride/">this blog</a>.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; find . -iname &quot;*.png&quot; -print0 | xargs -0 du -ch | tail -1
+2.2M	total
+</pre>
+
+<h2 id="df">7&gt; df</h2>
+
+<p>Classic. Collects some disk space usage information about your system.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; df -h
+Filesystem     Size   Used  Avail Capacity  iused   ifree %iused  Mounted on
+/dev/disk0s2  156Gi  138Gi   17Gi    89% 36247400 4528347   89%   /
+...
+</pre>
+
+<h2 id="dd">8&gt; dd</h2>
+
+<p>Basically <code>dd</code> is just a form of copying from some input to some output (by default from stdin to
+stdout) that let’s you configure the block size used for the copy. It will duplicate a bitstream
+from it’s input. I’ve also heard  people call it <strong>d</strong>ata <strong>d</strong>estroyer ‘cause you can easily shoot
+yourself in the foot by inadvertently mixing up input and output…<br />
+Turns out there are quite some interesting usecases for it.</p>
+
+<p>A nice one I found <a href="http://www.marksanborn.net/howto/wiping-a-hard-drive-with-dd/">here</a> is to securely wipe your drive: overwrite the entire drive with 0s:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/hda</code></pre></div>
+
+<p>More secure (means harder to recover) is to use random data to wipe the drive:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/hda</code></pre></div>
+
+<p>And for the paranoid and the US Government we can repeatedly execute the fun:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> n in <span class="sb">`</span>seq 7<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/sda <span class="nv">bs</span><span class="o">=</span>8b <span class="nv">conv</span><span class="o">=</span>notrunc<span class="p">;</span> <span class="k">done</span></code></pre></div>
+
+<h3 id="safe-mbr">Safe MBR</h3>
+
+<p>A less destructive example shows how to create an image of the entire master boot record (including the partition table):</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; dd if=/dev/sda of=MBR.img bs=512 count=1
+</pre>
+
+<p>Here <em>count=1</em> means copy only 1 input block, <em>bs=512</em> sets both input and output block size to 512 bytes.</p>
+
+<h3 id="generate-randomness">Generate Randomness</h3>
+
+<p>Sometimes very handy is to use <code>dd</code> to generate some random data for a file:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/random <span class="nv">of</span><span class="o">=</span>random.bin <span class="nv">bs</span><span class="o">=</span><span class="m">100</span> <span class="nv">count</span><span class="o">=</span>1</code></pre></div>
+
+<h3 id="tracking-progress">Tracking Progress</h3>
+
+<p>In some instances the process started with dd will take a considerable amount of time. Since you
+will not get any fancy progress bars, there is some trick to find out about the progress.<br />
+First you need to find out about the process id of the dd process:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; pgrep -l &#39;^dd$&#39;
+4523 dd
+</pre>
+
+<p>Then send the USR1 signal to the dd process:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; kill -USR1 4523
+</pre>
+
+<p>When <code>dd</code> detects the USR1 signal, it will print out the current statistics to its stderr.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; 123122312 bytes (xxx GB) copied, 3965.94 s, 13.9 MB/s
+</pre>
+
+<p>After reporting the status, dd will resume copying. To keep it going use
+<a href="/posts/2011-12-31-bash-features-of-the-year.html">watch</a>:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; watch -n 10 kill -USR1 4523
+</pre>
+
+<h2 id="zip">9&gt; zip</h2>
+
+<p>Even though I prefer tar with either gzip or bzip2, the <em>zip</em> format is widely used especially among
+windows users. So I frequently use <code>zip</code> and <code>unzip</code> as well. Since it works quite differently
+compared to tar, I list the main usecases I need:</p>
+
+<p>Most simple case: add some files to a zip-file (called “abc.zip”):</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">zip abc file1 file2 file3</code></pre></div>
+
+<p>Of course you can also copy a whole directory “tmp” into “abc.zip”.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">zip -r abc tmp</code></pre></div>
+
+<p>Also quite handy: creating a password protected archives:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">zip -e important.zip file1 file2</code></pre></div>
+
+<p>And finally list the files inside an archive</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">unzip -l a.zip</code></pre></div>
+
+<h2 id="hexdump">10&gt; hexdump</h2>
+
+<p>When dealing with binary files it is often necessary to glimps a quick view to the actual data. I
+found that having a little command line utility can be very practical for such cases. <code>hexdump</code> has
+exactly what I need.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; hexdump  new.zip | head -5
+0000000 70 a9 20 8d b1 a3 5c 1c 16 e3 17 b2 ef 94 16 ac
+0000010 85 40 59 f9 89 40 45 ed 61 e8 10 f5 6f f5 99 a2
+0000020 3a d6 69 62 e0 ab ee 0a 67 b8 c5 21 58 42 4d 52
+0000030 2d 78 ae 2a 31 f2 78 c7 1f 22 99 07 e1 6a 55 bb
+0000040 68 9a fe 8f c3 e0 e5 a3 4c 7d b3 6b f9 ae de 92
+</pre>
+
+<p>You can instruct it to display also the corresponding ASCII representation:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; hexdump -C new.zip | head -5
+00000000  70 a9 20 8d b1 a3 5c 1c  16 e3 17 b2 ef 94 16 ac  |p. ...\.........|
+00000010  85 40 59 f9 89 40 45 ed  61 e8 10 f5 6f f5 99 a2  |.@Y..@E.a...o...|
+00000020  3a d6 69 62 e0 ab ee 0a  67 b8 c5 21 58 42 4d 52  |:.ib....g..!XBMR|
+00000030  2d 78 ae 2a 31 f2 78 c7  1f 22 99 07 e1 6a 55 bb  |-x.*1.x..&quot;...jU.|
+00000040  68 9a fe 8f c3 e0 e5 a3  4c 7d b3 6b f9 ae de 92  |h.......L}.k....|
+</pre>
+
+<p>Combining hex and octal output quickly allows for relating the hex values to their octal counterparts:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; hexdump -xb new.zip | head -5
+0000000    a970    8d20    a3b1    1c5c    e316    b217    94ef    ac16
+0000000 160 251 040 215 261 243 134 034 026 343 027 262 357 224 026 254
+0000010    4085    f959    4089    ed45    e861    f510    f56f    a299
+0000010 205 100 131 371 211 100 105 355 141 350 020 365 157 365 231 242
+0000020    d63a    6269    abe0    0aee    b867    21c5    4258    524d
+</pre>
+
+<hr />
+
+<p><em>short update:</em> somebody took the time to <a href="http://science.webhostinggeeks.com/unix-komandne-usluzne-linije">translate this article</a> into Serbo-Croatian</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/quickcheck-testing-c++" data-toggle="tooltip" data-placement="top" title="QuickChecking C++ Code"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/happy-new-year-with-shunting-yard" data-toggle="tooltip" data-placement="top" title="Start of Year with Shunting Yard">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>

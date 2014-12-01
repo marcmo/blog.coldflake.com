@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Encouraging performance results - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/cxxproject-first-results">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,125 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/lights.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Encouraging performance results</h1>
+                    
+                    <h2 class="subheading">First results after introducing cxxproject on a large scale, quite promising.</h2>
+                    
+                    <span class="meta">Posted on December 11, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/C++">C++</a>, 
+                      
+                      <a href="/tag/ruby">ruby</a>, 
+                      
+                      <a href="/tag/rake">rake</a>, 
+                      
+                      <a href="/tag/performance">performance</a>, 
+                      
+                      <a href="/tag/dsl">dsl</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>It has been a while since we started to implement <a href="https://github.com/marcmo/cxxproject">cxxproject</a> (early 2010) but finally we managed to adopt is as the underlying buildsystem throughout the largest projects the company I work for.<br />
+I know, I know: It is foolish to build your own build system! But it’s quite a learning experience and can have it’s own <a href="/posts/2011-06-12-cxxproject.html">merits</a>. And as we now see can pay off!  </p>
+
+<div class="jumbotron">
+
+<h3>eclipse and CDT</h3>
+
+The <a href="http://eclipse.org/cdt/">CDT</a> (C/C++ Development Tooling) is easily the best available open source C++ IDE available. It is well suited for companies that need a feature rich environment while at the same time want to shape and customize it for individual use cases. Thus we were able to add support for our compiler or, as just recently, completely replace the make based CDT build environment with our custom build system.
+
 </div>
-<hr>
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Just to reiterate briefly: we were frustrated by a lot of aspects of the build-system that is normally used by the CDT: </p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
+<ul>
+  <li>the configuration files are an unreadable xml mess</li>
+  <li>they are changed automatically on various dubious occasions so that you always get outgoing changes even if nothing should have been changed</li>
+  <li>they are <em>impossible</em> to be merged!</li>
+  <li>makefiles are generated on the fly, even if nothing needs to be built, which does take a long time!</li>
+  <li>integrating pre- and post-steps is possible but tedious and does not consider build-dependencies correctly</li>
+  <li>incompatibilities between different CDT versions</li>
+  <li>…</li>
 </ul>
 
+<p>Cxxproject was the foundation that solved all of the above issues. The only problem: it’s a build tool that targets programmers. You need to hack your configuration files as an embedded ruby DSL. This approach is extremely powerful but it’s a long way from the cozy comfort of an IDE that seemingly takes care of all such aspects in the background.<br />
+We now have a full integration into eclipse which provides all the IDE goodies while directly using cxxproject under the hood. Unfortunately this integration is currently not open sourced but we are working on it.<br />
+Anyway…with the full IDE integration and an automatic way to convert CDT-style projects we had everything that was necessary to make the switch. Rather unexpectedly this switch was pretty smooth. And now after the first few weeks with the new build system we also gathered some interesting performance results.<br />
+In the following charts we compared some daily build scenarios we have in one of our current projects. The project is a rather large software development where we build and link 207 different static libraries.<br />
+The tests where conducted on a typical developer machine:</p>
 
-		</div>
-	</div>
-</div>
+<ul>
+  <li>Intel Xenon (4x 2.67GHz, 4GB RAM, Windows XP, HDD Raid)</li>
+  <li>eclipse 3.6 with CDT 7.0.1</li>
+  <li>Ruby 1.9.2</li>
+</ul>
+
+<h3 id="build-whole-workspace">Build whole workspace</h3>
+
+<p>Starting out with a fresh source code checkout and building all libraries and linking the final executable file turns out to be 39% faster.</p>
+
+<p><img class="img-responsive" src="/img/cxxproject_results/buildWorkspace.png" alt="" /></p>
+
+<h3 id="rebuild-workspace">Rebuild workspace</h3>
+
+<p>Also interesting to compare is the speed for a rebuild. This is actually the most frequent use-case: change only a couple of files and want to rebuild and link the final executable.
+Building the same workspace again without a clean in between was 73% faster!</p>
+
+<p><img class="img-responsive" src="/img/cxxproject_results/rebuildWorkspace.png" alt="" /></p>
+
+<h3 id="clean-everything">Clean everything</h3>
+
+<p>Cleaning everything should be very fast. Performing a clean for all 207 projects we previously built is now 78% faster.</p>
+
+<p><img class="img-responsive" src="/img/cxxproject_results/cleanEverything.png" alt="" /></p>
+
+<h3 id="memory-consumption">Memory Consumption</h3>
+
+<p>Memory consumption was also interesting to see: While the build in eclipse swelled the amount of used memory by roughly 300 MB (and stayed there!!), the cxxproject build peaked at 35 MB and released all of it after the build.
+That means we use 88% less memory then a regular CDT build. Awesome!</p>
+
+<p><img class="img-responsive" src="/img/cxxproject_results/memoryConsumption.png" alt="" /></p>
+
+<p>We will for sure continue to tweak our build system. But the first real numbers we collected are really promising! Always nice to see an idea pays of even when it might have looked foolish at the beginning.</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/tool-for-a-fool" data-toggle="tooltip" data-placement="top" title="A Tool for a Fool"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/tumblr-no-more" data-toggle="tooltip" data-placement="top" title="Good Bye Tumblr - Welcome Hakyll">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

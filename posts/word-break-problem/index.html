@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>Lunch break coding - Word Break Problem - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/word-break-problem">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,111 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/hirsch.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>Lunch break coding - Word Break Problem</h1>
+                    
+                    <h2 class="subheading">Simple programming puzzle to break up words according to dictionary.</h2>
+                    
+                    <span class="meta">Posted on August 15, 2011
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/haskell">haskell</a>, 
+                      
+                      <a href="/tag/puzzle">puzzle</a>, 
+                      
+                      <a href="/tag/algorithm">algorithm</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p>Another funny little programming puzzle that I found <a href="http://programmingpraxis.com/2011/08/12/word-breaks/">here</a> describes the <em>Word Break Problem</em>.</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<blockquote>
+  <p>Given an input string and a dictionary of words, segment the input string into a space-separated sequence of dictionary words if possible. For example, if the input string is “applepie” and dictionary contains a standard set of English words, then we would return the string “apple pie” as output. </p>
+</blockquote>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>So let’s give it a shot at using haskell:</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p>First we need some imports and a convenient data type for the dictionary that we are fed:</p>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">import</span> <span class="nn">Data.List</span><span class="p">(</span><span class="n">inits</span><span class="p">)</span>
+<span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Set</span> <span class="k">as</span> <span class="n">S</span>
+<span class="kr">import</span> <span class="nn">Maybe</span><span class="p">(</span><span class="n">isJust</span><span class="p">)</span>
+<span class="kr">import</span> <span class="nn">Control.Applicative</span><span class="p">((</span><span class="o">&lt;$&gt;</span><span class="p">))</span>
+<span class="kr">import</span> <span class="nn">System</span><span class="p">(</span><span class="n">getArgs</span><span class="p">)</span>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
+<span class="kr">type</span> <span class="kt">Dictionary</span> <span class="ow">=</span> <span class="kt">S</span><span class="o">.</span><span class="kt">Set</span> <span class="kt">String</span></code></pre></div>
 
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>Next the formulation of the problem itself:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">breakWords</span> <span class="ow">::</span>  <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">Dictionary</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+<span class="nf">breakWords</span> <span class="n">xs</span> <span class="n">dict</span> <span class="ow">=</span> <span class="n">splittUp</span> <span class="n">xs</span> <span class="kt">[]</span> <span class="kr">where</span>
+  <span class="n">splittUp</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+  <span class="n">splittUp</span> <span class="kt">[]</span> <span class="n">rs</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="o">$</span> <span class="n">reverse</span> <span class="n">rs</span> <span class="c1">-- done, give back result</span>
+  <span class="n">splittUp</span> <span class="n">xs</span> <span class="n">rs</span> <span class="ow">=</span> <span class="n">safeHead</span> <span class="o">$</span> <span class="n">filter</span> <span class="n">isJust</span> <span class="n">solutions</span> <span class="kr">where</span>
+    <span class="n">solutions</span> <span class="ow">=</span> <span class="p">[</span><span class="n">splittUp</span> <span class="n">rest</span> <span class="p">(</span><span class="n">match</span><span class="kt">:</span><span class="n">rs</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span><span class="n">rest</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">findMatches</span> <span class="n">xs</span> <span class="n">dict</span><span class="p">]</span></code></pre></div>
+
+<p>And of course the helper functions we need for this to work:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">findMatches</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">Dictionary</span> <span class="ow">-&gt;</span> <span class="p">[(</span><span class="kt">String</span><span class="p">,</span><span class="kt">String</span><span class="p">)]</span>
+<span class="nf">findMatches</span> <span class="n">xs</span> <span class="n">dict</span> <span class="ow">=</span>
+  <span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">drop</span> <span class="p">(</span><span class="n">length</span> <span class="n">x</span><span class="p">)</span> <span class="n">xs</span><span class="p">)</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">reverse</span> <span class="o">$</span> <span class="n">inits</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="kt">S</span><span class="o">.</span><span class="n">member</span><span class="p">`</span> <span class="n">dict</span><span class="p">]</span>
+          
+<span class="nf">safeHead</span> <span class="n">xs</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">null</span> <span class="n">xs</span> <span class="kr">then</span> <span class="kt">Nothing</span> <span class="kr">else</span> <span class="n">head</span> <span class="n">xs</span></code></pre></div>
+
+<p>Now drop into <em>ghci</em> for a quick test to validate the implementation:</p>
+
+<pre class="terminal">
+*Main&gt; S.fromList . lines &lt;$&gt; readFile "/usr/share/dict/words" &gt;&gt;=
+          print . breakWords "sometimesitisjustsosimple"
+Just ["sometimes","it","is","just","so","simple"]
+</pre>
+
+<p>Seems to work alright!<br />
+This implementation will give us exactly one valid solution (trying first to find the largest possible matches).<br />
+If we are interested in <em>all</em> possibilities, this is just a small tweak:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">breakWords2</span> <span class="n">xs</span> <span class="n">dict</span> <span class="ow">=</span> <span class="n">splittUp</span> <span class="n">xs</span> <span class="kt">[]</span> <span class="kr">where</span>
+  <span class="n">splittUp</span> <span class="kt">[]</span> <span class="n">rs</span> <span class="ow">=</span> <span class="p">[</span><span class="kt">Just</span> <span class="o">$</span> <span class="n">reverse</span> <span class="n">rs</span><span class="p">]</span> <span class="c1">-- done, give back result</span>
+  <span class="n">splittUp</span> <span class="n">xs</span> <span class="n">rs</span> <span class="ow">=</span> <span class="n">filter</span> <span class="n">isJust</span> <span class="o">$</span> <span class="n">concat</span> <span class="n">solutions</span> <span class="kr">where</span>
+    <span class="n">solutions</span> <span class="ow">=</span> <span class="p">[</span><span class="n">splittUp</span> <span class="n">rest</span> <span class="p">(</span><span class="n">match</span><span class="kt">:</span><span class="n">rs</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">match</span><span class="p">,</span><span class="n">rest</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">findMatches</span> <span class="n">xs</span> <span class="n">dict</span><span class="p">]</span></code></pre></div>
+
+<p>Full source-code is available <a href="/code/wordbreakproblem/full.hs">here</a>.</p>
 
 
-<!-- Pager -->
+                <hr>
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-		</div>
-	</div>
-</div>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/hettsProblem" data-toggle="tooltip" data-placement="top" title="Lunch break coding"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/first-nonrepeating-char" data-toggle="tooltip" data-placement="top" title="Lunch break coding - First Nonrepeating Character">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

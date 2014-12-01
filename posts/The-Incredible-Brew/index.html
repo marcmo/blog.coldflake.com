@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
 
-    <title>Coldflake Blog</title>
+    <title>The Incredible Brew - Coldflake Blog</title>
 
-    <link rel="canonical" href="http://blog.dahoam.in/">
+    <link rel="canonical" href="http://blog.dahoam.in/posts/The-Incredible-Brew">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -285,245 +285,193 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/sky_blurry.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/rusty-cog.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Coldflake Blog</h1>
-                    <span class="subheading">while !success = try_it do end</span>
+                <div class="post-heading">
+                    <h1>The Incredible Brew</h1>
+                    
+                    <h2 class="subheading">The missing package manager for OS X which solves a lot of headaches.</h2>
+                    
+                    <span class="meta">Posted on December 7, 2013
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/unix">unix</a>, 
+                      
+                      <a href="/tag/osx">osx</a>, 
+                      
+                      <a href="/tag/tool">tool</a>, 
+                      
+                      <a href="/tag/git">git</a>, 
+                      
+                      <a href="/tag/ruby">ruby</a>, 
+                      
+                      <a href="/tag/bash">bash</a>
+                      .
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/posts/choosing-the-Type-of-your-Types">
-        <h2 class="post-title">
-            Choosing the Type of your Types
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Statically and dynamically typed languages both can be enjoyable
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/types">types</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/lua">lua</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/ruby">ruby</a>
-      .
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/posts/Testing-without-a-Brain">
-        <h2 class="post-title">
-            Testing Without A Brain
-        </h2>
-        
-        <h3 class="post-subtitle">
-            How much Testing is good for your Development Process?
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/testing">testing</a>, 
-      
-      <a href="/tag/rant">rant</a>
-      .
-    </p>
-</div>
-<hr>
+				<p>When Apple started shipping the first iBooks including Mac OS X back in 2001 I was hooked. A
+beautiful and well design user interface sitting on top of a developer friendly operation system.
+More importantly: a <em>unix</em> based OS where most of the unix tools you know and love are available.
+But porting some linux based utility to Mac Os was now possible albeit quite hairy in some cases.
+Dealing with the dependencies and taking care that versions are compatible gets ungainly pretty
+quick.</p>
 
-<div class="post-preview">
-    <a href="/posts/Android-style-Message-Passing">
-        <h2 class="post-title">
-            Android Style Message Passing
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating between Threads using Message Queues.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/android">android</a>, 
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/concurrency">concurrency</a>, 
-      
-      <a href="/tag/ipc">ipc</a>
-      .
-    </p>
-</div>
-<hr>
+<h2 id="package-management-systems">Package Management Systems</h2>
 
-<div class="post-preview">
-    <a href="/posts/C++-delegates-on-steroids">
-        <h2 class="post-title">
-            C++ Delegates On Steroids
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Generic version of impossibly fast delegate using C++11 variadic templates.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/C++">C++</a>, 
-      
-      <a href="/tag/templates">templates</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
+<p>And of course there where others that stepped up and created whole package management systems:
+<a href="http://fink.thetis.ig42.org">fink</a> and <a href="http://www.macports.org">MacPorts</a> (formerly DarwinPorts) where the first contenders. While this ameliorated the
+whole situation considerably I still couldn’t quite warm up to those solutions. Both systems decided
+it was best to not rely on any library that come with OS X but rather include everything in the
+dependency-tree. That for sure does guarantee the best possible compatibility but it also means
+build times will increase dramatically. MacPorts was long my favorite solution and over time I
+assembled quite a fair share of compiled libraries. So much that you will avoid rebuilding at all
+costs. If for some reason your dependencies are messed up and you’d like to restart…you won’t do
+it.</p>
 
-<div class="post-preview">
-    <a href="/posts/top-10-unix-command-line-utilities-2013">
-        <h2 class="post-title">
-            Top 10 Unix Command Line Utilities 2013
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Again a selection of the some useful unix commands.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<h2 id="i-classfa-fa-flaski-homebrew-to-the-rescue"><i class="fa fa-flask"></i> Homebrew to the Rescue</h2>
 
-<div class="post-preview">
-    <a href="/posts/The-Incredible-Brew">
-        <h2 class="post-title">
-            The Incredible Brew
-        </h2>
-        
-        <h3 class="post-subtitle">
-            The missing package manager for OS X which solves a lot of headaches.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/unix">unix</a>, 
-      
-      <a href="/tag/osx">osx</a>, 
-      
-      <a href="/tag/tool">tool</a>, 
-      
-      <a href="/tag/git">git</a>, 
-      
-      <a href="/tag/ruby">ruby</a>, 
-      
-      <a href="/tag/bash">bash</a>
-      .
-    </p>
-</div>
-<hr>
+<p><a href="http://brew.sh">Homebrew</a> takes a radically different approach: reuse existing Mac OS libraries and stay as
+lightweight as possible. Everything about homebrew has a modern feel to it, from the homepage over
+the way they keep all package information in a git-repository to the super easy formula (that’s what
+they call their packages) definitions in ruby. It has a <em>very</em> active user community and since
+development is done on <a href="http://github.com/mxcl/homebrew">github</a>, it’s quite easy to follow along and participate.<br />
+The usual stuff works as expected:</p>
 
-<div class="post-preview">
-    <a href="/posts/Simple-Networking">
-        <h2 class="post-title">
-            Simple Networking
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Communicating over UDP sockets in haskell.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/udp">udp</a>, 
-      
-      <a href="/tag/networking">networking</a>, 
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/C++">C++</a>
-      .
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/posts/happy-new-year-with-shunting-yard">
-        <h2 class="post-title">
-            Start of Year with Shunting Yard
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Applying dijkstras shunting yard algorithm for expression evaluation.
-        </h3>
-        
-    </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
-      
-      <a href="/tag/haskell">haskell</a>, 
-      
-      <a href="/tag/puzzle">puzzle</a>, 
-      
-      <a href="/tag/algorithm">algorithm</a>, 
-      
-      <a href="/tag/lua">lua</a>
-      .
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
+<ul>
+  <li><code>brew update</code> – update the formulae and Homebrew itself</li>
+  <li><code>brew outdated</code> – now find out what is outdated</li>
+  <li><code>brew upgrade</code> – Upgrade everything</li>
+  <li><code>brew upgrade $FORMULA</code> – upgrade a specific formula</li>
+  <li><code>brew search /.*tk$/</code> – search for available formula</li>
+  <li><code>brew info $FORMULA</code> – provides a little more info about a formula</li>
 </ul>
 
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; brew info aubio
+    aubio: stable 0.3.2
+    http://aubio.org/
+    Not installed
+    From: https://github.com/mxcl/homebrew/commits/master/Library/Formula/aubio.rb
+    ==&gt; Dependencies
+    Build: pkg-config ✔, libtool ✔, swig ✘
+    Required: fftw ✘, libsamplerate ✘, libsndfile ✘
+    ...
+</pre>
 
-		</div>
-	</div>
-</div>
+<p>The <code>search</code> command can be used with regular expressions if the search term is surrounded with
+slashes. A lesser known brew way to search for packages/formulae is to use <code>brew server</code>. This
+requires that <a href="http://www.sinatrarb.com/">sinatra</a> is available on the system and provides a website for the search.</p>
+
+<p><img class="img-responsive" src="/img/brew/homebrew.png" alt="" /></p>
+
+<p>Of course you can always look up a package online as e.g. on <a href="http://braumeister.org/">braumeister</a>. And if you need a
+package that is not yet part of homebrew, it can easily be created. All it takes is to locate the
+sources on the web and call <code>brew create</code> with this link. homebrew will create a basic formula (== a
+ruby script) that you can either just use or tweak manually of some special configure options are
+needed. Since all formulae are kept in a git repository, it’s no problem to create your own packages
+and still keep up to date with homebrew.  In fact, it’s so easy to modify a formula and <a href="https://github.com/mxcl/homebrew/wiki/Formula-Cookbook#commit">have it
+added to the official</a> repository that a lot of people are contributing to keep everything up to
+date and grow the pool of available formulae constantly.</p>
+
+<h2 id="warm-and-fuzzy">Warm and Fuzzy</h2>
+
+<p>Good package managing systems have one area that is crucial in the long run: help to maintain a tidy
+system. An area where brew really shines is dependency tracking. To find out if it’s gonna be a
+quick install or quite a beast just take a look at the dependencies a formula has:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; brew deps cairo --tree
+cairo
+|- xz
+|- pkg-config
+|- freetype
+|  |- libpng
+|- fontconfig
+|  |- pkg-config
+|  |- freetype
+|  |  |- libpng
+...
+</pre>
+
+<p>To maintain a sleek and tidy brew installation you can easily get rid of installed formulae. Here
+it’s quite handy to do a reverse dependency lookup before:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; brew uses --recursive readline
+abcl			geocouch		...
+abook			ginac			...
+...
+</pre>
+
+<p>Once you decide what to get rid of, it just takes a <code>brew uninstall</code> or a <code>brew rm</code>. To make sure
+nothing unimportant remains in your system, <code>brew prune</code> will remove dead symlinks and <code>brew cleanup
+-s</code> will remove older versions and all downloads.<br />
+Brew also comes with some extremely useful checks. The <code>brew doctor</code> makes sure you are in good shape and gives you good advice.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; brew doctor
+Warning: Your XQuartz (2.7.4) is outdated
+Please install XQuartz 2.7.5:
+  https://xquartz.macosforge.org
+
+Warning: Some installed formula are missing dependencies.
+You should `brew install` the missing dependencies:
+
+    brew install libffi
+
+Run `brew missing` for more details.
+...
+</pre>
+
+<p>It tremendously helps to clean up and allows you to keep your peace of conscience. And <code>brew
+missing</code> of course shows you all formulae you still need to install.</p>
+
+<h2 id="absolutely-happy">Absolutely Happy</h2>
+
+<p>When I found out about brew a couple of years back, I was thrilled by it’s simplicity and the basic
+concepts behind brew. Today after having used brew on multiple OS versions and machines, brew is one
+of the first things to install. So far it never failed me and watching brew install a formula
+including all necessary dependencies is almost a calming experience. Looking forward to a lot of
+future installs!</p>
+
+<p><img class="img-responsive" src="/img/brew/cheers.png" alt="" /></p>
+
+<p><small>image: <cite>Cheers</cite> designed by <a href="http://thenounproject.com/RyanBeck">Ryan Beck</a>, both from the <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Noun Project</a></small></p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/Simple-Networking" data-toggle="tooltip" data-placement="top" title="Simple Networking"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/top-10-unix-command-line-utilities-2013" data-toggle="tooltip" data-placement="top" title="Top 10 Unix Command Line Utilities 2013">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

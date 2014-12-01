@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+
+    <title>Top 10 Unix Command Line Utilities 2013 - Coldflake Blog</title>
+
+    <link rel="canonical" href="http://blog.dahoam.in/posts/top-10-unix-command-line-utilities-2013">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                    
+                      
+                  <li><a href="/about.html">About</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                    
+                
+                    
+                      
+                  <li><a href="/tag/index.html">Tags</a></li>
+                      
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/tools.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Top 10 Unix Command Line Utilities 2013</h1>
+                    
+                    <h2 class="subheading">Again a selection of the some useful unix commands.</h2>
+                    
+                    <span class="meta">Posted on December 31, 2013
+                      <i class="icon-tags"></i> 
+                      
+                      <a href="/tag/unix">unix</a>, 
+                      
+                      <a href="/tag/bash">bash</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<div class="table-of-contents">
+
+
+<h3 id="content">Content</h3>
+
+<ul>
+  <li><a href="#awk">awk</a></li>
+  <li><a href="#ls">ls</a></li>
+  <li><a href="#find">find</a></li>
+  <li><a href="#ack">ack</a></li>
+  <li><a href="#rename">rename</a></li>
+  <li><a href="#redirects">Redirects</a></li>
+  <li><a href="#subshells">Subshells</a></li>
+  <li><a href="#tee">tee</a></li>
+  <li><a href="#zips-archives">Zips &amp; Archives</a></li>
+  <li><a href="#base-conversion">Base Conversion</a></li>
+</ul>
+
+
+</div>
+
+<p>For a long time I have used the bash on a daily basis. It has become such a trustworthy companion
+that I virtually cannot do any work on a windows box anymore. But even using bash every day I
+regularly come across ways of solving particular tasks that I did not really know about.<br />
+To keep track of such solutions, I try to keep my cheat-sheets up to date with what I found and
+learned during the year. In tradition with <a href="/posts/bash-features-of-the-year">2011</a> and <a href="/posts/Top-10-Unix-Command-Line-Utilities-2012">2012</a> I again took a look at the git-log and
+compiled 10 of the things that I learned or used a lot in the shell.<br />
+This year is different though since I decided to go into a little more detail about some of the
+items where I felt it was instructional. I also included a small table of contents, mainly ‘cause I
+tend to come back to those tips myself a lot and wanted a quicker way to find the item in question.</p>
+
+<h2 id="awk">1&gt; awk</h2>
+
+<p><code>awk</code> is probably the most powerful unix tool I encountered so far. It’s actually a whole
+programming language, not just a tool. I tend to stay clear of the more complicated uses but for
+some small output processing it’s just invaluable.<br />
+The basic structure of <code>awk</code> statements is always the same, first you list a pattern to match,
+second the action you want <code>awk</code> to perform:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">awk <span class="o">[</span>condition<span class="o">]</span> <span class="o">[{</span>action<span class="o">}]</span></code></pre></div>
+
+<p>In the <code>action</code> it is possible to refer to different parts of the current input record. If <code>awk</code> is
+fed some lines of text, it will process each line that satisfy the condition and dissect it into
+parts. That is often helpful if only some parts of the output are wanted.  </p>
+
+<h3 id="dependent-include-files">Dependent include files</h3>
+
+<p>One of the situations where this was just the right tool for me was trying to find recursively all
+dependent header files of a C-file. The compiler (<em>clang</em> in my case) can greatly help here since it
+has to know about the headers it needs. And it comes with an option to list this information:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">-H                      Show header includes and nesting depth</code></pre></div>
+
+<p>I found this option is less picky than <code>-M</code>. Using it, the information about included header files
+will be displayed along with lots of other stuff that is unwanted in this case. <code>awk</code> can be used to
+filter the results down to the relevant lines and further extract the file names from those lines.<br />
+In the example below</p>
+
+<ul>
+  <li>all error messages are filtered out (<code>2&gt;/dev/null</code>, see <a href="#redirects">redirects section</a>)</li>
+  <li>clang is used to list the recursive include tree (<code>cpp -H [include-paths] [C/C++-file]</code>)</li>
+  <li><code>awk</code> first filters all lines with header information (<code>/^#.*\.h\"$/</code>)</li>
+  <li>and extracts the header name (<code>{print $3}</code>)</li>
+  <li><code>tr</code> is used to get rid of the <code>""</code> quotation-marks</li>
+  <li>finally all duplicates are removed by using <code>sort</code> and <code>uniq</code></li>
+</ul>
+
+<pre class="terminal">
+<span class="prompt">kernel</span>(master) &gt; 2&gt;/dev/null cpp -H -Iinclude crypto/fcrypt.c \
+  | <span style="background-color:#C1DDFF; color:black">awk '/^#.*\.h\"$/ {print $3}'</span> | tr -d '""' | sort | uniq
+include/asm-generic/atomic-long.h
+include/linux/atomic.h
+include/linux/bitmap.h
+include/linux/compiler.h
+include/linux/completion.h
+include/linux/cpumask.h
+include/linux/crypto.h
+...
+</pre>
+
+<h2 id="ls">2&gt; ls</h2>
+
+<p>Plain old <code>ls</code> is probably my most used command. But <code>ls</code> can do some nice tricks, too. Using the
+<code>-S</code> flag, <code>ls</code> will sort the files by size. Combined with <code>-h</code> it produces a very readable result:</p>
+
+<pre class="terminal">
+<span class="prompt">kernel</span>(master) &gt; ls -lSh | head -5
+total 6352
+-rw-r--r--  1 muellero  staff   236K Jun  6  2013 sched.c
+-rw-r--r--  1 muellero  staff   139K Jun  6  2013 cgroup.c
+-rw-r--r--  1 muellero  staff   130K Jun  6  2013 sched_fair.c
+-rw-r--r--  1 muellero  staff   104K Jun  6  2013 workqueue.c
+</pre>
+
+<p>Often very helpful is also to only include the most recent files. <code>-t</code> will sort files by the date they were modified the last time.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ls -l -t</code></pre></div>
+
+<p>In a directory with lots of files it’s sometimes practical to only list the directories. The <code>-d</code>
+option makes sure directories are listed as plain files and not searched recursively. Since all
+directories end in <code>/</code> this can be used to list only those.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ls -d */</code></pre></div>
+
+<p>Of course the opposite is also achievable, this one only lists the files. For this you can use <code>-p</code>
+which will write a slash (“/”) after each filename if that file is a directory.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ls -p <span class="p">|</span> ack -v /</code></pre></div>
+
+<p>This one can nicely be combined with some <code>awk</code> magic to count the file-types by extensions in a
+directory:</p>
+
+<pre class="terminal">
+<span class="prompt">kernel</span>(master) &gt; ls -p | ack -v / | awk -F . '{print $NF}' | sort | uniq -c
+   1 Makefile
+ 112 c
+   1 freezer
+  17 h
+  ...
+</pre>
+
+<p>Here <code>awk</code> was used to split at the “.” and print the last part (which is the extension).</p>
+
+<h2 id="find">3&gt; find</h2>
+
+<p>Again a classic. After <code>ls</code> for sure an all-time favorite. Can also be combined with an action.<br />
+Here, <code>find</code> first seeks out all symbolic links in the current directory and deletes them.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">find . -type l -delete</code></pre></div>
+
+<p>This only works for reasonably recent versions of <code>find</code>. For older versions the following syntax should works as well:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">find . -type l -exec rm <span class="o">{}</span> <span class="se">\;</span></code></pre></div>
+
+<h2 id="ack">4&gt; ack</h2>
+
+<p>Ever since I found <a href="http://beyondgrep.com/">ack-grep</a> I most of the time us it as a replacement for <code>grep</code>. The developers
+claim that it is <em>”…designed as a replacement for 99% of the uses of grep…”</em> but to be honest, I
+never found that a case where it failed me. Out of the box it just works and produces beautifully
+highlighted results. But more importantly, it adds some nice features that I really grew to like.<br />
+And it’s quite fast. For most of my usecases faster then <code>grep</code> since it only searches whitelisted
+files by default. <a href="http://codeseekah.com/2012/03/11/ack-grep-vs-grep/">This guy here</a> has put together a pretty good comparison with some performance
+tests.  </p>
+
+<h3 id="limit-to-certain-file-types">Limit to certain File-Types</h3>
+
+<p>One very handy feature is the ability to narrow the search down to certain file types. By default
+<code>ack</code> already knows about countless file types (can be checked with <code>ack --help=types</code>). Limiting
+the searched files dramatically reduces the search time.<br />
+Here is an example of searching all C and C++ source files for a pattern and include 2 lines of
+context before (<code>-B</code>) and after (<code>-A</code>) the found match.</p>
+
+<pre class="terminal">
+<span class="prompt">kernel</span>(master) &gt; ack --type=cpp probability -B 2 -A 2
+<span style="color:#60FA67">drivers/net/ethernet/sun/cassini.h</span>
+<span style="color:#FFFC67">875</span>-
+<span style="color:#FFFC67">876</span>-/* probabilities for random early drop (RED) thresholds on a FIFO threshold
+<span style="color:#FFFC67">877</span>: * basis. <span style="background-color:#FFFC67; color:black">probability</span> should increase when the FIFO level increases. control
+<span style="color:#FFFC67">878</span>: * packets are never dropped and not counted in stats. <span style="background-color:#FFFC67; color:black">probability</span> programmed
+<span style="color:#FFFC67">879</span>- * on a 12.5% granularity. e.g., 0x1 = 1/8 packets dropped.
+<span style="color:#FFFC67">880</span>- * DEFAULT: 0x00000000
+</pre>
+
+<h3 id="highlighter">Highlighter</h3>
+
+<p>A lesser common usecase for <code>ack</code> is the <em>passthru</em> mode. In this mode <code>ack</code> does not limit the
+output to the matching positions but spills out the whole input, highlighting the search-matches in
+the process. This practically makes <code>ack</code> a formidable highlighting tool.</p>
+
+<pre class="terminal">
+<span class="prompt">kernel</span>(master) &gt; ls | ack -i mutex --passthru
+...
+lockdep_internals.h
+lockdep_proc.c
+lockdep_states.h
+module.c
+<span style="background-color:#FFFC67; color:black">mutex</span>-debug.c
+<span style="background-color:#FFFC67; color:black">mutex</span>-debug.h
+<span style="background-color:#FFFC67; color:black">mutex</span>.c
+<span style="background-color:#FFFC67; color:black">mutex</span>.h
+notifier.c
+nsproxy.c
+...
+</pre>
+
+<h2 id="rename">5&gt; rename</h2>
+
+<p>Mass renaming in the shell is usually done with some form of loop, e.g.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in *.zip <span class="p">;</span> <span class="k">do</span> mv <span class="s2">&quot;$i&quot;</span> <span class="s2">&quot;${i%.zip}`date +%Y`.zip&quot;</span><span class="p">;</span> <span class="k">done</span></code></pre></div>
+
+<p>Here a substitution operation is used to cut of the extension part which is then replaced with the
+year + the extension. The same thing using <code>rename</code> would look like this:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rename -X -a <span class="sb">`</span>date +%Y<span class="sb">`</span> *.zip</code></pre></div>
+
+<p>This is using the <code>-a</code> transform that appends some string to each filename.</p>
+
+<h3 id="rename-part-of-filename">rename part of filename</h3>
+
+<p>Using for loops can become complicated pretty soon, and for those cases <code>rename</code> is a pretty good
+alternative. Say when you have a bunch of files that contain the string “Aug” in their name but want
+to replace it with “08”. The by far easiest way I have found to accomplish stuff like this is to use
+the <code>rename</code> command.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rename <span class="s1">&#39;s/Aug/08/&#39;</span> *.*</code></pre></div>
+
+<p><code>rename</code> takes <em>modification rules</em> and applies them to the files that match a pattern (if given,
+otherwise it expects a list of filenames on <code>stdin</code>). The beauty of this utility is that it comes
+with support for lot’s of common cases out of the box. For example, if files contain spaces or other
+unwanted characters, there is the option to sanitize them using <code>-z</code>.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; ls
+a b  c_.tif
+<span class="prompt">tmp</span> &gt; rename -n -z *
+'a b  c_.tif' would be renamed to 'a_b_c_.tif'
+</pre>
+
+<p>Here the option <code>-n</code> is applied as well, resulting in a <em>dry run</em> without any actual modifications.
+The <code>-z</code> option will replace all sequences of whitespaces or control characters with a single “_”,
+replace every shell meta-character with “_” and remove spaces and underscores from left and right
+end.<br />
+The result is almost as desired… just the trailing “_” is still annoying. The sanitize
+command did not remove it. That’s because the file extension is the last part of the filename. But
+I’d really like to sanitize the name without the extension. Turns out <code>rename</code> has a very handy
+feature that allows to save and remove the last extension before any modifications and slab it on
+again afterwards.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; rename -n -X -z *
+'a b  c_.tif' would be renamed to 'a_b_c.tif'
+</pre>
+
+<h3 id="put-files-in-folders-according-to-their-endings">put files in folders according to their endings</h3>
+
+<p>This is something I use more and more often.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rename -p -X -e <span class="s1">&#39;$_ = &quot;$EXT/$_&quot; if @EXT&#39;</span> *</code></pre></div>
+
+<p>This will move all files into folders that have the same name as their extension. The <code>-p</code> is needed
+to make sure directories are created if needed. The <code>-X</code> chopes of the extension and saves it into
+the <code>$EXT</code> variable. <code>-e</code> will evaluate the following expression, in this case evaluate to a path
+consisting of the stored extension together with the filename if an extension exists.</p>
+
+<ul>
+  <li><code>p</code>    → creates directories if needed</li>
+  <li><code>X</code>    → chop of extension and append after the operation</li>
+  <li><code>e</code>    → evaluate perl expression</li>
+  <li><code>$EXT</code> → A string containing the accumulated extensions saved by “-X” switches, without a leading dot</li>
+  <li><code>@EXT</code> → An array containing the accumulated extensions saved by “-X” switches, from right to left, without any dots</li>
+</ul>
+
+<p>Note that <code>rename</code> is not available on all systems by default and you might need to install it, e.g.
+<code>brew install rename</code> on OSX.</p>
+
+<h2 id="redirects">6&gt; Redirects</h2>
+
+<p>For some shell commands I always have to consult my notes or google. Mostly that is ‘cause I haven’t
+taken the time to really understand the underlying concept. Redirects are a perfect example: simple
+enough to just use them so most people don’t worry about their mechanics.</p>
+
+<div class="jumbotron">
+
+
+<h3 id="everything-in-unix-is-a-file">Everything in UNIX is a file</h3>
+
+<p>Data streams and peripherals are treated as <em>files</em>, just like ordinary files. Each gets a
+file-descriptor assigned that can then be used to access the stream.  A <em>file-descriptor</em> is an
+integer associated with a network connection, a pipe or a real file, amongst other things. When
+executing a command, it will mainly work with 3 different file-descriptors/files:</p>
+
+<ul>
+  <li>0 ≘ stdin</li>
+  <li>1 ≘ stdout</li>
+  <li>2 ≘ stderr</li>
+</ul>
+
+
+</div>
+
+<h3 id="redirecting-output">Redirecting Output</h3>
+
+<p>For redirecting output you use “<strong>&gt;</strong>” (the output redirection operator).
+Probably my most widely used redirect is to write to a file instead of <code>stdout</code>. The example will
+write to a .gitignore file, possibly creating it in the process if it doesn’t already exist.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo </span>temp &gt; .gitignore</code></pre></div>
+
+<p>Slightly more useful is often to use the same redirect but append to a file rather than to overwrite it:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo </span>temp &gt;&gt; .gitignore</code></pre></div>
+
+<p>Such basic redirects are valid for the whole line and are a short form for specifying the target
+file descriptor explicitly (<code>&gt;&gt;</code> ≡ <code>1&gt;&gt;</code>). They can also appear before the command:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">1&gt;&gt; .gitignore <span class="nb">echo </span>temp <span class="c"># redirect stdout and append to .gitignore</span></code></pre></div>
+
+<p><img class="img-responsive" src="/img/unixtools2013/Stdout2file.png" alt="" /></p>
+
+<p>Of course redirects are not limited to redirecting to a file. Have you ever tried to redirect the
+output of a command to a file but there were still some messages displayed on the terminal that did
+not get redirected? This is a quite common case where <code>stderr</code> needs to be redirected to <code>stdout</code> so
+that all error messages are sent to <code>stdout</code>:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand 2&gt;<span class="p">&amp;</span>1</code></pre></div>
+
+<p><img class="img-responsive" src="/img/unixtools2013/RedirectStderr.png" alt="" /></p>
+
+<p>The <strong>&amp;</strong> is similar to the address operator in C/C++ and is used to name a file-descriptor. So
+<code>2&gt;&amp;1</code> tells the shell that we want file-descriptor <strong>(2)</strong> (<code>stderr</code>) to point to the same file as
+file-descriptor <strong>(1)</strong> (<code>stdout</code>). This works with any file-descriptor, not just <strong>(2)</strong> and
+<strong>(1)</strong>: <code>x&gt;&amp;y</code> will point file-descriptor x to where y is pointing to.<br />
+Using this knowledge, we can swap where 2 file-descritors point with a technique similar to pointer swapping in C:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand 3&gt;<span class="p">&amp;</span><span class="m">1</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span> 2&gt;<span class="p">&amp;</span><span class="m">3</span> 3&gt;<span class="p">&amp;</span>-</code></pre></div>
+
+<p>A temporary file-descriptor <strong>(3)</strong> is used as a temp. It will first capture the file pointed by
+<code>stdout</code> which is then be redirected to where <code>stderr</code> points to. As a last step <code>stderr</code> is now
+pointed to where <code>stdout</code> pointed originally and <strong>(3)</strong> is closed as it no longer is needed.</p>
+
+<p><img class="img-responsive" src="/img/unixtools2013/redirect_swap.png" alt="" /></p>
+
+<h3 id="order-of-redirects">Order of Redirects</h3>
+
+<p>A fact that often causes considerable confusion is that the order of the redirects matters. Actually
+not to hard to remember once you picture the file-descriptors as pointers to files. If we for
+example try to capture stdout and stderr in a file, one might be tempted to use something like this:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt;&gt; my_log_file.txt</code></pre></div>
+
+<p><img class="img-responsive" src="/img/unixtools2013/WrongRedirect.png" alt="" /></p>
+
+<p>But this does not work as expected. Here, <code>stderr</code> is first pointed at the same file as <code>stdout</code>
+(i.e. the terminal). Then we redirect <code>stdout</code> away from the terminal to a file.<br />
+If both <code>stdout</code> and <code>stderr</code> should be captured in a file, we need to reverse the order of the redirects:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand &gt;&gt;my_log_file.txt 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="c"># capture everything in a file</span></code></pre></div>
+
+<p><img class="img-responsive" src="/img/unixtools2013/Stdout2file2.png" alt="" /></p>
+
+<p>Armed with an understanding how redirects work, it’s now quite simple to understand the following example:</p>
+
+<h3 id="only-use-stderr-output">Only use stderr output</h3>
+
+<p>Redirect <code>stderr</code> to where <code>stdout</code> points to and then <code>stdout</code> to /dev/null (dump it). The output
+can then further be processed, here we pipe it to grep for something.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt;/dev/null <span class="p">|</span> grep <span class="s1">&#39;foo&#39;</span></code></pre></div>
+
+<p><img class="img-responsive" src="/img/unixtools2013/OnlyStderr.png" alt="" /></p>
+
+<h3 id="redirecting-input">Redirecting Input</h3>
+
+<p>Similar to how we can modify <code>stdout</code> and <code>stderr</code>, <code>stdin</code> can also be replaced as an input to a
+program using the input redirection operator “<strong>&lt;</strong>”.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand &lt; inputFile <span class="c"># same as cat inputFile | myCommand</span></code></pre></div>
+
+<p>Combining input and output redirection is also possible for one command:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">myCommand &lt; inputFile &gt; outFile</code></pre></div>
+
+<h2 id="subshells">7&gt; Subshells</h2>
+
+<p>Quite often I want to download some file using <code>wget</code> and put it into my download folder. At the
+same time I don’t want to loose the context (current working directory).<br />
+One way to deal with this is to <code>cd</code> into the download directory, issue the <code>wget</code> command, and use
+a quick <code>cd -</code> to return from where you started. Lately my preferred way is to use a <em>subshell</em>.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; (cd ~/downloads; wget http://www.example.com/abc.tar.gz)
+</pre>
+
+<p>A subshell is a child process of the process the shell is running in with access to the environment
+of it’s parent process. But any changes to the environment done in this child-process does not
+propagate to the parent. Thus we can change the directory, set or unset environment variables and so
+on.<br />
+Another nice example is to remove the <code>http_proxy</code> from the environment when temporarily not needed:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; (unset http_proxy; wget http://www.example.com/abc.tar.gz)
+</pre>
+
+<h3 id="bonus-example">Bonus Example</h3>
+
+<p>I just found another very nice usage of subshells on the discussion board of <a href="http://vimcasts.org/episodes/comparing-buffers-with-vimdiff/">vimcasts</a>. Barton
+Chittenden showed how to avoid the use of temporary files for using vimdiff using process
+substitution in bash:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; vimdiff &lt;(sort file1) &lt;(sort file2)
+</pre>
+
+<h2 id="tee">8&gt; Tee</h2>
+
+<p>Sometimes there is more then one consumer for some command output. This is what <code>tee</code> can be used
+for. It takes as an input the output of some other command using <code>stdin</code> and duplicates it, feeding
+  the two streams to a file-descriptor and <code>stdout</code>.</p>
+
+<p><img class="img-responsive" src="/img/unixtools2013/tee.png" alt="" /></p>
+
+<p>After taking a look at <a href="#redirects">redirects</a> and <a href="#subshells">subshells</a> here is a neat
+<a href="http://www.commandlinefu.com/commands/view/6334/use-tee-to-process-a-pipe-with-two-or-more-processes">commandlinefu-example</a> of how <code>tee</code> can be used to split a pipe into multiple streams for one or
+more subshells to work it.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; echo "tee can split a pipe in two" | <span style="background-color:#C1DDFF; color:black">tee &gt;(rev) &gt;(tr ' ' '_')</span>
+tee can split a pipe in two
+owt ni epip a tilps nac eet
+tee_can_split_a_pipe_in_two
+</pre>
+
+<h3 id="copy-directory-multiple-time">Copy directory multiple time</h3>
+
+<p>To copy a directory containing everything without temporary files and preserving ownership,
+permissions, and timestamps is often done with <code>tar</code>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar cf - . <span class="p">|</span> <span class="o">(</span><span class="nb">cd </span>targetDir <span class="o">&amp;&amp;</span> tar xfp -<span class="o">)</span></code></pre></div>
+
+<p><code>tar</code> will create an archive containing everything in the current directory. The “-“ is used to
+write to <code>stdout</code> instead of a file. The output is then piped into a <a href="#subshells">subshells</a> to
+change into the target directory and extract the everything.<br />
+Copying everything twice can be accomplished using <code>tee</code>:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar cf - . <span class="p">|</span> tee &gt;<span class="o">(</span><span class="nb">cd </span>targetDir <span class="o">&amp;&amp;</span> tar xfp -<span class="o">)</span> <span class="p">|</span> <span class="o">(</span><span class="nb">cd </span>targetDir2 <span class="o">&amp;&amp;</span> tar xfp -<span class="o">)</span></code></pre></div>
+
+<p>Here <code>tee</code> will duplicate <code>stdin</code> and feed it to a process substitution and to <code>stdout</code>, which in turn is then piped to the subshell.</p>
+
+<h2 id="zips--archives">9&gt; Zips &amp; Archives</h2>
+
+<p>Compressed archives are a brilliant way to exchange files… everything is bundled together, in
+general takes up way less space and can even be password protected. Inspecting or unpacking them
+usually involves creating temporary directories or files. But there are some handy ways to acoid
+such intermediate products.</p>
+
+<h3 id="view-zipfiles">view zipfiles</h3>
+
+<p>Often you just need to peek inside without actually extracting anything. <code>zipinfo</code> is a nice little utility that does just that.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; zipinfo tmp.zip
+Archive:  tmp.zip   20400 bytes   2 files
+-rw-r--r--  3.0 unx    19960 bx defN 14-Nov-12 11:05 colordiff-1.0.13.tar.gz
+-rw-r--r--  3.0 unx       72 bx stor 14-Nov-12 11:06 colordiff-1.0.13.tar.gz.sig
+2 files, 20032 bytes uncompressed, 20022 bytes compressed:  0.0%
+</pre>
+
+<p>But of course unzip can also perform the task. The <code>-t</code> option tests an archive file, listing it’s content in the process:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; unzip -t tmp.zip
+Archive:  tmp.zip
+    testing: colordiff-1.0.13.tar.gz   OK
+    testing: colordiff-1.0.13.tar.gz.sig   OK
+No errors detected in compressed data of tmp.zip.
+</pre>
+
+<p>A third and my prefered option is to use <code>unzip</code> with it’s <code>-l</code> option (lists the content of the archive file).</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; unzip -l tmp.zip
+Archive:  tmp.zip
+  Length     Date   Time    Name
+ --------    ----   ----    ----
+    19960  11-14-12 11:05   colordiff-1.0.13.tar.gz
+       72  11-14-12 11:06   colordiff-1.0.13.tar.gz.sig
+ --------                   -------
+    20032                   2 files
+</pre>
+
+<h3 id="unpacking">Unpacking</h3>
+
+<p>Even upacking does not necessarily involve spilling the zipped files out to disk. The content of a
+zip-archive can be extracted and fed to a pipe so that it becomes usable by another process.</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; echo "text me" &gt; test.txt
+<span class="prompt">tmp</span> &gt; zip storage test.txt; rm test.txt
+  adding: test.txt (stored 0%)
+<span class="prompt">tmp</span> &gt; ls
+storage.zip
+<span class="prompt">tmp</span> &gt; unzip -p storage.zip | rev
+em txet
+<span class="prompt">tmp</span> &gt; ls
+storage.zip
+</pre>
+
+<p>Here I created a sample zip archive and extracted it to feed the content to <code>rev</code> without creating any files in the process.</p>
+
+<h3 id="inspecting-tar-archives">Inspecting tar Archives</h3>
+
+<p>Most of the archives dealt with under Linux are compressed tar files, so here is how you list their content.<br />
+First, for a gzipped file (ending in <code>*.tar.gz</code> or <code>*.tgz</code>):</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -ztvf file.tar.gz</code></pre></div>
+
+<p>And finally for the <code>bzip2</code> formats:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -jtvf file.tar.bz2</code></pre></div>
+
+<ul>
+  <li><code>t</code> → list contents</li>
+  <li><code>v</code> → verbose, display detailed information</li>
+  <li><code>z</code> → filter through gzip (for *.gz fils)</li>
+  <li><code>j</code> → filter through bzip2 (for *.bz2 fils)</li>
+  <li><code>f</code> → filename</li>
+</ul>
+
+<h2 id="base-conversion">10&gt; Base Conversion</h2>
+
+<p>Even though <code>printf</code> in C/C++ offers great many pitfalls, I still like to use it often despite
+having access to C++ iostreams. Bash also supports a form of <code>printf</code> that can easily be used to do
+some basic number conversions.</p>
+
+<h3 id="convert-decimal-to-hexoctal">convert decimal to hex/octal</h3>
+
+<p>Just as in C, the bash <code>printf</code> can easily print numerical values in different formats:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; printf "%#x\n" 100
+0x64
+<span class="prompt">tmp</span> &gt; printf "%#o\n" 100
+0144
+</pre>
+
+<p>The <code>#</code>-character is the <em>alternative format modifier</em> and is responsible for prepending the “0x”
+for hexadecimal values and a leading zero for octal values.</p>
+
+<h3 id="convert-hex-to-decimal">convert hex to decimal</h3>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; printf "%d\n" 0x64
+100
+</pre>
+
+<h3 id="print-a-conversion-table-from-decimal-to-hex">Print a conversion table from decimal to hex</h3>
+
+<p>A nice example I found in the <a href="http://wiki.bash-hackers.org/commands/builtin/printf">Bash Hackers Wiki</a> is to print out a conversion table:</p>
+
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; for ((x=0; x &lt;= 127; x++)); do printf '%3d | 0x%02x\n' "$x" "$x"; done
+  0 | 0x00
+  1 | 0x01
+  2 | 0x02
+  3 | 0x03
+  ...
+</pre>
+
+<h2 id="done-for-2013">Done for 2013</h2>
+
+<p>Ok, this was my bash feature list of the year. By no means am I an expert for the features
+described. If you see something that is incorrect or might otherwise be completed more elegantly I’d
+be glad to hear it!</p>
+
+<p><small>Photo: Todd Quackenbush</small></p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                    <a href="/posts/The-Incredible-Brew" data-toggle="tooltip" data-placement="top" title="The Incredible Brew"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                    <a href="/posts/C++-delegates-on-steroids" data-toggle="tooltip" data-placement="top" title="C++ Delegates On Steroids">Newer <i class="fa fa-arrow-right"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<script src="/js/moment.min.js "></script>
+<script src="/js/livestamp.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+
+
+</body>
+
+</html>
