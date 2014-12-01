@@ -1,0 +1,15 @@
+# Site settings
+title: Coldflake Blog
+email: oliver.mueller@gmail.com
+description: "Exploring software technologies"
+baseurl: "/blog.coldflake.com"
+url: "http://blog.coldflake.com"
+twitter_username: marcontwit
+github_username:  marcmo
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+paginate: 8
+exclude: ["node_modules","sass","*.log","package.json","Gemfile*","Gruntfile.js","README.md"]
