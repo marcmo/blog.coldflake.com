@@ -176,8 +176,6 @@ Using the C-wrapper these events will end up triggering the C++ implementation. 
 
 Turned out that I really missed some corner cases in my implementation where timeouts where prematurely discarded. After all, Quickcheck _does_ indeed turn up very unexpected usecases that are still valid! And like John Hughes does with Erlang it is very much possible to use Quickcheck in haskell for testing native components!
 
-<citation>Photo: http://morguefile.com</citation>
-
 [Quickcheck]:http://en.wikipedia.org/wiki/QuickCheck
 [Volvo]:http://www.volvo.com
 [recent talk]:http://vimeo.com/42751120

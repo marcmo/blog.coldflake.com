@@ -94,7 +94,9 @@ hr.small {
 // Terminal look
 
 pre.terminal, code.sourceCode {
-  margin: 10px;
+  @media only screen and (min-width: 768px) {
+    margin: 10px;
+  }
   margin-bottom: 2em;
   word-spacing: 0;
   word-wrap: normal;

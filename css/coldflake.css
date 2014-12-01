@@ -68,7 +68,6 @@ hr.small {
   border-color: white; }
 
 pre.terminal, code.sourceCode {
-  margin: 10px;
   margin-bottom: 2em;
   word-spacing: 0;
   word-wrap: normal;
@@ -77,6 +76,9 @@ pre.terminal, code.sourceCode {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
+@media only screen and (min-width: 768px) {
+  pre.terminal, code.sourceCode {
+    margin: 10px; } }
 
 pre.terminal span.prompt {
   color: #c5c525; }

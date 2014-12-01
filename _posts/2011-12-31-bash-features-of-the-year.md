@@ -49,13 +49,12 @@ it into brief mode so that the result is more easy to browse.
 Even though I use `man` all the time, I never knew that you can easily search all manpages with the
 `-k` option. This is the result of searching in the manpages about "backup":
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > man -k backup
+{% terminal blog.coldflake.git %}(master) > man -k backup
 dump(8), rdump(8)        - filesystem backup
 restore(8), rrestore(8)  - restore files or file systems ...
 tdbbackup(8)             - tool for backing up and for ...
 registry(3)              - Store and backup key-value pairs
-</pre>
+{% endterminal %}
 
 `man -k` is actually just another form of calling `apropos` which searches in a database of
 descriptions of system commands for our search term. Results are displayed on the standard output.
@@ -86,7 +85,9 @@ Finally everything is fed to `bc` that will do the calculation.
 
 ## 4> watch
 
-A very useful utility that will run a command repeatedly. The output will be displayed. By default, the program that it is told to execute will be run every 2 seconds. `watch` is kind of similar to tail.
+A very useful utility that will run a command repeatedly. The output will be displayed. By default,
+the program that it is told to execute will be run every 2 seconds. `watch` is kind of similar to
+tail.
 
 {% highlight bash %}
 watch -n 60 ls -l # will execute ls -l every minute
@@ -102,17 +103,23 @@ This will collect and display system activities statistics every 5 seconds.
 
 ## 5> du
 
-I despise most of the graphical file explorers and prefer never to have to leave the shell for acquiring information about the system. A frequently occurring task for me is to display the size of all files and folders in the current working directory. That is exactly what `du` was mad for...only that the default output can be quite hard to read. So I found this solution that will print the sizes of everything, sorted by size.
+I despise most of the graphical file explorers and prefer never to have to leave the shell for
+acquiring information about the system. A frequently occurring task for me is to display the size of
+all files and folders in the current working directory. That is exactly what `du` was mad for...only
+that the default output can be quite hard to read. So I found this solution that will print the
+sizes of everything, sorted by size.
 
 {% highlight bash %}
 du -s ./* | sort -n | cut -f 2- | xargs -Ix du -sh x
 {% endhighlight %}
 
-This will first get the size of all items in the current directory and sort those according to their block usage. Then it will drop the block size to only cut out the names (already sorted by size) and rerun a `du` on those elements, this time using the "Human Readable" output. By the way, `du` is smart enough to *not* do the calculation twice so this second round is pretty fast.  
+This will first get the size of all items in the current directory and sort those according to their
+block usage. Then it will drop the block size to only cut out the names (already sorted by size) and
+rerun a `du` on those elements, this time using the "Human Readable" output. By the way, `du` is
+smart enough to *not* do the calculation twice so this second round is pretty fast.  
 Let's do a quick test run:
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > du -s ./* | sort -n | cut -f 2- \
+{% terminal blog.coldflake.git %}(master) > du -s ./* | sort -n | cut -f 2- \
   | xargs -Ix du -sh x
 412K	./code
 624K	./images
@@ -120,7 +127,7 @@ Let's do a quick test run:
 1.9M	./_cache
 3.5M	./deploy
 106M	./bin
-</pre>
+{% endterminal %}
 
 
 ## 7> find
@@ -147,7 +154,8 @@ for n in `find . -type f`;do if [ -x "$n" ];\
 
 ## 8> seq command
 
-Was useful to me on some occasions:  `seq` for printing numbers. On Mac OS `seq` is not available but `jot` can be used in a similar fashion.
+Was useful to me on some occasions:  `seq` for printing numbers. On Mac OS `seq` is not available
+but `jot` can be used in a similar fashion.
 
 {% highlight bash %}
 seq 5       # prints numbers from 1 to 5
@@ -158,48 +166,46 @@ seq 5 -1 1  # print numbers from 5 down to 1
 
 I use it for example to generate files quickly:
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > touch $(seq -f "test%02g" 5)
+{% terminal blog.coldflake.git %}(master) > touch $(seq -f "test%02g" 5)
 <span class="prompt">blog.coldflake.git</span>(master) > ls
 test01  test02  test03  test04  test05
-</pre>
-    
+{% endterminal %}
 
 ## 9> Compiled Files
 
-The `file` utility can be used to identify the type of a file and is useful, among other cases, to find out about the architecture for which a file was compiled.
+The `file` utility can be used to identify the type of a file and is useful, among other cases, to
+find out about the architecture for which a file was compiled.
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > file test.o
+{% terminal blog.coldflake.git %}(master) > file test.o
 test.o: Mach-O 64-bit object x86_64
-</pre>
+{% endterminal %}
 
-`nm` is very useful to find out about the symbols listed in the symbol table of object-files and libraries. It can be quite handy to search for the libraries that define a symbol:
+`nm` is very useful to find out about the symbols listed in the symbol table of object-files and
+libraries. It can be quite handy to search for the libraries that define a symbol:
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > nm -o /lib/* /usr/lib/* 2> /dev/null | grep 'printf$'
+{% terminal blog.coldflake.git %}(master) > nm -o /lib/* /usr/lib/* 2> /dev/null | grep 'printf$'
 /usr/lib/dyld: 00007fff5fc1b3ef t ___simple_bprintf
 /usr/lib/dyld: 00007fff5fc1bc54 t __simple_dprintf
 /usr/lib/dyld: 00007fff5fc1bbe2 t __simple_vdprintf
 /usr/lib/dyld: 00007fff5fc1bcf1 t __simple_vsprintf
 /usr/lib/dyld: 00007fff5fc0a98b t _fprintf
 ...
-</pre>
+{% endterminal %}
 
 
 ## 10> DNS tools
 
 If you need some information regarding DNS those tools come in handy. `host` is a simple utility for performing DNS lookups. 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > host coldflake.com
+
+{% terminal blog.coldflake.git %}(master) > host coldflake.com
 coldflake.com has address 173.230.139.188
 coldflake.com mail is handled by 10 mail.coldflake.com.
-</pre>
+{% endterminal %}
 
-`dig` (domain information groper) can be used for interrogating DNS name servers. For example you can use it to retrieve a list of DNS servers authoritative for a domain:
+`dig` (domain information groper) can be used for interrogating DNS name servers. For example you
+can use it to retrieve a list of DNS servers authoritative for a domain:
 
-<pre class="terminal">
-<span class="prompt">blog.coldflake.git</span>(master) > dig coldflake.com NS +noall +answer
+{% terminal blog.coldflake.git %}(master) > dig coldflake.com NS +noall +answer
 ; <<>> DiG 9.6-ESV-R4-P3 <<>> coldflake.com NS +noall +answer
 ;; global options: +cmd
 coldflake.com.		83707	IN	NS	ns3.linode.com.
@@ -207,10 +213,8 @@ coldflake.com.		83707	IN	NS	ns4.linode.com.
 coldflake.com.		83707	IN	NS	ns5.linode.com.
 coldflake.com.		83707	IN	NS	ns1.linode.com.
 coldflake.com.		83707	IN	NS	ns2.linode.com.
-</pre>
+{% endterminal %}
 
-
-<citation>[Photo: flyupmike/Pixbay](http://pixabay.com/en/users/flyupmike/) [(creativecommons)](http://creativecommons.org/publicdomain/zero/1.0/deed.en)</citation>
 
 [2011]:{% post_url 2011-12-31-bash-features-of-the-year %}
 [2012]:{% post_url 2012-12-30-Top-10-Unix-Command-Line-Utilities-2012 %}

@@ -11,9 +11,13 @@ redirect_from:
   - /posts/2013-01-09-happy-new-year-with-shunting-yard.html
 ---
 
-One of my resolutions for the new year is to solve more interesting problems and learn about new algorithms. The new year puzzle from [programming praxis] has some very interesting problem that I used as an excuse to try out one of Dijkstra's algorithms: [Shunting Yard].
+One of my resolutions for the new year is to solve more interesting problems and learn about new
+algorithms. The new year puzzle from [programming praxis] has some very interesting problem that I
+used as an excuse to try out one of Dijkstra's algorithms: [Shunting Yard].
 
-> As we begin the new year, we note that 109-8\*7+654\*3-2/1 = 2013. There are three other combinations of the numbers 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, in order, combined with the five operators NIL, +, -, \* and / that also evaluate to 2013.
+> As we begin the new year, we note that 109-8\*7+654\*3-2/1 = 2013. There are three other
+> combinations of the numbers 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, in order, combined with the five
+> operators NIL, +, -, \* and / that also evaluate to 2013.
 >
 > Your task is to write a program that finds all four expressions that evaluate to 2013.
 
@@ -23,7 +27,8 @@ There are a couple of little challenges hidden in this problem:
 * evaluating those combinations (with correct precedence)
 * possibly dealing with the complexity
 
-My first approach was to use the fact that you can evaluate strings in lua directly. Here the only challenge is to generate suitable input strings:
+My first approach was to use the fact that you can evaluate strings in lua directly. Here the only
+challenge is to generate suitable input strings:
 
 {% highlight lua %}
 local ops = {"","+","-","*","/"}
@@ -59,7 +64,9 @@ user	0m13.910s
 sys	0m0.019s
 </pre>
 
-This approach works if you use language or library that allows you to evaluate a string as an expression. But... somehow that felt kind of cheating and not very challenging. Building up the expression and evaluating it seemed a lot more fun.  
+This approach works if you use language or library that allows you to evaluate a string as an
+expression. But... somehow that felt kind of cheating and not very challenging. Building up the
+expression and evaluating it seemed a lot more fun.  
 There are a couple of approaches you can take for expression evaluation, e.g.:
 
 * build up a grammar and a [recursive descent parser] from scratch
@@ -70,12 +77,18 @@ The latter was the approach I was not familiar with so I decided to go for that 
 
 ## Shunting Yard
 
-The basic idea of this algorithm is to go through the elements of your expression while keeping 2 stacks, one for the operators and the one for the operands. It plugs off tokens from the input and pushes the operands onto one stack and the operators onto a second. The stack of the operators has to be ordered by precedence so that the operator on the bottom has the lowest precedence, the one at the top the highest.  
-In order to keep that order, all operators with higher precedence will have to be cleared of the stack (== applied to operands from the operand stack) until the current operator again has the highest precedence.  
+The basic idea of this algorithm is to go through the elements of your expression while keeping 2
+stacks, one for the operators and the one for the operands. It plugs off tokens from the input and
+pushes the operands onto one stack and the operators onto a second. The stack of the operators has
+to be ordered by precedence so that the operator on the bottom has the lowest precedence, the one at
+the top the highest.  
+In order to keep that order, all operators with higher precedence will have to be cleared of the
+stack (== applied to operands from the operand stack) until the current operator again has the
+highest precedence.  
 Consider the example `a+b*c+d`:
 
 
-<table class="table borderless">
+<table class="table-responsive borderless">
   <tr>
     <td>input</td>
     <td>operands</td>
@@ -160,7 +173,8 @@ eval xs = shunting xs [] []
           | otherwise = shunting (n:ns) (apply o b a:bs) os
 {% endhighlight %}
 
-`apply` just applies an operator to it's respective 2 operands and the `higher` function indicates the relative precedence:
+`apply` just applies an operator to it's respective 2 operands and the `higher` function indicates
+the relative precedence:
 
 {% highlight haskell %}
 apply :: Operator -> Double -> Double -> Double
@@ -183,7 +197,9 @@ higher _ _ = False
 {% highlight haskell %}
 apply :: Operator -> Double -> Double -> Double
 {% endhighlight %}
-Now that we can evaluate expression, the only thing that remains is to generate all possible expressions and filter out the valid one:
+
+Now that we can evaluate expression, the only thing that remains is to generate all possible
+expressions and filter out the valid one:
 
 {% highlight haskell %}
 combinations n = sequence . replicate n
@@ -196,7 +212,9 @@ solve n = [combo | combo <- map (interleave ids) (combinations 9 operators)
   where ids = [Id n | n <- reverse [1..10]]
 {% endhighlight %}
 
-Turns out for the size of the problem it is quite possible to check all combinations (we have to use 9 operators, for each 5 possibilities, so there are 5^9 ~ 2 mio. combinations). Running the code on my Macbook Pro 2.3 GHz Core i5 seems fast enough:
+Turns out for the size of the problem it is quite possible to check all combinations (we have to use
+9 operators, for each 5 possibilities, so there are 5^9 ~ 2 mio. combinations). Running the code on
+my Macbook Pro 2.3 GHz Core i5 seems fast enough:
 
 <pre class="terminal">
 <span class="prompt">2013_01_01</span> > time ./combineNumbers
@@ -213,7 +231,6 @@ sys	0m0.055s
 
 Full source code as usual available as a [gist].
 
-<small>Photo: <a href="http://pixabay.com/en/users/LoboStudioHamburg/">Thomas Ulrich/Pixbay</a>  (<a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">creativecommons</a>)</small>
 
 [programming praxis]:http://programmingpraxis.com/2013/01/01/happy-new-year/
 [Shunting Yard]:http://en.wikipedia.org/wiki/Shunting-yard_algorithm
