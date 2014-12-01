@@ -2,8 +2,8 @@
 title: Coldflake Blog
 email: oliver.mueller@gmail.com
 description: "Exploring software technologies"
-baseurl: "/blog.coldflake.com"
-url: "http://blog.coldflake.com"
+baseurl: ""
+url: "http://blog.dahoam.in"
 twitter_username: marcontwit
 github_username:  marcmo
 
