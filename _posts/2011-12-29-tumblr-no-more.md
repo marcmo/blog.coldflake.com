@@ -2,9 +2,11 @@
 layout:     post
 title: Good Bye Tumblr - Welcome Hakyll
 subtitle: Moving away from mum-style blogging to more hacker-style blogging.
-header-img: "img/hirsch.jpg"
+header-img: "img/typewriter.jpg"
 future_categories: programming
 tags: [blogging, git]
+redirect_from:
+  - /posts/2011-12-29-tumblr-no-more.html
 ---
 
 This year I finally got around to start writing about some of my technical projects and programming related tasks. And starting out fresh the quickest way was to use some ready-to-go blogging framework. The choices for this are actually pretty amazing...ranging from microblogging services like [Posterous] and [Tumblr] to full fledged blogging frameworks like [Wordpress] and [Blogger]. Of those services Tumblr seemed like an especially good fit for my needs.

@@ -4,6 +4,8 @@ title: Lunch break coding - Word Break Problem
 subtitle: Simple programming puzzle to break up words according to dictionary.
 header-img: "img/hirsch.jpg"
 tags: [haskell, puzzle, algorithm]
+redirect_from:
+  - /posts/2011-08-15-word-break-problem.html
 ---
 
 Another funny little programming puzzle that I found [here](http://programmingpraxis.com/2011/08/12/word-breaks/) describes the _Word Break Problem_.

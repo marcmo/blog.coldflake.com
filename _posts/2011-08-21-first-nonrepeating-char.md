@@ -4,6 +4,8 @@ title: Lunch break coding - First Nonrepeating Character
 subtitle: Simple programming puzzle to find the first nonrepeating character in a string.
 header-img: "img/hirsch.jpg"
 tags: [haskell, puzzle, algorithm]
+redirect_from:
+  - /posts/2011-08-21-first-nonrepeating-char.html
 ---
 
 Again a little programming task frome [here](http://programmingpraxis.com/2011/08/19/first-non-repeating-character/):

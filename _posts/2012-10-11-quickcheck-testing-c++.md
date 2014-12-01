@@ -2,8 +2,10 @@
 layout:     post
 title: QuickChecking C++ Code
 subtitle: The haskell testing framework which can be used quite beneficial to test C++ code
-header-img: "img/hirsch.jpg"
+header-img: "img/metal-chains.jpg"
 tags: [haskell, C++, quickcheck, testing]
+redirect_from:
+  - /posts/2012-10-11-quickcheck-testing-c++.html
 ---
 
 A friend of mine pointed out a [recent talk] by John Hughes that describes a how [Volvo] is using [Erlang] and more in particular [Quickcheck] to find bugs in automotive software systems. While the talk is rather boring the topic is actually quite fascinating! And since I'm ... let's say acquainted with the automotive industry, it's especially good to see a company like Volvo picking up on some modern software ideas.  

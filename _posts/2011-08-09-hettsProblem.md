@@ -4,6 +4,8 @@ title: Lunch break coding
 subtitle: A small prolog problem solved in haskell
 header-img: "img/hirsch.jpg"
 tags: [haskell, puzzle, algorithm]
+redirect_from:
+  - /posts/2011-08-09-hettsProblem.html
 ---
 
 Found a neat little site on programming puzzles for prolog programmers today in my lunch break. Of course I needed to try one immediately! Just for the fun of it and to see if haskell is suitable for this *prolog* problems.

@@ -303,8 +303,7 @@ footer .copyright {
   font-weight: 800;
   letter-spacing: 1px;
   padding: 15px 25px;
-  background-color: white;
-  border-radius: 0; }
+  background-color: white; }
 .pager li > a:hover, .pager li > a:focus {
   color: white;
   background-color: #82BD10;
@@ -333,7 +332,8 @@ img::-moz-selection {
   background: transparent; }
 
 body {
-  webkit-tap-highlight-color: #82BD10; }
+  webkit-tap-highlight-color: #82BD10;
+  overflow-x: hidden; }
 
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';

@@ -2,8 +2,10 @@
 layout:     post
 title: Scripting Git with Ghc Evaluation Mode
 subtitle: Some examples that show the usage of haskell's evaluation mode.
-header-img: "img/hirsch.jpg"
+header-img: "img/yellow_light_spots.jpg"
 tags: [haskell, git, ghc]
+redirect_from:
+  - /posts/2011-10-28-haskell-expression-mode-with-git.html
 ---
 
 Processing bits and pieces on the command line has a very functional feel to it. You feed some input to a function which gives you a result that again can be fed to another function and so on. Each of the individual processing steps resembles a pure function that takes some text as input and outputs some text again.  
@@ -149,7 +151,7 @@ An example might be the reoccurring situation that you created some local change
 test(master) > git status
 # On branch master
 # Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
 #
 #	.gitignore
 #	foo/
@@ -183,7 +185,7 @@ test(master) > git ls-files --others --exclude-standard --directory --no-empty-d
 test(master) > git status
 # On branch master
 # Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
 #
 #	.gitignore
 #	foo/

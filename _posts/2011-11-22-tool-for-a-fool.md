@@ -4,6 +4,8 @@ title: A Tool for a Fool
 subtitle: A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.
 header-img: "img/hirsch.jpg"
 tags: [haskell, C++, tool, algorithm, datastructure]
+redirect_from:
+  - /posts/2011-11-22-tool-for-a-fool.html
 ---
 
 It has been a while since I was foolish enough to convince some of my colleagues to use Linux as their primary OS instead of Windows. By now it has become much easier to ensure everything important runs on the Linux boxes. But the development team of a recent project was quite large (>80 devs!) and most of those still work in a Windows environment.  

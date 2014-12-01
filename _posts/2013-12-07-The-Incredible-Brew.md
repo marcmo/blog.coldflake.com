@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 future_categories: unix
 header-img: "img/rusty-cog.jpg"
 tags: [unix, osx, tool, git, ruby, bash]
+redirect_from:
+  - /posts/2013-12-07-The-Incredible-Brew.html
 ---
 
 When Apple started shipping the first iBooks including Mac OS X back in 2001 I was hooked. A

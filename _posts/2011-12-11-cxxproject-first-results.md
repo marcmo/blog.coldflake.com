@@ -3,8 +3,10 @@ layout:     post
 title: Encouraging performance results
 subtitle: First results after introducing cxxproject on a large scale, quite promising.
 future_categories: programming
-header-img: "img/hirsch.jpg"
+header-img: "img/lights.jpg"
 tags: [C++, ruby, rake, performance, dsl]
+redirect_from:
+  - /posts/2011-12-11-cxxproject-first-results.html
 ---
 
 It has been a while since we started to implement [cxxproject](https://github.com/marcmo/cxxproject) (early 2010) but finally we managed to adopt is as the underlying buildsystem throughout the largest projects the company I work for.  

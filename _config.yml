@@ -13,4 +13,6 @@ highlighter: pygments
 permalink: pretty
 paginate: 8
 exclude: ["node_modules","sass","*.log","package.json","Gemfile*","Gruntfile.js","README.md","rakefile.rb"]
-permalink: /posts/:year-:month-:day-:title.html
+permalink: /posts/:title
+gems:
+  - jekyll-redirect-from

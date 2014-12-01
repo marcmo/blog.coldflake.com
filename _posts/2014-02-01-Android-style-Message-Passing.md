@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 header-img: "img/snowtrain.jpg"
 future_categories: programming
 tags:       [android, C++, concurrency, ipc]
+redirect_from:
+  - /posts/2014-02-01-Android-style-Message-Passing.html
 ---
 
 Last week I finished a substantial rewrite of the concurrency portions in the code of a fairly

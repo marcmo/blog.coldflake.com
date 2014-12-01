@@ -7,7 +7,10 @@ author:     "Oliver Mueller"
 header-img: "img/backandwhitebeach.jpg"
 future_categories: programming
 tags:       [types,C++,lua,haskell,ruby]
+redirect_from:
+  - /posts/2014-08-31-Choosing-the-Type-of-your-Types.html
 ---
+
 
 In my years as a developer I have used a lot of different programming languages. Most of them I
 already tried to ban from my brain again (LISP still seems to give me nightmares from time to

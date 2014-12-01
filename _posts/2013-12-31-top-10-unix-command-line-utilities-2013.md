@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 header-img: "img/tools.jpg"
 future_categories: unix
 tags: [unix, bash]
+redirect_from:
+  - /posts/2013-12-31-top-10-unix-command-line-utilities-2013.html
 ---
 
 <div class="table-of-contents">
@@ -606,6 +608,8 @@ A nice example I found in the [Bash Hackers Wiki] is to print out a conversion t
 Ok, this was my bash feature list of the year. By no means am I an expert for the features
 described. If you see something that is incorrect or might otherwise be completed more elegantly I'd
 be glad to hear it!
+
+<small>Photo: Todd Quackenbush</small>
 
 [2011]:{% post_url 2011-12-31-bash-features-of-the-year %}
 [2012]:{% post_url 2012-12-30-Top-10-Unix-Command-Line-Utilities-2012 %}

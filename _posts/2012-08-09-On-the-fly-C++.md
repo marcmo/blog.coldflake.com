@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/blackbird.jpg"
 tags: [C++, llvm, clang]
+redirect_from:
+  - /posts/2012-08-09-On-the-fly-C++.html
 ---
 
 I can't recall how many times I had to write a basic small C or C++ program just to play around with an idea, the syntax of C++11 or anything similar. Very often indeed. Even though a good editor makes this very easy, it's kind of a burden to have to create a project directory, a source file, spell out the same old includes and the main function before you actually can start the task you where about to try.    

@@ -2,17 +2,32 @@
 layout:     post
 title: Simple Networking
 subtitle: Communicating over UDP sockets in haskell.
-header-img: "img/hirsch.jpg"
+header-img: "img/floorlight.jpg"
 tags: [udp, networking, haskell, C++]
+redirect_from:
+  - /posts/2013-08-25-Simple-Networking.html
 ---
 
-Last Friday a [coworker] was so kind to organize a fun session at work where we had to write bots that participated in a [game](http://en.wikipedia.org/wiki/Mia_%28game%29). The basic idea is to program a bot that plays against other bots, all communicating via UDP with a server that supervises the game.  
-Even though many of our developers are rather avid C++ users, this problem involved two reoccurring tasks: UDP communication and string handling, both topics that some would claim are not the particular strong points of C++ (up to the point that it is getting [ridiculous])[^1]. So most of us settled on [Ruby] or [Python], both of which shine especially with string processing.  
-Haskell supposedly also makes it easy to work with datagram sockets but it always takes me some time to get it right so this time I wanted to take the time to write down a small UDP sample for future reference. (there is an abundance of TCP examples out there, but less so for UDP)
+Last Friday a [coworker] was so kind to organize a fun session at work where we had to write bots
+that participated in a [game](http://en.wikipedia.org/wiki/Mia_%28game%29). The basic idea is to
+program a bot that plays against other bots, all communicating via UDP with a server that supervises
+the game.  
+Even though many of our developers are rather avid C++ users, this problem involved two reoccurring
+tasks: UDP communication and string handling, both topics that some would claim are not the
+particular strong points of C++ (up to the point that it is getting [ridiculous])[^1]. So most of us
+settled on [Ruby] or [Python], both of which shine especially with string processing.  
+Haskell supposedly also makes it easy to work with datagram sockets but it always takes me some time
+to get it right so this time I wanted to take the time to write down a small UDP sample for future
+reference. (there is an abundance of TCP examples out there, but less so for UDP)
 
-Here is a pretty minimal UDP client application in haskell that just connects a datagram socket and sends some data.  
-I retrieve the address-information for the server I want to talk to (`getAddrInfo`), get a socket (`socket`) and associate it with the server ip and port (`connect`). Now I have a socket that can be used to send datagram packets.  
-For completeness I wrap the code with `bracket` just to be sure clean up is done properly in every case. Don't mind the `withSocketsDo`, this is only necessary on windows for some initialization stuff but usually is included to make the code platform agnostic.
+Here is a pretty minimal UDP client application in haskell that just connects a datagram socket and
+sends some data.  
+I retrieve the address-information for the server I want to talk to (`getAddrInfo`), get a socket
+(`socket`) and associate it with the server ip and port (`connect`). Now I have a socket that can be
+used to send datagram packets.  
+For completeness I wrap the code with `bracket` just to be sure clean up is done properly in every
+case. Don't mind the `withSocketsDo`, this is only necessary on windows for some initialization
+stuff but usually is included to make the code platform agnostic.
 
 {% highlight haskell %}
 module Main where
@@ -32,8 +47,11 @@ main = withSocketsDo $ bracket getSocket sClose talk
                 recv s 1024 >>= \msg -> putStrLn $ "Received " ++ msg
 {% endhighlight %}
 
-Even though in our scenario writing a server was not required, it proved valuable for test purposes and I include it for reference.  
-Here, we build a socket with the address-info and bind it to our own ip on our port (`getaddrinfo`,`socket`,`bindSocket`). Having bound the socket, we can receive from it and send s.th. back to the client that sent us a message.
+Even though in our scenario writing a server was not required, it proved valuable for test purposes
+and I include it for reference.  
+Here, we build a socket with the address-info and bind it to our own ip on our port (`getaddrinfo`,
+`socket`, `bindSocket`). Having bound the socket, we can receive from it and send s.th. back to the
+client that sent us a message.
 
 {% highlight haskell %}
 module Main where
@@ -65,7 +83,9 @@ $ runghc client
 Received Hello, world!
 </pre>
 
-For our bot contest I paired with a ruby guy and a simple UPD client is very easy, even though it does not include any options to setup the address-info or handle graceful shutdown in case of exceptions:
+For our bot contest I paired with a ruby guy and a simple UPD client is very easy, even though it
+does not include any options to setup the address-info or handle graceful shutdown in case of
+exceptions:
 
 {% highlight ruby %}
 require 'socket'
@@ -85,7 +105,9 @@ $ ruby client.rb
 "Hello Server"
 </pre>
 
-Pretty interesting to see that even developers with a strong C/C++ background had problems getting started. But then again it's definitely more work to get a working client using the posix api. For the fun, here is the code:
+Pretty interesting to see that even developers with a strong C/C++ background had problems getting
+started. But then again it's definitely more work to get a working client using the posix api. For
+the fun, here is the code:
 
 {% highlight cpp %}
 #include <sys/types.h>
@@ -146,7 +168,8 @@ sent 11 bytes to 127.0.0.1
 received back 11 bytes: Hello World
 </pre>
 
-Besides all the technical details, it is a great way to spend a Friday afternoon and more companies should consider allowing for such fun events!
+Besides all the technical details, it is a great way to spend a Friday afternoon and more companies
+should consider allowing for such fun events!
 
 [^1]: Yes, I know about [asio] and [boost string algorithms]
 

@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 header-img: "img/shuttlestart.jpg"
 future_categories: programming
 tags: [C++, templates, lua]
+redirect_from:
+  - /posts/2014-01-12-C++-delegates-on-steroids.html
 ---
 
 Yesterday I came across an [excellent article] from [Jeremy Ong] that introduces

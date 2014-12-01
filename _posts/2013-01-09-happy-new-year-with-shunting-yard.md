@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/shuntingyard.jpg"
 tags: [haskell, puzzle, algorithm, lua]
+redirect_from:
+  - /posts/2013-01-09-happy-new-year-with-shunting-yard.html
 ---
 
 One of my resolutions for the new year is to solve more interesting problems and learn about new algorithms. The new year puzzle from [programming praxis] has some very interesting problem that I used as an excuse to try out one of Dijkstra's algorithms: [Shunting Yard].

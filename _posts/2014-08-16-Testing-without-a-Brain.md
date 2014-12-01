@@ -7,6 +7,8 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/hirsch.jpg"
 tags: [testing, rant]
+redirect_from:
+  - /posts/2014-08-16-Testing-without-a-Brain.html
 ---
 
 Testing software is perhaps one of the most controversial topics among programmers. Opinions range
