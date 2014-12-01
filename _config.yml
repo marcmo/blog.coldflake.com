@@ -16,3 +16,4 @@ exclude: ["node_modules","sass","*.log","package.json","Gemfile*","Gruntfile.js"
 permalink: /posts/:title
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
