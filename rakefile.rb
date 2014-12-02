@@ -2,13 +2,15 @@ require 'rake/clean'
 
 CLEAN.include "logfile.log"
 
+desc 'build site'
+task :build do
+  puts "## Generating site"
+  system "jekyll b"
+end
 
 desc "Deploy to Github Pages"
 task :deploy do
   puts "## Deploying to Github Pages"
-
-  puts "## Generating site"
-  system "jekyll b"
 
   cd "_site" do
     system "git add -A"
@@ -23,3 +25,6 @@ task :deploy do
     puts "## Deploy Complete!"
   end
 end
+
+desc 'generate AND deploy in one go'
+task :gen_deploy => [:build,:deploy]
