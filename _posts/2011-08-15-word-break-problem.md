@@ -6,6 +6,9 @@ header-img: "img/letters.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-08-15-word-break-problem.html
+credits_name: Sam Javanrouh
+credits_url: https://www.flickr.com/photos/wvs/
+credits_license: https://creativecommons.org/licenses/by-nc/2.0/
 ---
 
 Another funny little programming puzzle that I found [here](http://programmingpraxis.com/2011/08/12/word-breaks/) describes the _Word Break Problem_.

@@ -6,6 +6,9 @@ header-img: "img/greenbrain.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-10-11-brainfuck.html
+credits_name: Zsolt Fila
+credits_url: https://www.flickr.com/photos/nymphofox/
+credits_license: https://creativecommons.org/licenses/by/2.0/
 ---
 
 This is probably the worst name for a programming language after Javascript... but it's a really fun little language! The task is to [write an interpreter for it](http://programmingpraxis.com/2011/10/04/brainfuck/).

@@ -6,6 +6,9 @@ header-img: "img/domino.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-08-21-first-nonrepeating-char.html
+credits_name: Mikey Phillips
+credits_url: https://www.flickr.com/photos/mikeyphillips/
+credits_license: https://creativecommons.org/licenses/by-nc-nd/2.0/
 ---
 
 Again a little programming task frome [here](http://programmingpraxis.com/2011/08/19/first-non-repeating-character/):

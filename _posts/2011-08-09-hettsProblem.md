@@ -6,6 +6,9 @@ header-img: "img/puzzle.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-08-09-hettsProblem.html
+credits_name: boris drenec
+credits_url: https://www.flickr.com/photos/_boris/
+credits_license: https://creativecommons.org/licenses/by-nc-sa/2.0/
 ---
 
 Found a neat little site on programming puzzles for prolog programmers today in my lunch break. Of course I needed to try one immediately! Just for the fun of it and to see if haskell is suitable for this *prolog* problems.

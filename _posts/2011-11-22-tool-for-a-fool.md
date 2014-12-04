@@ -6,6 +6,9 @@ header-img: "img/watertool.jpg"
 tags: [haskell, C++, tool, algorithm, datastructure]
 redirect_from:
   - /posts/2011-11-22-tool-for-a-fool.html
+credits_name: Michael Bliefert
+credits_url: https://www.flickr.com/photos/buridansesel/
+credits_license: https://creativecommons.org/licenses/by-nc-sa/2.0/
 ---
 
 It has been a while since I was foolish enough to convince some of my colleagues to use Linux as their primary OS instead of Windows. By now it has become much easier to ensure everything important runs on the Linux boxes. But the development team of a recent project was quite large (>80 devs!) and most of those still work in a Windows environment.  

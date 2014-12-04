@@ -6,6 +6,9 @@ header-img: "img/wood_tools.jpg"
 tags: [unix, bash]
 redirect_from:
   - /posts/2011-12-31-bash-features-of-the-year.html
+credits_name: Marco Ferracuti
+credits_url: https://www.flickr.com/photos/mamaol/
+credits_license: https://creativecommons.org/licenses/by-nc-nd/2.0/
 ---
 
 <div class="table-of-contents">

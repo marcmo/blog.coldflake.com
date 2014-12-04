@@ -5,10 +5,13 @@ subtitle: How much Testing is good for your Development Process?
 date: 2014-08-16 12:00:00
 author:     "Oliver Mueller"
 future_categories: programming
-header-img: "img/hirsch.jpg"
+header-img: "img/brainless.jpg"
 tags: [testing, rant]
 redirect_from:
   - /posts/2014-08-16-Testing-without-a-Brain.html
+credits_name: Ardinnnn :)
+credits_url: https://www.flickr.com/photos/ardinhasaphotography/
+credits_license: https://creativecommons.org/licenses/by-nc-sa/2.0/
 ---
 
 Testing software is perhaps one of the most controversial topics among programmers. Opinions range

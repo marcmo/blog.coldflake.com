@@ -32,6 +32,10 @@ layout: default
 
 				{{ content }}
 
+              {% if page.credits_name %}
+              <hr>
+              <small>title-image by <a href="{{page.credits_url}}">{{page.credits_name}}</a> (<a href="{{page.credits_license}}">license</a>)</small>
+              {% endif %}
                 <hr>
 
                 <ul class="pager">
