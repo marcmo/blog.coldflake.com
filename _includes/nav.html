@@ -24,7 +24,7 @@
                 {% for page in site.pages %}
                     {% if page.title %}
                       {% if page.type != "tag_type" %}
-                  <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+                  <li><a href="{{ page.url | prepend: site.baseurl | replace: '/index.html', '' }}">{{ page.title }}</a></li>
                       {% endif %}
                     {% endif %}
                 {% endfor %}

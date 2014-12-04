@@ -8,6 +8,12 @@ task :build do
   system "jekyll b"
 end
 
+desc 'watch & build site'
+task :watch do
+  puts "## Watching site"
+  system "jekyll b -w"
+end
+
 desc "Deploy to Github Pages"
 task :deploy do
   puts "## Deploying to Github Pages"

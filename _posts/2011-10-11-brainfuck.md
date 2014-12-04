@@ -2,7 +2,7 @@
 layout:     post
 title: Lunch break coding - brainfuck
 subtitle: Implementing a brainfuck interpreter in haskell.
-header-img: "img/hirsch.jpg"
+header-img: "img/greenbrain.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-10-11-brainfuck.html

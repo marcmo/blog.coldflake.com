@@ -4,7 +4,7 @@ title:      "Choosing the Type of your Types"
 subtitle:   "Statically and dynamically typed languages both can be enjoyable"
 date:       2014-08-31 12:00:00
 author:     "Oliver Mueller"
-header-img: "img/backandwhitebeach.jpg"
+header-img: "img/lights2.jpg"
 future_categories: programming
 tags:       [types,C++,lua,haskell,ruby]
 redirect_from:

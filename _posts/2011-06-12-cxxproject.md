@@ -9,8 +9,6 @@ redirect_from:
   - /posts/2011-06-12-cxxproject.html
 ---
 
-<img class="img-responsive" src="{{ site.baseurl }}/img/cxxproject/cxx_buildingblocks3.png" alt="">
-
 Why are IDE's like [eclipse](http://www.eclipse.org) or Visual Studio so popular with many software developers? Yes, they offer an abundance of features and support to make it bearable to program in even the most verbose languages like Java and C++. Ok, the abundance of add-ons and plugins does allow for a nice integration of additional features and customization of the work environment.
 
 Another advantage for many is the ability to have managed projects. This will allow you to just create a project (let's take C++ as an example) and will pretty much take care of setting up a build environment. Easy.
@@ -24,6 +22,8 @@ But this approach has some inherent drawbacks that might not be apparent at firs
 
 Of course in most cases you are not bound to stick with this *one-size-fits-all* approach. Often you can use a custom makefile to describe your build.
 This is by far the more flexible solution but requires you to maintain makefiles... . But makefiles are so general it might turn out to be quite challenging for non-make-gurus to setup and maintain a well structured make-based build-system.
+
+<img class="img-responsive" src="{{ site.baseurl }}/img/cxxproject/cxx_buildingblocks3.png" alt="">
 
 About a year ago a [friend of mine](http://gizmomogwai.tumblr.com) was working on a quite large C++ project that was built using Visual Studio. Since he is mostly working Mac and Linux he wanted to port the build system to s.th. less platform-dependent. That turned out to be quite a challenge and he ended up with a collection of rakefiles that he could now use on every platform.
 

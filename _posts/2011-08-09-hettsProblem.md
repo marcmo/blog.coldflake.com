@@ -2,7 +2,7 @@
 layout:     post
 title: Lunch break coding
 subtitle: A small prolog problem solved in haskell
-header-img: "img/hirsch.jpg"
+header-img: "img/puzzle.jpg"
 tags: [haskell, puzzle, algorithm]
 redirect_from:
   - /posts/2011-08-09-hettsProblem.html

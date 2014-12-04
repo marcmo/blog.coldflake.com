@@ -28,8 +28,6 @@ body {
 p {
   line-height: 1.5;
   margin: 30px 0; }
-p a {
-  color: #68960D; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -42,9 +40,9 @@ h3 {
   margin-top: 30px; }
 
 a {
-  color: #404040; }
+  color: gray; }
 a:hover, a:focus {
-  color: #82BD10; }
+  color: #68960D; }
 
 .table-of-contents {
   float: right;
@@ -158,11 +156,11 @@ pre.terminal {
   .navbar-custom.is-fixed .navbar-brand {
     color: #404040; }
   .navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #82BD10; }
+    color: #68960D; }
   .navbar-custom.is-fixed .nav li a {
     color: #404040; }
   .navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
-    color: #82BD10; }
+    color: #68960D; }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     -webkit-transform: translate3d(0, 100%, 0);
@@ -228,7 +226,7 @@ pre.terminal {
   color: #404040; }
 .post-preview > a:hover, .post-preview > a:focus {
   text-decoration: none;
-  color: #82BD10; }
+  color: #68960D; }
 .post-preview > a > .post-title {
   font-size: 30px;
   margin-top: 30px;
@@ -246,7 +244,7 @@ pre.terminal {
   text-decoration: none;
   color: #404040; }
 .post-preview > .post-meta > a:hover, .post-preview > .post-meta > a:focus {
-  color: #82BD10;
+  color: #68960D;
   text-decoration: underline; }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
@@ -267,8 +265,10 @@ pre.terminal {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px; }
 
-footer {
-  padding: 50px 0 65px; }
+footer a {
+  color: #404040; }
+footer a:hover, footer a:focus {
+  color: gray; }
 footer .list-inline {
   font-size: 14px;
   margin: 0;
@@ -292,8 +292,8 @@ footer .copyright {
   padding: 25px 35px; }
 
 .btn-default:hover, .btn-default:focus {
-  background-color: #82BD10;
-  border: 1px solid #82BD10;
+  background-color: #68960D;
+  border: 1px solid #68960D;
   color: white; }
 
 .pager {
@@ -308,8 +308,8 @@ footer .copyright {
   background-color: white; }
 .pager li > a:hover, .pager li > a:focus {
   color: white;
-  background-color: #82BD10;
-  border: 1px solid #82BD10; }
+  background-color: #68960D;
+  border: 1px solid #68960D; }
 .pager .disabled > a, .pager .disabled > a:hover, .pager .disabled > a:focus, .pager .disabled > span {
   color: gray;
   background-color: #404040;
@@ -318,12 +318,12 @@ footer .copyright {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #82BD10; }
+  background: #68960D; }
 
 ::selection {
   color: white;
   text-shadow: none;
-  background: #82BD10; }
+  background: #68960D; }
 
 img::selection {
   color: white;
@@ -334,7 +334,7 @@ img::-moz-selection {
   background: transparent; }
 
 body {
-  webkit-tap-highlight-color: #82BD10;
+  webkit-tap-highlight-color: #68960D;
   overflow-x: hidden; }
 
 [class^="icon-"], [class*=" icon-"] {
