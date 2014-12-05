@@ -134,7 +134,7 @@ pre.terminal {
   background-color: rgba(250, 250, 250, .8);
   @include sans-serif;
   .navbar-brand {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       img {
         display: none;
       }
