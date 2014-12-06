@@ -9,6 +9,9 @@ header-img: "img/shuntingyard.jpg"
 tags: [haskell, puzzle, algorithm, lua]
 redirect_from:
   - /posts/2013-01-09-happy-new-year-with-shunting-yard.html
+credits_name: Zruda
+credits_url: https://www.flickr.com/photos/zruda/
+credits_license: https://creativecommons.org/licenses/by-nc-sa/2.0/
 ---
 
 One of my resolutions for the new year is to solve more interesting problems and learn about new
