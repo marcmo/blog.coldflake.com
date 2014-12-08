@@ -222,6 +222,9 @@ pre.terminal {
   .intro-header .post-heading .subheading {
     font-size: 30px; } }
 
+@media only screen and (max-width: 767px) {
+  .post-preview {
+    text-align: center; } }
 .post-preview > a {
   color: #404040; }
 .post-preview > a:hover, .post-preview > a:focus {

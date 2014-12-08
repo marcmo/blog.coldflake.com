@@ -303,6 +303,9 @@ pre.terminal {
 // Post Preview Pages
 
 .post-preview {
+  @media only screen and (max-width: 767px) {
+    text-align: center;
+  }
   > a {
     color: $gray-dark;
     &:hover,
