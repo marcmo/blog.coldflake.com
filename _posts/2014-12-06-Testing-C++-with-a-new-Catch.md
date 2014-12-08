@@ -127,7 +127,7 @@ with expansion:
 
 ## Command line Tool
 
-With the executable you get has a decent command line parser built in that gives you a lot of
+With the executable you get a decent command line parser built in that gives you a lot of
 options. Rather then to just execute every test-case, you can select the cases to be executed using
 a simple glob-like pattern (e.g. `put*` matches tests starting with `put`, `~put*` everything else).  
 Another option I really like is the `--list` option, which tells you about all available tests.
