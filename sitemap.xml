@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.coldflake.com/posts/Testing-C++-with-a-new-Catch</loc>
+    <lastmod>2014-12-06T00:00:00+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://blog.coldflake.com/posts/choosing-the-Type-of-your-Types</loc>
     <lastmod>2014-08-31T14:00:00+02:00</lastmod>
     <priority>0.8</priority>
@@ -117,211 +122,211 @@
   </url>
   <url>
     <loc>http://blog.coldflake.com/about/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/C++/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/ruby/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/rake/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/dsl/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/gtest/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/testing/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/unix/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/bash/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/haskell/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/puzzle/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/algorithm/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/git/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/ghc/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/tool/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/datastructure/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/performance/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/blogging/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/llvm/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/clang/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/quickcheck/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/lua/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/udp/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/networking/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/osx/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/templates/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/android/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/concurrency/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/ipc/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/rant/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/types/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://blog.coldflake.com/tag/</loc>
-    <lastmod>2014-12-06T09:04:40+01:00</lastmod>
+    <lastmod>2014-12-08T08:41:34+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

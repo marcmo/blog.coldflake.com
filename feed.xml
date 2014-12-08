@@ -5,9 +5,183 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 06 Dec 2014 09:04:40 +0100</pubDate>
-    <lastBuildDate>Sat, 06 Dec 2014 09:04:40 +0100</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 08:41:34 +0100</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 08:41:34 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
+    
+      <item>
+        <title>Testing C++ With A New Catch</title>
+        <description>&lt;p&gt;Unit Testing frameworks are mostly boring – if they are any good, they follow the rough approach of
+the x-unit family that Kent Beck introduced with smalltalk. And in languages like ruby or even
+Java they are quite comfortable and can make use of the runtime introspection capabilities, mostly
+to automatically discover your test cases and execute them. Not so in C++. And the test frameworks
+here always feel a little clumsy. CppUnit has an arcane way of writing and registering your
+testcases. I was a user once, never again. As so often &lt;a href=&quot;http://www.boost.org/&quot;&gt;boost&lt;/a&gt; has a superior solution (&lt;a href=&quot;(http://www.boost.org/doc/libs/1_49_0/libs/test/doc/html/index.html)&quot;&gt;Boost.Test&lt;/a&gt;)
+but it’s reeeeeeeally a pain to set it up – so I ended up not using it either.&lt;br /&gt;
+A noteworthy exception to the depressing C++ testing landscape is &lt;a href=&quot;/posts/gtest&quot;&gt;gtest&lt;/a&gt;, googles own testing
+framework for C++ that aims at portability and ease of use. It heavily relies on macros to provide
+kind of a nice syntax and automatic test registration. It’s light weight, extensible and works on
+most platforms out-of-the-box. It has become my default turn-to solution for writing C++ unit tests.
+Digging into it’s features reveals that it is capable of rather non standard niceties like
+repeatedly running the test cases while randomizing the execution order, running a subset of your
+tests (using exclude/include patterns on invocation) or turning assertion errors directly into
+debugger break-points.&lt;/p&gt;
+
+&lt;h2 id=&quot;enter-the-world-of-catch&quot;&gt;Enter the world of Catch&lt;/h2&gt;
+
+&lt;p&gt;I just found out recently about &lt;a href=&quot;https://github.com/philsquared/Catch&quot;&gt;Catch&lt;/a&gt; while watching someone explain a piece of code along with it’s
+tests. The first thing that kind of sticks out is that the tests seem to have a very clear visual
+outline. That might seem silly but when looking at a piece of code I really like it when I can
+get a feeling for the program structure merely by the outline of the text of the program. And that is
+caused by one of the most intriguing aspects of &lt;a href=&quot;https://github.com/philsquared/Catch&quot;&gt;Catch&lt;/a&gt;: rather then to use the classical &lt;code&gt;setup&lt;/code&gt; –
+&lt;code&gt;test&lt;/code&gt; – &lt;code&gt;teardown&lt;/code&gt; cycle, the test-cases are organized into nested sections. The inner-most
+sections (the &lt;em&gt;leaf&lt;/em&gt;-sections) are the actual units under test, and they are executed along with
+their enclosing sections. That immediately allows to reuse setup and tear-down code – on multiple
+levels.&lt;br /&gt;
+What I found is that my test cases got considerable shorter since a lot of times there is some
+common setup steps or even test steps that are actually duplicated in a couple of test cases. The
+classic &lt;em&gt;one-setup-approach&lt;/em&gt; is just not enough here. The image shows the outline of the tests
+&lt;a href=&quot;https://github.com/marcmo/bitstream/blob/46ae519fe3abbfaa8157464fc57a26b8eeae57b2/test/BitstreamTest.cpp&quot;&gt;before&lt;/a&gt; and &lt;a href=&quot;https://github.com/marcmo/bitstream/blob/b39b301ed15c05a3af81ecc8837ab12c46eead7e/test/BitstreamTest.cpp&quot;&gt;after&lt;/a&gt; porting them from gtest to &lt;a href=&quot;https://github.com/philsquared/Catch&quot;&gt;Catch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/catch/code_outline.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-setup&quot;&gt;Quick Setup&lt;/h2&gt;
+
+&lt;p&gt;One thing C++ programmers (or at least me) envy in the javascript/&lt;a href=&quot;http://nodejs.org/&quot;&gt;nodejs&lt;/a&gt; community is the uniform
+and quick way to start a project and add the dependencies. It’s quite common to check out a project
+from github, do a quick &lt;code&gt;npm install&lt;/code&gt; and have all dependencies installed in the local project
+directory within seconds.&lt;br /&gt;
+&lt;em&gt;Catch&lt;/em&gt; is a header-only library (thanks!!) and getting up to speed is just as fast: &lt;code&gt;wget&lt;/code&gt; the
+latest &lt;a href=&quot;https://raw.githubusercontent.com/philsquared/Catch/master/single_include/catch.hpp&quot;&gt;all-in-one-header&lt;/a&gt; file, add 2 lines to your test file, and everything is ready!&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;quot;Bitstream.h&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define CATCH_CONFIG_MAIN&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;quot;catch.hpp&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;TEST_CASE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;getOneBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;BitstreamReader&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;REQUIRE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;No need to derive from a Test-Base class or anything like that. Pretty much just include the header,
+request a predefined &lt;code&gt;main&lt;/code&gt; function, and write your test-case.&lt;/p&gt;
+
+&lt;h2 id=&quot;behavior-driven-anyone&quot;&gt;Behavior Driven anyone?&lt;/h2&gt;
+
+&lt;p&gt;Quite amazingly the &lt;em&gt;section&lt;/em&gt;-based design allows to use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;-flavored syntax without having to
+add any implementation. Here is an example of how it can be used:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;SCENARIO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;BitstreamTest: read bits from stream&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;[getters]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;GIVEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;A Bitstream with 1 byte of data&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;BitstreamReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BitstreamReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;WHEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;we set the leftmost bit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;THEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;we should get 1 when reading 1 bit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;REQUIRE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Will produce an output something like that:&lt;/p&gt;
+
+&lt;pre class=&quot;terminal&quot;&gt;
+&lt;span class=&quot;prompt&quot;&gt;tmp&lt;/span&gt; &amp;gt;
+Scenario: BitstreamTest: read bits from stream
+     Given: A Bitstream with 1 byte of data
+      When: we set the leftmost bit
+      Then: we should get 1 when reading 1 bit
+    ...
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;SCENARIO&lt;/code&gt; is merely a synonym for &lt;code&gt;TEST_CASE&lt;/code&gt;, &lt;code&gt;GIVEN&lt;/code&gt; and &lt;code&gt;WHEN&lt;/code&gt; are synonyms for &lt;code&gt;SECTION&lt;/code&gt;. So
+simple but results in a beautiful DSL.&lt;/p&gt;
+
+&lt;h2 id=&quot;simplicity-all-the-way&quot;&gt;Simplicity all the way&lt;/h2&gt;
+
+&lt;p&gt;In contrast to other Unit-testing frameworks, &lt;a href=&quot;https://github.com/philsquared/Catch&quot;&gt;Catch&lt;/a&gt; does not offer the usual selection of assert
+macros but manages to get away with basically just 2 kinds: &lt;code&gt;REQUIRE&lt;/code&gt; and &lt;code&gt;CHECK&lt;/code&gt;.  &lt;code&gt;REQUIRE&lt;/code&gt;
+evaluates a boolean expression and stops the tests as soon as there is an assertion failure. &lt;code&gt;CHECK&lt;/code&gt;
+does the same thing but keeps the tests going, reporting what went wrong in the end. And the reports
+you get are even really specific, not just something like the &lt;em&gt;”…expected True but was False…“&lt;/em&gt;
+kind of junk.&lt;/p&gt;
+
+&lt;pre class=&quot;terminal&quot;&gt;
+&lt;span class=&quot;prompt&quot;&gt;tmp&lt;/span&gt; &amp;gt;
+...
+test/BitstreamTest.cpp:31: FAILED:
+  REQUIRE( 0b1 == bs-&amp;gt;get&amp;lt;2&amp;gt;() )
+with expansion:
+  1 == 3
+...
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;command-line-tool&quot;&gt;Command line Tool&lt;/h2&gt;
+
+&lt;p&gt;With the executable you get has a decent command line parser built in that gives you a lot of
+options. Rather then to just execute every test-case, you can select the cases to be executed using
+a simple glob-like pattern (e.g. &lt;code&gt;put*&lt;/code&gt; matches tests starting with &lt;code&gt;put&lt;/code&gt;, &lt;code&gt;~put*&lt;/code&gt; everything else).&lt;br /&gt;
+Another option I really like is the &lt;code&gt;--list&lt;/code&gt; option, which tells you about all available tests.
+Almost a little bit like &lt;code&gt;rake -T&lt;/code&gt; is used to display the available tasks in a rakefile.  &lt;code&gt;--tags&lt;/code&gt;
+is similar but shows the available tags instead (test-cases can be tagged with multiple strings
+which makes it very convenient to restrict the executed test-cases, e.g. to just run the tests that
+deal with insertion etc.).&lt;br /&gt;
+By default &lt;a href=&quot;https://github.com/philsquared/Catch&quot;&gt;Catch&lt;/a&gt; is very quiet and does not report on successful test-cases. Sometimes it’s
+nice to see them as well so you can use the &lt;code&gt;-s&lt;/code&gt; or &lt;code&gt;--success&lt;/code&gt; option to do so.&lt;br /&gt;
+There are a lot more options to explore, here are the ones of the current version:&lt;/p&gt;
+
+&lt;pre class=&quot;terminal&quot;&gt;
+&lt;span class=&quot;prompt&quot;&gt;tmp&lt;/span&gt; &amp;gt; test_executable -h
+Catch v1.0 build 53
+usage:
+  bitstream.exe [&amp;lt;test name, pattern or tags&amp;gt; ...] [options]
+
+where options are:
+  -?, -h, --help               display usage information
+  -l, --list-tests             list all/matching test cases
+  -t, --list-tags              list all/matching tags
+  -s, --success                include successful tests in output
+  -b, --break                  break into debugger on failure
+  -e, --nothrow                skip exception tests
+  -i, --invisibles             show invisibles (tabs, newlines)
+  -o, --out &amp;lt;filename&amp;gt;         output filename
+  -r, --reporter &amp;lt;name&amp;gt;        reporter to use (defaults to console)
+  -n, --name &amp;lt;name&amp;gt;            suite name
+  -a, --abort                  abort at first failure
+  -x, --abortx &amp;lt;no. failures&amp;gt;  abort after x failures
+  -w, --warn &amp;lt;warning name&amp;gt;    enable warnings
+  -d, --durations &amp;lt;yes/no&amp;gt;     show test durations
+  -f, --input-file &amp;lt;filename&amp;gt;  load test names to run from a file
+  --list-test-names-only       list all/matching test cases names only
+  --list-reporters             list all reporters
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;give-it-a-try&quot;&gt;Give it a Try!&lt;/h2&gt;
+
+&lt;p&gt;Catch might not be the test-framework with the most features but it certainly brings a fresh new
+approach to the table. It’s trivial to setup and use and that alone should be a reason to use it.
+From the limited time I spent playing with it I already found it has given me some nice benefits. I
+plan to use it even more in the future.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 06 Dec 2014 00:00:00 +0100</pubDate>
+        <link>http://blog.coldflake.com/posts/Testing-C++-with-a-new-Catch</link>
+        <guid isPermaLink="true">http://blog.coldflake.com/posts/Testing-C++-with-a-new-Catch</guid>
+        
+        <category>C++</category>
+        
+        <category>testing</category>
+        
+        
+      </item>
     
       <item>
         <title>Choosing the Type of your Types</title>
@@ -2942,188 +3116,6 @@ exactly what I need.&lt;/p&gt;
         <category>unix</category>
         
         <category>bash</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>QuickChecking C++ Code</title>
-        <description>&lt;p&gt;A friend of mine pointed out a &lt;a href=&quot;http://vimeo.com/42751120&quot;&gt;recent talk&lt;/a&gt; by John Hughes that describes a how &lt;a href=&quot;http://www.volvo.com&quot;&gt;Volvo&lt;/a&gt; is using &lt;a href=&quot;http://www.erlang.org&quot;&gt;Erlang&lt;/a&gt; and more in particular &lt;a href=&quot;http://en.wikipedia.org/wiki/QuickCheck&quot;&gt;Quickcheck&lt;/a&gt; to find bugs in automotive software systems. While the talk is rather boring the topic is actually quite fascinating! And since I’m … let’s say acquainted with the automotive industry, it’s especially good to see a company like Volvo picking up on some modern software ideas.&lt;br /&gt;
-I’ve long had a affection for Quickcheck as it is the testing tool of choice for testing haskell programs. But in my day job I mostly do embedded programming in C++, in an environment where errors are hardly tolerated. Having a solid suite of unit tests in place can go a long way in ensuring the expected program behavior. And since I like testing this is actually &lt;a href=&quot;/posts/2011-07-11-gtest.html&quot;&gt;fun to do&lt;/a&gt;.
-Quickcheck allows for quite a different approach to testing: you need to formulate properties of a program and that Quickcheck can then verify them for you by generating valid but random input data and automatically checking the properties for this input. This is one of &lt;strong&gt;&lt;em&gt;the&lt;/em&gt;&lt;/strong&gt; reasons why I love programming in haskell. Once you get the hang of it you will not want to miss it anymore.&lt;/p&gt;
-
-&lt;h3 id=&quot;need-for-extensive-testing&quot;&gt;Need for extensive Testing&lt;/h3&gt;
-
-&lt;p&gt;For a recent project I had to implement a service in C++ that could be used by a number of different clients whose operation depends on the current voltage level of the battery they are running on. Those clients need to react properly if the voltage drops below a certain level or exceeds an upper threshold.
-Seems to be pretty straight forward. But as always there are details that complicate matters:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Complicating Requirements&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;&lt;em&gt;Registration:&lt;/em&gt; clients are allowed to register and unregister during all times&lt;/li&gt;
-    &lt;li&gt;&lt;em&gt;Threshold:&lt;/em&gt; each client can specify her own levels for either a lower threshold, an upper threshold, or both&lt;/li&gt;
-    &lt;li&gt;&lt;em&gt;Timeouts:&lt;/em&gt; clients can configure a timeout to specify how long an such an exceptional situation would need to prevail in order to get a notification&lt;/li&gt;
-    &lt;li&gt;&lt;em&gt;Hysteresis:&lt;/em&gt; when recovering from over/under-voltage clients can specify an &lt;a href=&quot;http://en.wikipedia.org/wiki/Hysteresis#Control_systems&quot;&gt;hysteresis&lt;/a&gt; to prevent a situation where it would be notified too often when the voltage level drifts around the trigger level&lt;/li&gt;
-    &lt;li&gt;…&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;When implementing something like this service I tend to do a lot of unit-testing to verify correct behavior. But when the parameters of the system under test become too many it will soon become impractical to cover all possible situations with an unit-test.
-This is actually some indication that now will trigger my &lt;em&gt;quickcheck&lt;/em&gt;-infiltrated brain to begin formulating properties of the system, e.g.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;circumstances under which clients will definitely have received notification&lt;/li&gt;
-  &lt;li&gt;situations in which a client that is registered will not be notified when the voltage crosses the threshold&lt;/li&gt;
-  &lt;li&gt;invariants considering the (de-)registration&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;quickcheck-to-the-rescue&quot;&gt;Quickcheck to the Rescue&lt;/h3&gt;
-
-&lt;p&gt;Quickcheck is a valuable companion when it comes to generating a sequence of inputs that will surface weak spots in the implementation. In case of such a control-system, the inputs are actually a series of events like&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a change in the voltage level&lt;/li&gt;
-  &lt;li&gt;a registration or de-registration of a client&lt;/li&gt;
-  &lt;li&gt;a timeout event that will trigger client notification&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A stream of events will describe the behavior of the system over time. And this is what we can use to bring in Quickcheck.
-Defining some data-types and a way to generate valid random data for those types will be necessary to enable Quickcheck to work it’s magic and find some nasty test series that will stress the system.&lt;br /&gt;
-Let’s say we want to check the system behavior when the current is slowly rising. So we need to generate some random event stream that simulates an increasing voltage while different clients with random timeouts randomly register and unregister. So first thing that is needed is a way to generate those clients. That can be done by defining an &lt;code&gt;Arbitrary&lt;/code&gt; instance for clients:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span class=&quot;kr&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;VoltageListener&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;VL&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;deriving&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Arbitrary&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;VoltageListener&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;where&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;arbitrary&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;debounce&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;hyst&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;VL&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debounce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hyst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;With that in place we now can define &lt;code&gt;Arbitrary&lt;/code&gt; instances for different streams, e.g. for a rising voltage &lt;a href=&quot;https://gist.github.com/3865403#file_voltage_tests.hs&quot;&gt;(see VoltageTests.hs for more details)&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span class=&quot;kr&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SlowRisingCurve&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SlowRising&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;VoltageListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;deriving&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Arbitrary&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SlowRisingCurve&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;where&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;arbitrary&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;vs&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eventList&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;350&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;listener&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arbitrary&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SlowRising&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listener&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cutAfter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;eventList&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Gen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;cutAfter&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;::&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;letting-quickcheck-work-its-magic&quot;&gt;Letting Quickcheck work it’s Magic&lt;/h3&gt;
-
-&lt;p&gt;Let’s see what kind of events will be generated by quickcheck:&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/quickcheck/slowlyRising.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Not too bad. But what else is a realistic scenario? Maybe one where the voltage level stays more or less the same but has some occasional drops due to some loads that are put in the circuit.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/quickcheck/short_drops.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Also quite realistic is the simulation of a bleeding battery where the current slowly approaches zero.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/quickcheck/slowlyDeclining.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And here is one that simulates a battery that is getting charged with a pause in between.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/quickcheck/riseFallRise.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;connecting-haskell-to-c&quot;&gt;Connecting Haskell to C++&lt;/h3&gt;
-
-&lt;div class=&quot;jumbotron&quot;&gt;
-
-
-&lt;h3 id=&quot;linking-issues&quot;&gt;Linking Issues&lt;/h3&gt;
-
-&lt;p&gt;It can be a little tricky to have ghc link all the code, especially with C++ since the C++ runtime
-is also needed (don’t forget the &lt;em&gt;-lstdc++&lt;/em&gt; and &lt;em&gt;-lc++&lt;/em&gt; as linker flags for ghc). What works best
-for me is to build static libraries for the C++ code I want to test, for the C wrappers and test
-  drivers, and tell ghc to link those.&lt;/p&gt;
-
-
-&lt;/div&gt;
-
-&lt;p&gt;So far so good…but since there is no C++ version of Quickcheck, the task remains to bridge the Quickcheck testing facilities with the C++ code that needs to be tested. So in the final setup it is desirable to call the C++ code from haskell, using haskell as the test driver that is testing the C++ functionality. This can easily be achieved by using the &lt;a href=&quot;http://www.haskell.org/haskellwiki/Foreign_Function_Interface&quot;&gt;FFI&lt;/a&gt;, haskell’s way to connect with native code.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/quickcheck/pipe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the simplest case we just need to call a C-function that only takes primitive types as arguments and only returns primitive types &lt;a href=&quot;https://gist.github.com/3865403#file_voltage_ffi.hs&quot;&gt;(VoltageFFI.hs)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span class=&quot;nf&quot;&gt;foreign&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ccall&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;ftest.h voltageEvent&amp;quot;&lt;/span&gt;
-     &lt;span class=&quot;n&quot;&gt;c_voltageEvent&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CInt&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The corresponding function in the C-wrapper then looks like this &lt;a href=&quot;https://gist.github.com/3865403#file_c_interface.h&quot;&gt;(c_interface.h)&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;C&amp;quot;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;voltageEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Here it is important to declare the C-functions as &lt;code&gt;extern &#39;C&#39;&lt;/code&gt; to avoid name mangling in the C++ compiler and allow haskell to find the symbol. In the implementation the final call the the C++ code can now be issued. &lt;a href=&quot;https://gist.github.com/3865403#file_c_interface.cpp&quot;&gt;(c_interface.cpp)&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestExecuter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;VoltageManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;TestExecuter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getTestExecuter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pTestExecuter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pTestExecuter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestExecuter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pTestExecuter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// implementation of FFI&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;getTestExecuter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;voltageManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;voltageChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;formulating-properties&quot;&gt;Formulating Properties&lt;/h3&gt;
-
-&lt;p&gt;The only thing missing in the mix are the actual tests that we want to run. In Quickcheck this is done by formulating &lt;code&gt;properties&lt;/code&gt;. Each property takes a datatype that is an instance of the &lt;code&gt;Arbitrary&lt;/code&gt; typeclass so that quickcheck knows how to generate usecases. It’s very handy that the generated testinputs can further be restricted in the properties (e.g. we &lt;em&gt;only&lt;/em&gt; want inputs that specify at least one listener). And finally it’s important to use the &lt;a href=&quot;http://www.cse.chalmers.se/~rjmh/Papers/QuickCheckST.ps&quot;&gt;monadic interface of Quickcheck&lt;/a&gt; since the code we are testing is only available through FFI and therefore lives in the IO Monad.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span class=&quot;nf&quot;&gt;prop_neverMissLeftUndervoltage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;SlowRising&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listeners&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listeners&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;monadicIO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forM_&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listeners&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addListenerC&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sendEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;forM_&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listeners&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;do&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;finalState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enteredCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leftCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageStateC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;finalState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normal_voltage&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enteredCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leftCount&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_tearDown&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;quickCheck&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prop_neverMissLeftUndervoltage&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;quickCheck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;With this basic setup it’s now straight forward to implement the code for the quickcheck test-driver on the C++ side. Quickcheck will generate event-sequences like [&lt;code&gt;VoltageUpdate&lt;/code&gt;, &lt;code&gt;AddListener&lt;/code&gt;, &lt;code&gt;VoltageUpdate&lt;/code&gt;, &lt;code&gt;VoltageUpdate&lt;/code&gt;, &lt;code&gt;Timeout&lt;/code&gt;, &lt;code&gt;VoltagUpdate&lt;/code&gt;, &lt;code&gt;AddListener&lt;/code&gt;, &lt;code&gt;RemoveListener&lt;/code&gt;,…].&lt;br /&gt;
-Using the C-wrapper these events will end up triggering the C++ implementation. After a series of events has been executed we examine the state of the C++ world and assert that everything matches our expectations … and see the beloved output from Quickcheck:&lt;/p&gt;
-
-&lt;pre class=&quot;terminal&quot;&gt;
-+++ OK, passed 100 tests.
-+++ OK, passed 100 tests.
-+++ OK, passed 100 tests.
-+++ OK, passed 100 tests.
-...
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;is-it-worth-the-effort&quot;&gt;Is it worth the Effort?&lt;/h3&gt;
-
-&lt;p&gt;Turned out that I really missed some corner cases in my implementation where timeouts where prematurely discarded. After all, Quickcheck &lt;em&gt;does&lt;/em&gt; indeed turn up very unexpected usecases that are still valid! And like John Hughes does with Erlang it is very much possible to use Quickcheck in haskell for testing native components!&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 11 Oct 2012 00:00:00 +0200</pubDate>
-        <link>http://blog.coldflake.com/posts/quickcheck-testing-c++</link>
-        <guid isPermaLink="true">http://blog.coldflake.com/posts/quickcheck-testing-c++</guid>
-        
-        <category>haskell</category>
-        
-        <category>C++</category>
-        
-        <category>quickcheck</category>
-        
-        <category>testing</category>
         
         
       </item>
