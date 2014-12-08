@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 08:41:34 +0100</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 08:41:34 +0100</lastBuildDate>
+    <pubDate>Mon, 08 Dec 2014 16:22:34 +0100</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 16:22:34 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -126,7 +126,7 @@ with expansion:
 
 &lt;h2 id=&quot;command-line-tool&quot;&gt;Command line Tool&lt;/h2&gt;
 
-&lt;p&gt;With the executable you get has a decent command line parser built in that gives you a lot of
+&lt;p&gt;With the executable you get a decent command line parser built in that gives you a lot of
 options. Rather then to just execute every test-case, you can select the cases to be executed using
 a simple glob-like pattern (e.g. &lt;code&gt;put*&lt;/code&gt; matches tests starting with &lt;code&gt;put&lt;/code&gt;, &lt;code&gt;~put*&lt;/code&gt; everything else).&lt;br /&gt;
 Another option I really like is the &lt;code&gt;--list&lt;/code&gt; option, which tells you about all available tests.
