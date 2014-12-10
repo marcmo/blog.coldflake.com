@@ -72,7 +72,7 @@ request a predefined `main` function, and write your test-case.
 
 ## Behavior Driven anyone?
 
-Quite amazingly the *section*-based design allows to use a [BDD]-flavored syntax without having to
+Quite amazingly the *section*-based design lets you use a [BDD]-flavored syntax without having to
 add any implementation. Here is an example of how it can be used:
 
 {% highlight cpp %}
@@ -171,6 +171,14 @@ approach to the table. It's trivial to setup and use and that alone should be a 
 From the limited time I spent playing with it I already found it has given me some nice benefits. I
 plan to use it even more in the future.
 
+---
+
+_Edit:_ Someone made me aware of [UnitTest++]. I had a brief look at it but immediately bailed when
+I saw the comment in the docs:
+
+> "Pre-requisites: While there are currently some bundled makefiles and
+> projects, UnitTest++ is primarily built and supported using CMake."
+
 
 [Catch]:https://github.com/philsquared/Catch
 [Boost.Test]:(http://www.boost.org/doc/libs/1_49_0/libs/test/doc/html/index.html)
@@ -182,3 +190,4 @@ plan to use it even more in the future.
 [npm]:https://www.npmjs.org/
 [all-in-one-header]:https://raw.githubusercontent.com/philsquared/Catch/master/single_include/catch.hpp
 [BDD]:http://en.wikipedia.org/wiki/Behavior-driven_development
+[UnitTest++]:https://github.com/unittest-cpp/unittest-cpp
