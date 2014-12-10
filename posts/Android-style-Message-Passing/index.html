@@ -1,30 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
-
     <title>Android Style Message Passing - Coldflake Blog</title>
-
     <link rel="canonical" href="http://blog.coldflake.com/posts/Android-style-Message-Passing">
-
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/coldflake.css">
-
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
-
     <!-- iconfonts -->
     <style type="text/css" media="screen, print">
         @font-face {
@@ -38,29 +30,23 @@
           font-style: normal;
         }
     </style>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-21532991-3', 'auto');
       ga('require', 'displayfeatures');
       ga('send', 'pageview');
     </script>
 </head>
-
-
 <body>
-
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -77,214 +63,20 @@
               <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
             </a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/">Home</a>
                 </li>
-                
-                    
-                
-                    
-                      
                   <li><a href="/about">About</a></li>
-                      
-                    
-                
-                    
-                
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
                   <li><a href="/tag">Tags</a></li>
-                      
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
-
-
     <!-- Post Header -->
 <header class="intro-header" style="background-image: url('/img/snowtrain.jpg')">
     <div class="container">
@@ -292,18 +84,12 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <h1>Android Style Message Passing</h1>
-                    
                     <h2 class="subheading">Communicating between Threads using Message Queues.</h2>
-                    
                     <span class="meta">Posted on February 1, 2014
                       <i class="icon-tags"></i> 
-                      
                       <a href="/tag/android">android</a>, 
-                      
                       <a href="/tag/C++">C++</a>, 
-                      
                       <a href="/tag/concurrency">concurrency</a>, 
-                      
                       <a href="/tag/ipc">ipc</a>
                       .
                     </span>
@@ -312,18 +98,15 @@
         </div>
     </div>
 </header>
-
 <!-- Post Content -->
 <article>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
 				<p>Last week I finished a substantial rewrite of the concurrency portions in the code of a fairly
 complex embedded system we currently develop at work. It has been quite a roller-coaster ride and I
 went back and forth between moments of joy and situations where I would tear my hair out. In the end
 I’m quite happy with the result and want to reflect about some of the things I learned.</p>
-
 <p>Our target platform is very restricted concerning memory footprint and CPU and we have only a very
 basic operating system. Thankfully we can use C++ (with some restrictions) so it’s a rather pleasant
 development platform. The OS has support for <a href="http://en.wikipedia.org/wiki/Preemption_(computing)">preemptive scheduling</a> of computational execution
@@ -333,15 +116,10 @@ priorities that only change briefly when <a href="http://en.wikipedia.org/wiki/P
 style problems. Most of the threads are not allowed to block as they need to guarantee some realtime
 behavior. Other threads run with a lower priority and might execute some blocking and potentially
 long-running IO function (e.g. write to persistent memory).  </p>
-
 <h2 id="i-classicon-threadi-thread-communication"><i class="icon-thread"></i> Thread Communication</h2>
-
 <h3 id="using-shared-memory">Using Shared Memory</h3>
-
 <div class="jumbotron">
-
 <h3>Shared Memory</h3>
-
 <table class="table borderless">
   <tbody>
     <tr class="odd">
@@ -366,9 +144,7 @@ long-running IO function (e.g. write to persistent memory).  </p>
     </tr>
   </tbody>
 </table>
-
 </div>
-
 <p>Threads can communicate using shared memory. But that needs some form of synchronization to avoid
 <a href="http://en.wikipedia.org/wiki/Race_condition">race conditions</a>. Every access to a shared mutable chunk of data needs to be protected to enforce
 the correct sequence of writes and reads. This can be achieved using some form of lock mechanism but
@@ -380,15 +156,12 @@ the API calls might not need to offer a thread-safe interface → less chance to
 (<a href="/posts/2014-01-12-C++-delegates-on-steroids.html">delegates</a> are especially well suited). That’s the kind of approach Android follows with
 <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTasks</a>. The motivation here is that the UI must not be manipulated from any other context but
 the UI thread.</p>
-
 <p>The approach we took so far is just that: try to reduce the critical sections to a minimum by
 pushing delegates around and executing them in other threads. We also implemented our own version of
 futures (unfortunately our <a href="http://www.windriver.com/products/development_suite/wind_river_compiler/">stupid compiler</a> does not feel the need to support C++11 features yet)
 which is a huge help to avoid the asynchronous <em>callback-hell</em>. But futures have a noted problem:
 they introduce blocking into the system which is highly undesirable!</p>
-
 <h3 id="communicating-with-messages">Communicating with Messages</h3>
-
 <p>Using messages to invoke a certain behavior might sound unfamiliar to most object oriented
 programmers today but is actually one of the original concepts behind object orientation. Java or
 C++ hide the messaging idea behind the scenes, smalltalk makes no fuss about it: you use messages to
@@ -396,9 +169,7 @@ communicate. But those forms of communication are <em>synchronous</em>, i.e. the
 receiver has finished executing code.<br />
 In smalltalk sending messages has the form of <code>[object] [message]</code>. Here is a small example from
 smalltalk where we send the message factorial to 42:</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="mi">42</span> <span class="n">factorial</span></code></pre></div>
-
 <p>For making use of message passing in a concurrent environment, it needs to be <em>asynchronous</em> (→
 non-blocking). The caller sends a message and is done. If some information needs to be transfered
 back to the caller, this has to happen in another message. To be able to work on messages, the
@@ -408,44 +179,31 @@ Message-queues are traditionally a tool for synchronizing access to shared resou
 work to another thread, some form of executable units can be added to the queue by multiple caller
 threads. A worker-thread picks up those units sequentially and executes them. The only thing that
 needs to be synchronized here is the access to the message-queue. Here is the general idea:</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// caller-thread</span>
 <span class="n">messageQueue</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">workItem</span><span class="p">)</span>
-
 <span class="c1">// worker-thread</span>
 <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">done</span><span class="p">)</span>
   <span class="n">workItem</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1">//will block until work is available</span>
   <span class="n">workItem</span><span class="p">()</span> <span class="c1">//execute the code</span></code></pre></div>
-
 <p>This model is famously used by Erlang and even has the potential to be used for distributed systems
 since the communication threads/processes do not need to share the same address space. All the
 locking is happening under the hood (the message queue takes care of this) so the programmer
 does not need to worry about it.</p>
-
 <h2 id="message-passing-in-android">Message Passing in Android</h2>
-
 <p>Android has picked up on this idea and makes use of it in form of the <a href="http://developer.android.com/reference/android/os/package-summary.html">looper framework</a> which you
 can find in multiple places inside the Android source code. This framework is a very handsome form
 of the <a href="http://en.wikipedia.org/wiki/Active_object">active object pattern</a> that is primarily used to enforce a non-blocking and responsive
 UI-thread. It is mainly implemented in the classes <strong>Looper</strong>, <strong>Handler</strong> and <strong>MessageQueue</strong>.  </p>
-
 <div class="jumbotron">
-
-
 <h3 id="active-object">Active Object</h3>
-
 <p>For those who are familiar with the active object pattern, here is an overview of how the concepts
 match to the Android Looper framework:</p>
-
 <ul>
   <li><em>Looper</em> corresponds to the <em>Scheduler</em></li>
   <li><em>Handler</em> to the <em>Servant</em></li>
   <li><em>MessageQueue</em> to the <em>ActivationList</em></li>
 </ul>
-
-
 </div>
-
 <p>For me the most natural way to grasp those concepts was to associate the motivation behind this
 framework with the implementation details: we are running on a client thread and want to have code
 executed in another thread context.<br />
@@ -456,15 +214,11 @@ it. That’s the job of the <strong>Looper</strong>.<br />
 Once the Looper has popped of a message of the message-queue, it needs to know <em>who</em> should process that message: and here we get to the
 <strong>Handler</strong>.<br />
 There is no need for explicit locking, synchronization happens implicitly inside the message-queue.</p>
-
 <p><img class="img-responsive" src="/img/looper/Looper.png" alt="" /></p>
-
 <p>One looper has one message-queue, each message has a handler and each handler is associated with
 exactly one looper. The handler is bound to it’s looper at construction time and will only be executing
 in the thread the looper is running in.</p>
-
 <h2 id="message-passing-in-c">Message Passing in C++</h2>
-
 <p>The Android looper framework is all java code which I cannot use. But fortunately <a href="http://himmele.blogspot.de/">a colleague</a> took
 the time to do an efficient <a href="https://github.com/Himmele/Mindroid.ecpp">C++ port</a> which is easily portable for multiple platforms. This was just the
 right starting point for our project and we could reuse the code with only some minor modifications
@@ -472,7 +226,6 @@ right starting point for our project and we could reuse the code with only some 
 Each incoming message features a reference to the handler who is needed to perform a service.
 The looper code shows what’s going on. Here is the main workhorse-function that drives the whole
 asynchronous message processing:</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// static function</span>
 <span class="kt">void</span> <span class="n">Looper</span><span class="o">::</span><span class="n">loop</span><span class="p">()</span>
 <span class="p">{</span>
@@ -495,27 +248,20 @@ asynchronous message processing:</p>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
-
 <div class="jumbotron">
-
 <h3 id="condition-variable">Condition Variable</h3>
-
 <p>Sometimes threads need to wait for some condition to become true. A condition-variable is a
 synchronization primitive that can be used for that purpose: block until some other thread signals
 or a timeout occurs. To use the wait function, the thread first needs to acquire a lock. This lock
 will be released by the condition-variable as long as the thread is halted. Once the
 condition-variable notifies and the thread continues, the lock is re-acquired.</p>
-
-
 </div>
-
 <p>Since a looper is specific to the thread it is running on, the <em>loop</em> function can be static and figures
 out which looper is running in the current thread (<em>myLooper</em>). Quite similar to the message queue
 pseudo code sample from above, the looper loops through the message queue to schedule the next
 request. For each dequeued message, it reaches for the handler associated with it to
 process the message. Since each message knows about it’s handler, it’s quite natural to have
 multiple handlers that each are responsible for different services.</p>
-
 <p>The message queue itself works on a linked list of messages. Most of the times the queue itself is
 implemented as a priority queue or a simple FIFO. It’s main functions are enqueue and dequeue.<br />
 An enqueue is triggered through client code, the dequeue happens on the looper (worker) thread and
@@ -523,7 +269,6 @@ might even block when there is nothing left in the queue. A condition variable i
 synchronization. In case the message-queue in a looper is empty it will block on a dequeue by using
 a condition variable to <em>wait</em>. The calling thread will trigger a <em>notify</em> for the condition
 variable and will get the blocked thread and the looper inside going again.</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">bool</span> <span class="n">MessageQueue</span><span class="o">::</span><span class="n">enqueueMessage</span><span class="p">(</span><span class="n">Message</span><span class="o">&amp;</span> <span class="n">message</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">execTimestamp</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// check if the message is valid and we are not quitting</span>
@@ -533,7 +278,6 @@ variable and will get the blocked thread and the looper inside going again.</p>
     <span class="n">mCondVar</span><span class="p">.</span><span class="n">notify</span><span class="p">();</span>
     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span>
-
 <span class="n">Message</span><span class="o">*</span> <span class="n">MessageQueue</span><span class="o">::</span><span class="n">dequeueMessage</span><span class="p">(</span><span class="n">Message</span><span class="o">&amp;</span> <span class="n">message</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
@@ -544,14 +288,12 @@ variable and will get the blocked thread and the looper inside going again.</p>
         <span class="p">{</span>
             <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
         <span class="p">}</span>
-
         <span class="kt">uint64_t</span> <span class="n">now</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">::</span><span class="n">monotonicTime</span><span class="p">();</span>
         <span class="c1">// getNextMessage returns next due message or NULL if nothing is due</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">getNextMessage</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">return</span> <span class="o">&amp;</span><span class="n">message</span><span class="p">;</span>
         <span class="p">}</span>
-
         <span class="k">if</span> <span class="p">(</span><span class="n">mHeadMessage</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// there are messges in the queue</span>
@@ -568,7 +310,6 @@ variable and will get the blocked thread and the looper inside going again.</p>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
-
 <p>For the client, sending a message instead of calling a blocking function requires some fundamental
 changes in the the way the code is structured. Functionality is no longer specified by abstract base
 classes and virtual functions but through a set of predefined integral values that are used to type
@@ -576,12 +317,10 @@ messages. Those message-ids (or event-ids) are needed so that the Handler can di
 and invoke the required functionality.  For the result the caller will only be notified in an
 asynchronous fashion (if needed at all).<br />
 A client that wants to send a message first needs to <em>obtain</em> a message from the receiving Handler.</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Handler</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
     <span class="p">...</span>
-
     <span class="n">Message</span><span class="o">*</span> <span class="n">obtainMessage</span><span class="p">(</span><span class="n">Message</span><span class="o">&amp;</span> <span class="n">message</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int32_t</span> <span class="n">what</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="n">Message</span><span class="o">::</span><span class="n">obtain</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">what</span><span class="p">);</span>
@@ -594,18 +333,15 @@ A client that wants to send a message first needs to <em>obtain</em> a message f
     <span class="kt">bool</span> <span class="nf">removeMessages</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">what</span><span class="p">);</span>
     <span class="p">...</span>
 <span class="p">};</span></code></pre></div>
-
 <p>For obtaining a message from a handler we need to pass in another message object which is a nice way
 to enforce the responsibility of the resource management for messages on the caller side. Here a
 message will receive the reference to it’s handler. This message can then be sent (<em>sendMessage</em>)
 which triggers the whole looper mechanism and asynchronously ends up in the <em>handleMessage</em> function
 of the handler.  This <em>handleMessage</em> function will finally dispatch on the message-id which got
 it’s value from the <em>what</em> argument in <em>obtainMessage</em>.</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomeHandler</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Handler</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-
     <span class="k">virtual</span> <span class="kt">void</span> <span class="n">handleMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">Message</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">switch</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">what</span><span class="p">)</span>
@@ -618,25 +354,19 @@ it’s value from the <em>what</em> argument in <em>obtainMessage</em>.</p>
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">};</span></code></pre></div>
-
 <p>Notice that the message passing approach also allows to send messages to ourselves if we are a
 handler. That way we get a <em>timer</em> mechanism for free by sending a message obtained from <code>*this</code>.</p>
-
 <h2 id="programming-in-message-passing-style">Programming in Message Passing Style</h2>
-
 <p>As already pointed out, the interaction patterns of code using asynchronous message passing instead
 of conventional function calls are drastically different. There are no direct return values and code
 that used to make one function call after another has to be factored into multiple functions that in
 turn get called with the results.</p>
-
 <p><img class="img-responsive" src="/img/looper/messagePassing.png" alt="" /></p>
-
 <p>And even more, it’s no longer possible to use stack allocated variables as arguments to the function
 call since there won’t be any stack after our function ends.  One way around that is to use heap
 allocated structs that pack the information for the function call together and attach those to the
 message. Here is an example of a formerly synchronous call where the execution get’s moved to a
 background thread. The synchronous version looks like this:</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">client</span><span class="o">::</span><span class="n">myFunction</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="kt">bool</span> <span class="n">res</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span>
@@ -651,15 +381,12 @@ background thread. The synchronous version looks like this:</p>
     <span class="p">}</span>
     <span class="p">...</span>
 <span class="p">}</span></code></pre></div>
-
 <p>Using a struct to transport all the parameter information looks like this:</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// parameter pack</span>
 <span class="k">struct</span> <span class="n">encrypt_call</span>
 <span class="p">{</span>
     <span class="p">...</span>
     <span class="c1">// constructor etc.</span>
-
     <span class="n">uint8</span><span class="o">*</span> <span class="n">data2encrypt</span><span class="p">;</span>
     <span class="n">uint16</span> <span class="n">dataLength</span><span class="p">;</span>
     <span class="n">uint16</span> <span class="n">maxEncryptedLength</span><span class="p">;</span>
@@ -667,9 +394,7 @@ background thread. The synchronous version looks like this:</p>
     <span class="n">uint16</span><span class="o">*</span> <span class="n">encryptedDataLength</span><span class="p">;</span>
     <span class="kt">bool</span> <span class="n">success</span><span class="p">;</span>
 <span class="p">};</span>
-
 <span class="c1">// usage</span>
-
 <span class="kt">void</span> <span class="n">client</span><span class="o">::</span><span class="n">myFunction</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="p">...</span>
@@ -679,32 +404,25 @@ background thread. The synchronous version looks like this:</p>
             <span class="n">MAX_LEN_RESULT</span><span class="p">,</span>
             <span class="n">encrypted</span><span class="p">,</span>
             <span class="n">encryptedLength</span><span class="p">);</span>
-
     <span class="c1">// obtain the response message</span>
     <span class="k">this</span><span class="o">-&gt;</span><span class="n">obtainMessage</span><span class="p">(</span><span class="n">responseMessage</span><span class="p">,</span> <span class="n">DATA_ENCRYPTION_FINISHED_EVENT</span><span class="p">);</span>
     <span class="c1">// attach context</span>
     <span class="n">responseMessage</span><span class="p">.</span><span class="n">obj</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">ec</span><span class="p">;</span>
-
     <span class="c1">// obtain the actual message</span>
     <span class="n">myService</span><span class="p">.</span><span class="n">obtainMessage</span><span class="p">(</span><span class="n">message2handler</span><span class="p">,</span> <span class="n">ENCRYPT_DATA_EVENT</span><span class="p">);</span>
     <span class="c1">// attach response message</span>
     <span class="n">message2handler</span><span class="p">.</span><span class="n">obj</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">responseMessage</span><span class="p">;</span>
-
     <span class="c1">// send message will enqueue message in the handler&#39;s message queue</span>
     <span class="n">myService</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">message2handler</span><span class="p">);</span>
     <span class="p">...</span>
 <span class="p">}</span></code></pre></div>
-
 <p>The trick here is to use two messages: one for the request and one for the response. That way we can
 let the handler know who will process the response (remember, each message knows it’s handler). So
 we process the response ourselves and have to implement the <em>Handler</em> interface.</p>
-
 <p><img class="img-responsive" src="/img/looper/messageInMessage.png" alt="" /></p>
-
 <p>Since we are a <em>Handler</em>, we obtain a message from ourselves that we attach to the message we
 obtain from the receiving handler (<em>myService</em>). When the <em>myService</em> object later handles our
 message, it can use the attached message to fire the response.</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">service</span><span class="o">::</span><span class="n">handleMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">Message</span><span class="o">&amp;</span> <span class="n">eventMessage</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">eventMessage</span><span class="p">.</span><span class="n">what</span><span class="p">)</span>
@@ -731,11 +449,9 @@ message, it can use the attached message to fire the response.</p>
         <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
-
 <p>In the worker thread we can finally get all the context for the synchronous call and send back a
 message with the results so that our client can continue. Notice that there is no need for the
 service code to clean up anything since the client can take care of cleaning up itself.</p>
-
 <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="n">client</span><span class="o">::</span><span class="n">handleMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">Message</span><span class="o">&amp;</span> <span class="n">eventMessage</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">eventMessage</span><span class="p">.</span><span class="n">what</span><span class="p">)</span>
@@ -760,12 +476,9 @@ service code to clean up anything since the client can take care of cleaning up 
         <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
-
 <p>Once our client handler receives the response message, it can query the result and clean up the heap
 allocated objects.</p>
-
 <h2 id="welcome-to-async-jungle">Welcome to Async Jungle</h2>
-
 <p>On first sight this asynchronous way of calling functions adds a lot of overhead and complexity.
 Checking results on blocking function calls is no more… for every call we have to switch context
 and loose our stack. And debugging your multi-threaded application is not getting easier: wanna take
@@ -776,41 +489,27 @@ restructured it actually feels nice and tidy again. And in the lack of a full-bl
 debugging purposes can be mitigated somewhat by adding logging facilities in your message queues.<br />
 And another very useful side-effect (especially for memory constraint systems) is that the stack sizes
 actually do not grow as much which allows for a reduced memory footprint.</p>
-
 <h2 id="the-good-the-bad-and-the-ugly">The Good, the Bad and the Ugly</h2>
-
 <p>To completely become aware of the ramifications of the changes introduced for applying the message
 passing paradigm it will probably take some time getting used to it and gaining experience. So far
 our impression is throughout positive. Resource consumption actually went down while all the
 explicit locking has disappeared. The code looks <em>very</em> different but that’s not necessarily a bad
 thing. All in all I’m quite happy with our new concurrency architecture. Thanks to <a href="http://himmele.blogspot.de/">Daniel</a> for
 bringing this approach to my attention and providing such a nice native implementation.</p>
-
-
-
-              
                 <hr>
-
                 <ul class="pager">
-                    
                     <li class="previous">
                     <a href="/posts/C++-delegates-on-steroids" data-toggle="tooltip" data-placement="top" title="C++ Delegates On Steroids"><i class="fa fa-arrow-left"></i> Older</a>
                     </li>
-                    
-                    
                     <li class="next">
                     <a href="/posts/Testing-without-a-Brain" data-toggle="tooltip" data-placement="top" title="Testing Without A Brain">Newer <i class="fa fa-arrow-right"></i></a>
                     </li>
-                    
                 </ul>
             </div>
         </div>
     </div>
 </article>
-
 <hr>
-
-
     <!-- Footer -->
 <footer>
     <div class="container">
@@ -833,7 +532,6 @@ bringing this approach to my attention and providing such a nice native implemen
                             </span>
                         </a>
                     </li>
-                    
                     <li>
                         <a href="https://twitter.com/marcontwit">
                             <span class="fa-stack fa-lg">
@@ -842,8 +540,6 @@ bringing this approach to my attention and providing such a nice native implemen
                             </span>
                         </a>
                     </li>
-                    
-                    
                     <li>
                         <a href="https://github.com/marcmo">
                             <span class="fa-stack fa-lg">
@@ -852,7 +548,6 @@ bringing this approach to my attention and providing such a nice native implemen
                             </span>
                         </a>
                     </li>
-                    
                     <li>
                       <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
                             <span class="fa-stack fa-lg">
@@ -863,23 +558,16 @@ bringing this approach to my attention and providing such a nice native implemen
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014
-                
             </div>
         </div>
     </div>
 </footer>
-
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-
 <script src="/js/moment.min.js "></script>
 <script src="/js/livestamp.min.js "></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
-
-
-
 </body>
-
 </html>
+

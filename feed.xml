@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 16:22:34 +0100</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 16:22:34 +0100</lastBuildDate>
+    <pubDate>Wed, 10 Dec 2014 15:18:20 +0100</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 15:18:20 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -71,7 +71,7 @@ request a predefined &lt;code&gt;main&lt;/code&gt; function, and write your test
 
 &lt;h2 id=&quot;behavior-driven-anyone&quot;&gt;Behavior Driven anyone?&lt;/h2&gt;
 
-&lt;p&gt;Quite amazingly the &lt;em&gt;section&lt;/em&gt;-based design allows to use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;-flavored syntax without having to
+&lt;p&gt;Quite amazingly the &lt;em&gt;section&lt;/em&gt;-based design lets you use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Behavior-driven_development&quot;&gt;BDD&lt;/a&gt;-flavored syntax without having to
 add any implementation. Here is an example of how it can be used:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;SCENARIO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;BitstreamTest: read bits from stream&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;[getters]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -170,6 +170,16 @@ where options are:
 approach to the table. It’s trivial to setup and use and that alone should be a reason to use it.
 From the limited time I spent playing with it I already found it has given me some nice benefits. I
 plan to use it even more in the future.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Edit:&lt;/em&gt; Someone made me aware of &lt;a href=&quot;https://github.com/unittest-cpp/unittest-cpp&quot;&gt;UnitTest++&lt;/a&gt;. I had a brief look at it but immediately bailed when
+I saw the comment in the docs:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Pre-requisites: While there are currently some bundled makefiles and
+projects, UnitTest++ is primarily built and supported using CMake.”&lt;/p&gt;
+&lt;/blockquote&gt;
 
 </description>
         <pubDate>Sat, 06 Dec 2014 00:00:00 +0100</pubDate>

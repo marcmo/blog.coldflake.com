@@ -1,30 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
-
     <title>The Wonders of xargs - Coldflake Blog</title>
-
     <link rel="canonical" href="http://blog.coldflake.com/posts/the-wonders-of-xargs">
-
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/coldflake.css">
-
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
-
     <!-- iconfonts -->
     <style type="text/css" media="screen, print">
         @font-face {
@@ -38,29 +30,23 @@
           font-style: normal;
         }
     </style>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-21532991-3', 'auto');
       ga('require', 'displayfeatures');
       ga('send', 'pageview');
     </script>
 </head>
-
-
 <body>
-
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -77,214 +63,20 @@
               <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
             </a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/">Home</a>
                 </li>
-                
-                    
-                
-                    
-                      
                   <li><a href="/about">About</a></li>
-                      
-                    
-                
-                    
-                
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
-                    
-                
-                    
-                      
                   <li><a href="/tag">Tags</a></li>
-                      
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
-
-
     <!-- Post Header -->
 <header class="intro-header" style="background-image: url('/img/wood.jpg')">
     <div class="container">
@@ -292,14 +84,10 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <h1>The Wonders of xargs</h1>
-                    
                     <h2 class="subheading">Exploring the goodness of xargs, one of the most versatile unix utilities.</h2>
-                    
                     <span class="meta">Posted on July 31, 2011
                       <i class="icon-tags"></i> 
-                      
                       <a href="/tag/unix">unix</a>, 
-                      
                       <a href="/tag/bash">bash</a>
                       .
                     </span>
@@ -308,22 +96,17 @@
         </div>
     </div>
 </header>
-
 <!-- Post Content -->
 <article>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
 				<p><a href="http://www.gnu.org/software/findutils/manual/html_node/find_html/Invoking-xargs.html">xargs</a> is a nice little utility for the command line that I use quite a lot. The basic usecases are pretty simple and it might even be so simple that the wonders of xargs go unnoticed for quite some time.<br />
 <em>xargs</em> is useful whenever you want to apply a command to a list of items in the shell. One really simple example:</p>
-
 <pre class="terminal">
 $ find . -type f | xargs md5
 </pre>
-
 <p>will calculate the md5 checksum of each file in the current directory:</p>
-
 <pre class="terminal">
 MD5 (1.txt) = dfb5cfe29927bb659c380f553eb43131
 MD5 (2.txt) = fd97581244bf2ff3241f977c432f2c0b
@@ -331,85 +114,57 @@ MD5 (3.txt) = 63a79bfa8ff94b772f16a6fea311b9a7
 MD5 (4.txt) = 2e848e59c3a2abe9dd0fe250af7ac2dc
 MD5 (5.txt) = 2098d6fce034058709de9120bd366bee
 </pre>
-
 <p>Here <em>xargs</em> will simply take the output of the <code>find</code> command and feed it to the <code>md5</code> command.<br />
 The output will be fed as one chunk so the md5 command will be invoked like this:</p>
-
 <pre class="terminal">
 $ md5 1.txt 2.txt 3.txt 4.txt 5.txt
 </pre>
-
 <p>If you want xargs to split up the string and feed it one by one to the md5 command, you would need to use the <code>-n</code> option:</p>
-
 <pre class="terminal">
 $ find . -type f -print0 | xargs -0 -n1 md5
 </pre>
-
 <p>Note that <em>xargs</em> will take any string and by default interpret spaces, tabs and newlines as delimiters.</p>
-
 <p>A little more complicated form shows how <em>xargs</em> can take a command where the first parameter is already bound.</p>
-
 <pre class="terminal">
 $ find . -name "*.h" | xargs grep assert
 </pre>
-
 <p>Up to here it’s pretty straight forward since we only had to supply the the last parameter to the command after xargs. But it’s a little more involved when the parameter is not a the end, e.g. in a copy command:</p>
-
 <pre class="terminal">
 $ mkdir tmp
 $ find . -type f -name "*.txt" | xargs -I xxx cp xxx tmp
 </pre>
-
 <p>This will find all files ending in “.txt” and copy them into a temporary directory.<br />
 Here the <code>-I</code> option allows to define a replacement string for the following command. So each input is bound to the variable <code>xxx</code> and can then be used in the copy command.<br />
 Note that this will not work for files that contain spaces! To make it work with such nasty filenames we have to use the <code>-0</code> option:</p>
-
 <pre class="terminal">
 $ find . -type f -name "*.txt" -print0 | xargs -0 -I xxx cp xxx tmp
 </pre>
-
 <p>One very useful option is <code>-p</code>. This will prompt the user before executing each command invocation which sometimes is what you want.</p>
-
 <pre class="terminal">
 $ find old -type f -name "*.txt" -print0 | xargs -0 -n1 -p rm
 </pre>
 <p>will find all textfiles in the <code>old</code> directory, feed each of these to xargs (using the <code>-n1</code> option) and remove them after prompting the user.</p>
-
 <p>It’s good to know about <em>xargs</em> and how to use it… It definitely WILL come in handy in lot’s of situations.<br />
 One final example (‘cause it’s kind of a favorite of mine):</p>
-
 <pre class="terminal">
 $ find . -type d -name '.svn' -print0 | xargs -0 rm -rdf
 </pre>
-
 <p>Will delete all the @*#!%-.svn folders recursivly from the current directory! Gone and forever!<br />
 Long live the git!</p>
-
-
-
-              
                 <hr>
-
                 <ul class="pager">
-                    
                     <li class="previous">
                     <a href="/posts/gtest" data-toggle="tooltip" data-placement="top" title="Testing is fun again"><i class="fa fa-arrow-left"></i> Older</a>
                     </li>
-                    
-                    
                     <li class="next">
                     <a href="/posts/hettsProblem" data-toggle="tooltip" data-placement="top" title="Lunch break coding">Newer <i class="fa fa-arrow-right"></i></a>
                     </li>
-                    
                 </ul>
             </div>
         </div>
     </div>
 </article>
-
 <hr>
-
-
     <!-- Footer -->
 <footer>
     <div class="container">
@@ -432,7 +187,6 @@ Long live the git!</p>
                             </span>
                         </a>
                     </li>
-                    
                     <li>
                         <a href="https://twitter.com/marcontwit">
                             <span class="fa-stack fa-lg">
@@ -441,8 +195,6 @@ Long live the git!</p>
                             </span>
                         </a>
                     </li>
-                    
-                    
                     <li>
                         <a href="https://github.com/marcmo">
                             <span class="fa-stack fa-lg">
@@ -451,7 +203,6 @@ Long live the git!</p>
                             </span>
                         </a>
                     </li>
-                    
                     <li>
                       <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
                             <span class="fa-stack fa-lg">
@@ -462,23 +213,16 @@ Long live the git!</p>
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2014
-                
             </div>
         </div>
     </div>
 </footer>
-
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-
 <script src="/js/moment.min.js "></script>
 <script src="/js/livestamp.min.js "></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
-
-
-
 </body>
-
 </html>
+
