@@ -19,7 +19,7 @@ body {
 @media only screen and (min-width: 768px) {
   .container .jumbotron, .container-fluid .jumbotron {
     padding: 30px; } }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .container .jumbotron, .container-fluid .jumbotron {
     width: 100%; } }
 .container .jumbotron p, .container-fluid .jumbotron p {
@@ -51,7 +51,7 @@ a:hover, a:focus {
   border-radius: 10px;
   padding: 20px;
   margin: 0 0 20px 10px; }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .table-of-contents {
     width: 100%; } }
 
@@ -64,6 +64,26 @@ hr.small {
   margin: 15px auto;
   border-width: 4px;
   border-color: white; }
+
+#tagcloud {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+#tagcloud text {
+  font-family: 'Bitter', 'Times New Roman', serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-anchor: middle;
+  pointer-events: none; }
+#tagcloud circle {
+  fill: #cccccc; }
+#tagcloud .node:hover circle {
+  fill: #82BD10; }
+#tagcloud a:hover {
+  text-decoration: none; }
+@media only screen and (max-width: 767px) {
+  #tagcloud {
+    visibility: hidden;
+    display: none; } }
 
 pre.terminal, code.sourceCode {
   margin-bottom: 2em;
@@ -131,43 +151,6 @@ pre.terminal {
     padding: 20px; }
   .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
     color: fade(white, 80%); } }
-@media only screen and (min-width: 1170px) {
-  .navbar-custom {
-    -webkit-transition: background-color 0.3s;
-    -moz-transition: background-color 0.3s;
-    transition: background-color 0.3s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; }
-  .navbar-custom.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -61px;
-    background-color: fade(white, 90%);
-    border-bottom: 1px solid #f2f2f2;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s; }
-  .navbar-custom.is-fixed .navbar-brand {
-    color: #404040; }
-  .navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #68960D; }
-  .navbar-custom.is-fixed .nav li a {
-    color: #404040; }
-  .navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
-    color: #68960D; }
-  .navbar-custom.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0); } }
 
 .intro-header {
   background-color: gray;

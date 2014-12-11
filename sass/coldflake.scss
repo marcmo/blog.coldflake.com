@@ -22,13 +22,14 @@ body {
     color: $abstract-grey;
   }
   float: right;
-  @media only screen and (min-width: 768px) {
+
+  @include breakpoint(min-width-small) {
     padding: 30px;
   }
   margin-left: 20px;
   margin-top: 20px;
   width: 50%;
-  @media only screen and (max-width: 768px) {
+  @include breakpoint(max-width-small) {
     width: 100%;
   }
   p {
@@ -66,9 +67,7 @@ a {
 .table-of-contents {
   float: right;
   width: 50%;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
+  @include breakpoint(max-width-small) { width: 100%; }
   background: #eee;
   border-radius: 10px;
   padding: 20px;
@@ -88,10 +87,38 @@ hr.small {
   border-color: white;
 }
 
+#tagcloud {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text {
+    @include serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-anchor: middle;
+    pointer-events: none;
+  }
+
+  circle {
+    fill:$gray-lighter;
+  }
+
+  .node:hover circle {
+    fill: $green-link;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  @include breakpoint(max-width-small) {
+    visibility: hidden;
+    display: none;
+  }
+
+}
 // Terminal look
 
 pre.terminal, code.sourceCode {
-  @media only screen and (min-width: 768px) {
+
+  @include breakpoint(min-width-small) {
     margin: 10px;
   }
   margin-bottom: 2em;
@@ -134,7 +161,7 @@ pre.terminal {
   background-color: rgba(250, 250, 250, .8);
   @include sans-serif;
   .navbar-brand {
-    @media only screen and (max-width: 767px) {
+    @include breakpoint(max-width-small) {
       img {
         display: none;
       }
@@ -151,7 +178,7 @@ pre.terminal {
       }
     }
   }
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(min-width-small) {
     background: transparent;
     border-bottom: 1px solid transparent;
     .navbar-brand {
@@ -175,7 +202,7 @@ pre.terminal {
       }
     }
   }
-  @media only screen and (min-width: 1170px) {
+  @include breakpoint(min-width-medium) {
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
@@ -240,7 +267,7 @@ pre.terminal {
   .page-heading {
     padding: 100px 0 50px;
     color: white;
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(min-width-small) {
       padding: 150px 0;
     }
   }
@@ -259,7 +286,7 @@ pre.terminal {
       font-weight: 400;
       margin: 10px 0 0;
     }
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(min-width-small) {
       h1 {
         font-size: 80px;
       }
@@ -289,7 +316,7 @@ pre.terminal {
         color: white;
       }
     }
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(min-width-small) {
       h1 {
         font-size: 55px;
       }
@@ -303,7 +330,7 @@ pre.terminal {
 // Post Preview Pages
 
 .post-preview {
-  @media only screen and (max-width: 767px) {
+  @include breakpoint(max-width-small) {
     text-align: center;
   }
   > a {
@@ -339,7 +366,7 @@ pre.terminal {
       }
     }
   }
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(min-width-small) {
     > a {
       > .post-title {
         font-size: 36px;

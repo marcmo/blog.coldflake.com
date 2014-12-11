@@ -2,7 +2,6 @@
 layout: default
 header-img: "img/snowflakes.jpg"
 ---
-
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ page.header-img }}')">
     <div class="container">
@@ -15,12 +14,12 @@ header-img: "img/snowflakes.jpg"
         </div>
     </div>
 </header>
-
 <!-- Main Content -->
 <div class="container">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
       <h2 class="post_title"><i class="icon-tags"></i> Tags by frequency</h2>
+      <div id="tagcloud"></div>
       <ul class="list-group">
         {% for tag in page.alltags %}
         <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="list-group-item">
@@ -33,3 +32,42 @@ header-img: "img/snowflakes.jpg"
 </div>
 
 <hr>
+<script src="{{ site.baseurl }}/js/d3.min.js"></script>
+<script>
+
+var bleed = 30,
+    width = 600,
+    height = 500;
+
+var pack = d3.layout.pack()
+    .sort(null)
+    .size([width, height + bleed * 2])
+    .padding(2);
+
+var svg = d3.selectAll("#tagcloud").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(0," + -bleed + ")");
+
+d3.json("tags.json", function(error, json) {
+  var node = svg.selectAll(".node")
+      .data(pack.nodes(json)
+        .filter(function(d) { return !d.children; }))
+    .enter().append("a")
+      .attr("class", "node")
+      .attr("xlink:href", function(d) { return d.name;})
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("circle")
+      .attr("r", function(d) { return d.r; });
+
+  node.append("text")
+      .text(function(d) { return d.name; })
+      .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 24) + "px"; })
+      .attr("dy", ".35em");
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
