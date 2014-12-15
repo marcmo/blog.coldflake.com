@@ -65,13 +65,48 @@ hr.small {
   border-width: 4px;
   border-color: white; }
 
+#tagdeps a:hover {
+  text-decoration: none; }
+#tagdeps a {
+  fill: #AAAAAA; }
+#tagdeps a:hover {
+  fill: #000; }
+#tagdeps .node {
+  font: 600 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #AAAAAA; }
+#tagdeps .node:a:visited {
+  fill: #AAAAAA; }
+#tagdeps .node:hover {
+  fill: #000; }
+#tagdeps .link {
+  stroke: steelblue;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+  fill: none;
+  pointer-events: none; }
+#tagdeps .node:hover, #tagdeps .node--source, #tagdeps .node--target {
+  font-weight: 700;
+  fill: #E0B629; }
+#tagdeps .link--source, #tagdeps .link--target {
+  stroke-opacity: 1;
+  stroke-width: 3px; }
+#tagdeps .link--source {
+  stroke: #E0B629; }
+#tagdeps .link--target {
+  stroke: #E0B629; }
+@media only screen and (max-width: 767px) {
+  #tagdeps {
+    visibility: hidden;
+    display: none; } }
+
 #tagcloud {
   margin-top: 20px;
   margin-bottom: 20px; }
 #tagcloud text {
-  font-family: 'Bitter', 'Times New Roman', serif;
+  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 24px;
+  font-weight: 800;
   text-anchor: middle;
   pointer-events: none; }
 #tagcloud circle {
@@ -151,6 +186,43 @@ pre.terminal {
     padding: 20px; }
   .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
     color: fade(white, 80%); } }
+@media only screen and (min-width: 1170px) {
+  .navbar-custom {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -61px;
+    background-color: fade(white, 90%);
+    border-bottom: 1px solid #f2f2f2;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s; }
+  .navbar-custom.is-fixed .navbar-brand {
+    color: #404040; }
+  .navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
+    color: #68960D; }
+  .navbar-custom.is-fixed .nav li a {
+    color: #404040; }
+  .navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
+    color: #68960D; }
+  .navbar-custom.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); } }
 
 .intro-header {
   background-color: gray;

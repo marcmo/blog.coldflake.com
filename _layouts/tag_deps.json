@@ -1,0 +1,10 @@
+{% strip %}[
+{% for tag in page.tagmapping %}
+  {"name": "{{ tag[0] }}",
+  "id": "{{ tag[0] |  split:"." | last }}",
+  "imports": [{% for dep in tag[1] %}
+    "{{ dep }}"{% unless forloop.last %},{% endunless %}
+  {% endfor %}]}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endstrip %}

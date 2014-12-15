@@ -87,13 +87,70 @@ hr.small {
   border-color: white;
 }
 
+#tagdeps {
+  a:hover {
+    text-decoration: none;
+  }
+  a {
+    fill: $medium-grey;
+    &:hover {
+      fill: #000;
+    }
+  }
+  .node {
+    font: 600 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: $medium-grey;
+    &:a:visited {
+      fill: $medium-grey;
+    }
+    &:hover {
+      fill: #000;
+    }
+  }
+
+
+  .link {
+    stroke: steelblue;
+    stroke-opacity: .5;
+    stroke-width: 1px;
+    fill: none;
+    pointer-events: none;
+  }
+
+  .node:hover,
+  .node--source,
+  .node--target {
+    font-weight: 700;
+    fill: $yellow-dark;
+  }
+
+  .link--source,
+  .link--target {
+    stroke-opacity: 1;
+    stroke-width: 3px;
+  }
+
+  .link--source {
+    stroke: $yellow-dark;
+  }
+
+  .link--target {
+    stroke: $yellow-dark;
+  }
+
+  @include breakpoint(max-width-small) {
+    visibility: hidden;
+    display: none;
+  }
+}
 #tagcloud {
   margin-top: 20px;
   margin-bottom: 20px;
   text {
-    @include serif;
+    @include sans-serif;
     text-transform: uppercase;
     font-size: 24px;
+    font-weight: 800;
     text-anchor: middle;
     pointer-events: none;
   }

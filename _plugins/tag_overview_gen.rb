@@ -10,7 +10,7 @@ end
 module Jekyll
 
   class TagOverviewIndex < Page
-    def initialize(site, base, dir, tag, all)
+    def initialize(site, base, dir, tag, sorted_tags)
       $logger.debug("TagOverviewIndex:: tag=#{tag}")
       @site = site
       @base = base
@@ -21,7 +21,7 @@ module Jekyll
       self.read_yaml(File.join(base, '_layouts'), 'tag_overview.html')
       self.data['tag'] = tag
       self.data['title'] = "Tags"
-      self.data['alltags'] = all
+      self.data['sorted_tags'] = sorted_tags
       self.data['type'] = "tag_overview_type"
     end
   end
