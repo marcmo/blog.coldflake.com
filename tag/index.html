@@ -205,7 +205,7 @@
 <script src="/js/d3.min.js"></script>
 <script>
 var bleed = 30,
-    tagcloud_width = 600,
+    tagcloud_width = 700,
     tagcloud_height = 500;
 var pack = d3.layout.pack()
     .sort(null)
@@ -233,6 +233,8 @@ d3.json("tags.json", function(error, json) {
 });
 // dependency-graph
 var diameter = 600,
+    dep_width = diameter + 100,
+    middle = dep_width / 2,
     radius = diameter / 2,
     innerRadius = radius - 120;
 var cluster = d3.layout.cluster()
@@ -246,10 +248,10 @@ var line = d3.svg.line.radial()
     .radius(function(d) { return d.y; })
     .angle(function(d) { return d.x / 180 * Math.PI; });
 var svg = d3.select("#tagdeps").append("svg")
-    .attr("width", diameter)
+    .attr("width", dep_width)
     .attr("height", diameter)
   .append("g")
-    .attr("transform", "translate(" + radius + "," + radius + ")");
+    .attr("transform", "translate(" + middle + "," + radius + ")");
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
 d3.json("dependencies.json", function(error, classes) {
