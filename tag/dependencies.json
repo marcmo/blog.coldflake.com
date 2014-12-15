@@ -1,0 +1,273 @@
+[
+  {"name": "languages.C++",
+  "id": "C++",
+  "imports": [
+    "languages.ruby",
+    "unix.rake",
+    "techniques.dsl",
+    "testing.gtest",
+    "testing.testing",
+    "languages.haskell",
+    "unix.tool",
+    "cs.algorithm",
+    "cs.datastructure",
+    "cs.performance",
+    "languages.llvm",
+    "languages.clang",
+    "testing.quickcheck",
+    "cs.udp",
+    "cs.networking",
+    "languages.templates",
+    "languages.lua",
+    "os.android",
+    "cs.concurrency",
+    "os.ipc",
+    "cs.types"
+  ]},
+  {"name": "languages.ruby",
+  "id": "ruby",
+  "imports": [
+    "languages.C++",
+    "unix.rake",
+    "techniques.dsl",
+    "cs.performance",
+    "unix.unix",
+    "os.osx",
+    "unix.tool",
+    "unix.git",
+    "unix.bash",
+    "cs.types",
+    "languages.lua",
+    "languages.haskell"
+  ]},
+  {"name": "unix.rake",
+  "id": "rake",
+  "imports": [
+    "languages.C++",
+    "languages.ruby",
+    "techniques.dsl",
+    "cs.performance"
+  ]},
+  {"name": "techniques.dsl",
+  "id": "dsl",
+  "imports": [
+    "languages.C++",
+    "languages.ruby",
+    "unix.rake",
+    "cs.performance"
+  ]},
+  {"name": "testing.gtest",
+  "id": "gtest",
+  "imports": [
+    "languages.C++",
+    "testing.testing"
+  ]},
+  {"name": "testing.testing",
+  "id": "testing",
+  "imports": [
+    "languages.C++",
+    "testing.gtest",
+    "languages.haskell",
+    "testing.quickcheck",
+    "fun.rant"
+  ]},
+  {"name": "unix.unix",
+  "id": "unix",
+  "imports": [
+    "unix.bash",
+    "os.osx",
+    "unix.tool",
+    "unix.git",
+    "languages.ruby"
+  ]},
+  {"name": "unix.bash",
+  "id": "bash",
+  "imports": [
+    "unix.unix",
+    "os.osx",
+    "unix.tool",
+    "unix.git",
+    "languages.ruby"
+  ]},
+  {"name": "languages.haskell",
+  "id": "haskell",
+  "imports": [
+    "fun.puzzle",
+    "cs.algorithm",
+    "unix.git",
+    "languages.ghc",
+    "languages.C++",
+    "unix.tool",
+    "cs.datastructure",
+    "testing.quickcheck",
+    "testing.testing",
+    "languages.lua",
+    "cs.udp",
+    "cs.networking",
+    "cs.types",
+    "languages.ruby"
+  ]},
+  {"name": "fun.puzzle",
+  "id": "puzzle",
+  "imports": [
+    "languages.haskell",
+    "cs.algorithm",
+    "languages.lua"
+  ]},
+  {"name": "cs.algorithm",
+  "id": "algorithm",
+  "imports": [
+    "languages.haskell",
+    "fun.puzzle",
+    "languages.C++",
+    "unix.tool",
+    "cs.datastructure",
+    "languages.lua"
+  ]},
+  {"name": "unix.git",
+  "id": "git",
+  "imports": [
+    "languages.haskell",
+    "languages.ghc",
+    "fun.blogging",
+    "unix.unix",
+    "os.osx",
+    "unix.tool",
+    "languages.ruby",
+    "unix.bash"
+  ]},
+  {"name": "languages.ghc",
+  "id": "ghc",
+  "imports": [
+    "languages.haskell",
+    "unix.git"
+  ]},
+  {"name": "unix.tool",
+  "id": "tool",
+  "imports": [
+    "languages.haskell",
+    "languages.C++",
+    "cs.algorithm",
+    "cs.datastructure",
+    "unix.unix",
+    "os.osx",
+    "unix.git",
+    "languages.ruby",
+    "unix.bash"
+  ]},
+  {"name": "cs.datastructure",
+  "id": "datastructure",
+  "imports": [
+    "languages.haskell",
+    "languages.C++",
+    "unix.tool",
+    "cs.algorithm"
+  ]},
+  {"name": "cs.performance",
+  "id": "performance",
+  "imports": [
+    "languages.C++",
+    "languages.ruby",
+    "unix.rake",
+    "techniques.dsl"
+  ]},
+  {"name": "fun.blogging",
+  "id": "blogging",
+  "imports": [
+    "unix.git"
+  ]},
+  {"name": "languages.llvm",
+  "id": "llvm",
+  "imports": [
+    "languages.C++",
+    "languages.clang"
+  ]},
+  {"name": "languages.clang",
+  "id": "clang",
+  "imports": [
+    "languages.C++",
+    "languages.llvm"
+  ]},
+  {"name": "testing.quickcheck",
+  "id": "quickcheck",
+  "imports": [
+    "languages.haskell",
+    "languages.C++",
+    "testing.testing"
+  ]},
+  {"name": "languages.lua",
+  "id": "lua",
+  "imports": [
+    "languages.haskell",
+    "fun.puzzle",
+    "cs.algorithm",
+    "languages.C++",
+    "languages.templates",
+    "cs.types",
+    "languages.ruby"
+  ]},
+  {"name": "cs.udp",
+  "id": "udp",
+  "imports": [
+    "cs.networking",
+    "languages.haskell",
+    "languages.C++"
+  ]},
+  {"name": "cs.networking",
+  "id": "networking",
+  "imports": [
+    "cs.udp",
+    "languages.haskell",
+    "languages.C++"
+  ]},
+  {"name": "os.osx",
+  "id": "osx",
+  "imports": [
+    "unix.unix",
+    "unix.tool",
+    "unix.git",
+    "languages.ruby",
+    "unix.bash"
+  ]},
+  {"name": "languages.templates",
+  "id": "templates",
+  "imports": [
+    "languages.C++",
+    "languages.lua"
+  ]},
+  {"name": "os.android",
+  "id": "android",
+  "imports": [
+    "languages.C++",
+    "cs.concurrency",
+    "os.ipc"
+  ]},
+  {"name": "cs.concurrency",
+  "id": "concurrency",
+  "imports": [
+    "os.android",
+    "languages.C++",
+    "os.ipc"
+  ]},
+  {"name": "os.ipc",
+  "id": "ipc",
+  "imports": [
+    "os.android",
+    "languages.C++",
+    "cs.concurrency"
+  ]},
+  {"name": "fun.rant",
+  "id": "rant",
+  "imports": [
+    "testing.testing"
+  ]},
+  {"name": "cs.types",
+  "id": "types",
+  "imports": [
+    "languages.C++",
+    "languages.lua",
+    "languages.haskell",
+    "languages.ruby"
+  ]}
+]
+

@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1></h1>
+                    <h1>Tags</h1>
                 </div>
             </div>
         </div>
@@ -93,103 +93,245 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-      <h2 class="post_title"><i class="icon-tags"></i> Tags by frequency</h2>
-      <ul class="list-group">
-        <a href="/tag/C++" class="list-group-item">
-          <span class="badge">11</span>C++
-        </a>
-        <a href="/tag/haskell" class="list-group-item">
-          <span class="badge">10</span>haskell
-        </a>
-        <a href="/tag/algorithm" class="list-group-item">
-          <span class="badge">6</span>algorithm
-        </a>
-        <a href="/tag/puzzle" class="list-group-item">
-          <span class="badge">5</span>puzzle
-        </a>
-        <a href="/tag/bash" class="list-group-item">
-          <span class="badge">5</span>bash
-        </a>
-        <a href="/tag/unix" class="list-group-item">
-          <span class="badge">5</span>unix
-        </a>
-        <a href="/tag/testing" class="list-group-item">
-          <span class="badge">4</span>testing
-        </a>
-        <a href="/tag/ruby" class="list-group-item">
-          <span class="badge">4</span>ruby
-        </a>
-        <a href="/tag/lua" class="list-group-item">
-          <span class="badge">3</span>lua
-        </a>
-        <a href="/tag/git" class="list-group-item">
-          <span class="badge">3</span>git
-        </a>
-        <a href="/tag/rake" class="list-group-item">
-          <span class="badge">2</span>rake
-        </a>
-        <a href="/tag/dsl" class="list-group-item">
-          <span class="badge">2</span>dsl
-        </a>
-        <a href="/tag/tool" class="list-group-item">
-          <span class="badge">2</span>tool
-        </a>
-        <a href="/tag/performance" class="list-group-item">
-          <span class="badge">1</span>performance
-        </a>
-        <a href="/tag/datastructure" class="list-group-item">
-          <span class="badge">1</span>datastructure
-        </a>
-        <a href="/tag/ghc" class="list-group-item">
-          <span class="badge">1</span>ghc
-        </a>
-        <a href="/tag/blogging" class="list-group-item">
-          <span class="badge">1</span>blogging
-        </a>
-        <a href="/tag/llvm" class="list-group-item">
-          <span class="badge">1</span>llvm
-        </a>
-        <a href="/tag/clang" class="list-group-item">
-          <span class="badge">1</span>clang
-        </a>
-        <a href="/tag/quickcheck" class="list-group-item">
-          <span class="badge">1</span>quickcheck
-        </a>
-        <a href="/tag/gtest" class="list-group-item">
-          <span class="badge">1</span>gtest
-        </a>
-        <a href="/tag/udp" class="list-group-item">
-          <span class="badge">1</span>udp
-        </a>
-        <a href="/tag/networking" class="list-group-item">
-          <span class="badge">1</span>networking
-        </a>
-        <a href="/tag/osx" class="list-group-item">
-          <span class="badge">1</span>osx
-        </a>
-        <a href="/tag/templates" class="list-group-item">
-          <span class="badge">1</span>templates
-        </a>
-        <a href="/tag/android" class="list-group-item">
-          <span class="badge">1</span>android
-        </a>
-        <a href="/tag/concurrency" class="list-group-item">
-          <span class="badge">1</span>concurrency
-        </a>
-        <a href="/tag/ipc" class="list-group-item">
-          <span class="badge">1</span>ipc
-        </a>
-        <a href="/tag/rant" class="list-group-item">
-          <span class="badge">1</span>rant
-        </a>
-        <a href="/tag/types" class="list-group-item">
-          <span class="badge">1</span>types
-        </a>
-      </ul>
+      <div id="tagcloud">
+        <h2 class="post_title"><i class="fa fa-cloud"></i> Tag-Cloud</h2>
+      </div>
+      <hr>
+      <div id="tagdeps">
+        <h2 class="post_title"><i class="fa fa-sitemap"></i> Related Tags</h2>
+        <p>I thought it's a neat way to depict the relationships between tags. If there is a post that has multiple tags, those will be connected in the graph.</p>
+      </div>
+      <div id="taglist">
+        <h2 class="post_title"><i class="fa fa-tags"></i> Tags by frequency</h2>
+        <ul class="list-group">
+          <a href="/tag/C++" class="list-group-item">
+            <span class="badge">11</span>C++
+          </a>
+          <a href="/tag/haskell" class="list-group-item">
+            <span class="badge">10</span>haskell
+          </a>
+          <a href="/tag/algorithm" class="list-group-item">
+            <span class="badge">6</span>algorithm
+          </a>
+          <a href="/tag/puzzle" class="list-group-item">
+            <span class="badge">5</span>puzzle
+          </a>
+          <a href="/tag/bash" class="list-group-item">
+            <span class="badge">5</span>bash
+          </a>
+          <a href="/tag/unix" class="list-group-item">
+            <span class="badge">5</span>unix
+          </a>
+          <a href="/tag/testing" class="list-group-item">
+            <span class="badge">4</span>testing
+          </a>
+          <a href="/tag/ruby" class="list-group-item">
+            <span class="badge">4</span>ruby
+          </a>
+          <a href="/tag/lua" class="list-group-item">
+            <span class="badge">3</span>lua
+          </a>
+          <a href="/tag/git" class="list-group-item">
+            <span class="badge">3</span>git
+          </a>
+          <a href="/tag/rake" class="list-group-item">
+            <span class="badge">2</span>rake
+          </a>
+          <a href="/tag/dsl" class="list-group-item">
+            <span class="badge">2</span>dsl
+          </a>
+          <a href="/tag/tool" class="list-group-item">
+            <span class="badge">2</span>tool
+          </a>
+          <a href="/tag/performance" class="list-group-item">
+            <span class="badge">1</span>performance
+          </a>
+          <a href="/tag/datastructure" class="list-group-item">
+            <span class="badge">1</span>datastructure
+          </a>
+          <a href="/tag/ghc" class="list-group-item">
+            <span class="badge">1</span>ghc
+          </a>
+          <a href="/tag/blogging" class="list-group-item">
+            <span class="badge">1</span>blogging
+          </a>
+          <a href="/tag/llvm" class="list-group-item">
+            <span class="badge">1</span>llvm
+          </a>
+          <a href="/tag/clang" class="list-group-item">
+            <span class="badge">1</span>clang
+          </a>
+          <a href="/tag/quickcheck" class="list-group-item">
+            <span class="badge">1</span>quickcheck
+          </a>
+          <a href="/tag/gtest" class="list-group-item">
+            <span class="badge">1</span>gtest
+          </a>
+          <a href="/tag/udp" class="list-group-item">
+            <span class="badge">1</span>udp
+          </a>
+          <a href="/tag/networking" class="list-group-item">
+            <span class="badge">1</span>networking
+          </a>
+          <a href="/tag/osx" class="list-group-item">
+            <span class="badge">1</span>osx
+          </a>
+          <a href="/tag/templates" class="list-group-item">
+            <span class="badge">1</span>templates
+          </a>
+          <a href="/tag/android" class="list-group-item">
+            <span class="badge">1</span>android
+          </a>
+          <a href="/tag/concurrency" class="list-group-item">
+            <span class="badge">1</span>concurrency
+          </a>
+          <a href="/tag/ipc" class="list-group-item">
+            <span class="badge">1</span>ipc
+          </a>
+          <a href="/tag/rant" class="list-group-item">
+            <span class="badge">1</span>rant
+          </a>
+          <a href="/tag/types" class="list-group-item">
+            <span class="badge">1</span>types
+          </a>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 <hr>
+<style>
+</style>
+<script src="/js/d3.min.js"></script>
+<script>
+var bleed = 30,
+    tagcloud_width = 600,
+    tagcloud_height = 500;
+var pack = d3.layout.pack()
+    .sort(null)
+    .size([tagcloud_width, tagcloud_height + bleed * 2])
+    .padding(2);
+var tagcloud_svg = d3.selectAll("#tagcloud").append("svg")
+    .attr("width", tagcloud_width)
+    .attr("height", tagcloud_height)
+  .append("g")
+    .attr("transform", "translate(0," + -bleed + ")");
+d3.json("tags.json", function(error, json) {
+  var node = tagcloud_svg.selectAll(".node")
+      .data(pack.nodes(json)
+        .filter(function(d) { return !d.children; }))
+    .enter().append("a")
+      .attr("class", "node")
+      .attr("xlink:href", function(d) { return d.name;})
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  node.append("circle")
+      .attr("r", function(d) { return d.r; });
+  node.append("text")
+      .text(function(d) { return d.name; })
+      .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 24) + "px"; })
+      .attr("dy", ".35em");
+});
+// dependency-graph
+var diameter = 600,
+    radius = diameter / 2,
+    innerRadius = radius - 120;
+var cluster = d3.layout.cluster()
+    .size([360, innerRadius])
+    .sort(null)
+    .value(function(d) { return d.size; });
+var bundle = d3.layout.bundle();
+var line = d3.svg.line.radial()
+    .interpolate("bundle")
+    .tension(.85)
+    .radius(function(d) { return d.y; })
+    .angle(function(d) { return d.x / 180 * Math.PI; });
+var svg = d3.select("#tagdeps").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+  .append("g")
+    .attr("transform", "translate(" + radius + "," + radius + ")");
+var link = svg.append("g").selectAll(".link"),
+    node = svg.append("g").selectAll(".node");
+d3.json("dependencies.json", function(error, classes) {
+  var nodes = cluster.nodes(packageHierarchy(classes)),
+      links = packageImports(nodes);
+  link = link
+      .data(bundle(links))
+    .enter().append("path")
+      .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+      .attr("class", "link")
+      .attr("d", line);
+  node = node
+      .data(nodes.filter(function(n) { return !n.children; }))
+    .enter().append("text")
+      .attr("class", "node")
+      .attr("dy", ".31em")
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+    .append("a")
+      .attr("xlink:href", function(d) { return "/tag/" + d.id;})
+      .style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .text(function(d) { return d.key; })
+      .on("mouseover", mouseovered)
+      .on("mouseout", mouseouted);
+});
+function mouseovered(d) {
+  node
+      .each(function(n) { n.target = n.source = false; });
+  link
+      .classed("link--target", function(l) { if (l.target === d) return l.source.source = true; })
+      .classed("link--source", function(l) { if (l.source === d) return l.target.target = true; })
+    .filter(function(l) { return l.target === d || l.source === d; })
+      .each(function() { this.parentNode.appendChild(this); });
+  node
+      .classed("node--target", function(n) { return n.target; })
+      .classed("node--source", function(n) { return n.source; });
+}
+function mouseouted(d) {
+  link
+      .classed("link--target", false)
+      .classed("link--source", false);
+  node
+      .classed("node--target", false)
+      .classed("node--source", false);
+}
+d3.select(self.frameElement).style("height", diameter + "px");
+// Lazily construct the package hierarchy from class names.
+function packageHierarchy(classes) {
+  var map = {};
+  function find(name, data) {
+    var node = map[name], i;
+    if (!node) {
+      node = map[name] = data || {name: name, children: []};
+      if (name.length) {
+        node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+        node.parent.children.push(node);
+        node.key = name.substring(i + 1);
+      }
+    }
+    return node;
+  }
+  classes.forEach(function(d) {
+    find(d.name, d);
+  });
+  return map[""];
+}
+// Return a list of imports for the given array of nodes.
+function packageImports(nodes) {
+  var map = {},
+      imports = [];
+  // Compute a map from name to node.
+  nodes.forEach(function(d) {
+    map[d.name] = d;
+  });
+  // For each import, construct a link from the source to target node.
+  nodes.forEach(function(d) {
+    if (d.imports) d.imports.forEach(function(i) {
+      imports.push({source: map[d.name], target: map[i]});
+    });
+  });
+  return imports;
+}
+</script>
     <!-- Footer -->
 <footer>
     <div class="container">

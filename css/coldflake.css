@@ -19,7 +19,7 @@ body {
 @media only screen and (min-width: 768px) {
   .container .jumbotron, .container-fluid .jumbotron {
     padding: 30px; } }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .container .jumbotron, .container-fluid .jumbotron {
     width: 100%; } }
 .container .jumbotron p, .container-fluid .jumbotron p {
@@ -51,7 +51,7 @@ a:hover, a:focus {
   border-radius: 10px;
   padding: 20px;
   margin: 0 0 20px 10px; }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .table-of-contents {
     width: 100%; } }
 
@@ -64,6 +64,66 @@ hr.small {
   margin: 15px auto;
   border-width: 4px;
   border-color: white; }
+
+@media only screen and (min-width: 768px) {
+  #taglist {
+    visibility: hidden;
+    display: none; } }
+
+#tagdeps a:hover {
+  text-decoration: none; }
+#tagdeps a {
+  fill: #AAAAAA; }
+#tagdeps a:hover {
+  fill: #000; }
+#tagdeps .node {
+  font: 600 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #AAAAAA; }
+#tagdeps .node:a:visited {
+  fill: #AAAAAA; }
+#tagdeps .node:hover {
+  fill: #000; }
+#tagdeps .link {
+  stroke: steelblue;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+  fill: none;
+  pointer-events: none; }
+#tagdeps .node:hover, #tagdeps .node--source, #tagdeps .node--target {
+  font-weight: 700;
+  fill: #E0B629; }
+#tagdeps .link--source, #tagdeps .link--target {
+  stroke-opacity: 1;
+  stroke-width: 3px; }
+#tagdeps .link--source {
+  stroke: #E0B629; }
+#tagdeps .link--target {
+  stroke: #E0B629; }
+@media only screen and (max-width: 767px) {
+  #tagdeps {
+    visibility: hidden;
+    display: none; } }
+
+#tagcloud {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+#tagcloud text {
+  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 800;
+  text-anchor: middle;
+  pointer-events: none; }
+#tagcloud circle {
+  fill: #cccccc; }
+#tagcloud .node:hover circle {
+  fill: #82BD10; }
+#tagcloud a:hover {
+  text-decoration: none; }
+@media only screen and (max-width: 767px) {
+  #tagcloud {
+    visibility: hidden;
+    display: none; } }
 
 pre.terminal, code.sourceCode {
   margin-bottom: 2em;
