@@ -87,6 +87,12 @@ hr.small {
   border-color: white;
 }
 
+#taglist {
+  @include breakpoint(min-width-small) {
+    visibility: hidden;
+    display: none;
+  }
+}
 #tagdeps {
   a:hover {
     text-decoration: none;

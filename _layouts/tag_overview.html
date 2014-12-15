@@ -25,15 +25,18 @@ title: Tags
       <hr>
       <div id="tagdeps">
         <h2 class="post_title">{% icon fa-sitemap %} Related Tags</h2>
+        <p>I thought it's a neat way to depict the relationships between tags. If there is a post that has multiple tags, those will be connected in the graph.</p>
       </div>
-      <h2 class="post_title">{% icon fa-tags %} Tags by frequency</h2>
-      <ul class="list-group">
-        {% for tag in page.sorted_tags %}
-        <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="list-group-item">
-          <span class="badge">{{ tag[1] }}</span>{{ tag[0] }}
-        </a>
-        {% endfor %}
-      </ul>
+      <div id="taglist">
+        <h2 class="post_title">{% icon fa-tags %} Tags by frequency</h2>
+        <ul class="list-group">
+          {% for tag in page.sorted_tags %}
+          <a href="{{ site.baseurl }}/tag/{{ tag[0] }}" class="list-group-item">
+            <span class="badge">{{ tag[1] }}</span>{{ tag[0] }}
+          </a>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
