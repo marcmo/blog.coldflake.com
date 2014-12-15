@@ -468,9 +468,14 @@ int main()
 There you go. An extremely fast delegate implementation that looks quite usable
 to my eyes thanks to C++11's variadic templates.
 
+---
+
+If you are interested, the source-code is available on [github].
+
 [the impossibly fast c++ delegate]:http://www.codeproject.com/Articles/11015/The-Impossibly-Fast-C-Delegates
 [Sergey Ryazanov]:http://www.codeproject.com/Members/Sergey-Ryazanov
 [Andrei]:http://erdani.com/
 [his talk at GoingNative 2012]:http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Variadic-Templates-are-Funadic
 [excellent article]:http://www.jeremyong.com/blog/2014/01/10/interfacing-lua-with-templates-in-c-plus-plus-11/
 [Jeremy Ong]:https://github.com/jeremyong
+[github]:https://github.com/marcmo/delegates
