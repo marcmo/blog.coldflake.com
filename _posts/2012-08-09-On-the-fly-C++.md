@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/blackbird.jpg"
 tags: [C++, llvm, clang]
+tag_weights: [30,10,10]
 redirect_from:
   - /posts/2012-08-09-On-the-fly-C++.html
 ---

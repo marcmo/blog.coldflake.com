@@ -4,6 +4,7 @@ title: QuickChecking C++ Code
 subtitle: The haskell testing framework which can be used quite beneficial to test C++ code
 header-img: "img/metal-chains.jpg"
 tags: [haskell, C++, quickcheck, testing]
+tag_weights: [30,30,40,20]
 redirect_from:
   - /posts/2012-10-11-quickcheck-testing-c++.html
 ---

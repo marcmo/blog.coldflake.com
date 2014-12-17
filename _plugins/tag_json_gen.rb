@@ -10,8 +10,8 @@ end
 module Jekyll
 
   class TagJson < Page
-    def initialize(site, dir, layout_name, target_file, tag, sorted_tags, tag_map)
-      $logger.debug("TagJson:: tag=#{tag}")
+    def initialize(site, dir, layout_name, target_file, tag, data)
+      $logger.debug("TagJson:: layout=#{layout_name} for #{target_file}")
       @site = site
       @base = site.source
       @dir = dir
@@ -21,8 +21,10 @@ module Jekyll
       self.read_yaml(File.join(@base, '_layouts'), "#{layout_name}.json")
       self.data['tag'] = tag
       self.data['title'] = "Tags"
-      self.data['alltags'] = sorted_tags
-      self.data['tagmapping'] = tag_map
+      unless data.nil?
+        self.data[data[0]] = data[1] # for additional data
+        $logger.debug "--> TagJson with [#{data[0]}]"
+      end
       self.data['type'] = "tag_type"
     end
   end
@@ -82,7 +84,21 @@ module Jekyll
       $logger.debug "TagJsonGenerator:: generator running, site: #{site}"
       alltags = []
       tag_map = {}
+
       site.posts.each do |p|
+        tag_weights = p.data['tag_weights']
+        if p.tags.length != tag_weights.length
+          raise "tags have to be matched with tag_weight (wrong for #{p.title})"
+        end
+        dest = site.config['destination']
+        d = p.destination(dest)
+        d["#{dest}/"] = ''
+        d["/index.html"] = ''
+        tags_with_ratio = {}
+        p.tags.each_with_index { |t,i|
+          tags_with_ratio[t] = tag_weights[i]
+        }
+        write_tag_ratio_json(site, d, ["tagratio",tags_with_ratio])
         p.tags.each do |t|
           alltags << t
           ct = categorize(t)
@@ -106,15 +122,21 @@ module Jekyll
 
       $logger.debug "available layouts: #{site.layouts.keys}"
       if site.layouts.key? 'tag_list'
-        write_tag_index(site, 'tag', "all_tags", 'tag_list', 'tags.json', sorted, tag_map_with_list)
+        write_tag_index(site, 'tag', "all_tags", 'tag_list', 'tags.json', ["alltags",sorted])
       end
       if site.layouts.key? 'tag_deps'
-        write_tag_index(site, 'tag', "tag_dependencies", 'tag_deps', 'dependencies.json', sorted, tag_map_with_list)
+        write_tag_index(site, 'tag', "tag_dependencies", 'tag_deps', 'dependencies.json', ["tagmapping",tag_map_with_list])
       end
     end
 
-    def write_tag_index(site, dir, tag, layout_name, target_file, tags_sorted, tag_map)
-      json = TagJson.new(site, dir, layout_name, target_file, tag, tags_sorted, tag_map)
+    def write_tag_ratio_json(site, dir, data)
+      json = TagJson.new(site, dir, 'tag_ratio', 'tag_ratio.json', nil, data)
+      json.render(site.layouts, site.site_payload)
+      json.write(site.dest)
+      site.pages << json
+    end
+    def write_tag_index(site, dir, tag, layout_name, target_file, data)
+      json = TagJson.new(site, dir, layout_name, target_file, tag, data)
       json.render(site.layouts, site.site_payload)
       json.write(site.dest)
       site.pages << json

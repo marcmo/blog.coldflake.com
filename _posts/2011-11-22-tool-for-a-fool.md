@@ -4,6 +4,7 @@ title: A Tool for a Fool
 subtitle: A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.
 header-img: "img/watertool.jpg"
 tags: [haskell, C++, tool, algorithm, datastructure]
+tag_weights: [25,20,15,10,30]
 redirect_from:
   - /posts/2011-11-22-tool-for-a-fool.html
 credits_name: Michael Bliefert

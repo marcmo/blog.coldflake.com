@@ -4,6 +4,7 @@ title: Scripting Git with Ghc Evaluation Mode
 subtitle: Some examples that show the usage of haskell's evaluation mode.
 header-img: "img/yellow_light_spots.jpg"
 tags: [haskell, git, ghc]
+tag_weights: [25,10,15]
 redirect_from:
   - /posts/2011-10-28-haskell-expression-mode-with-git.html
 ---

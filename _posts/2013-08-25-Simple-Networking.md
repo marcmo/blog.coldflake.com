@@ -4,6 +4,7 @@ title: Simple Networking
 subtitle: Communicating over UDP sockets in haskell.
 header-img: "img/floorlight.jpg"
 tags: [udp, networking, haskell, C++]
+tag_weights: [30,20,30,10]
 redirect_from:
   - /posts/2013-08-25-Simple-Networking.html
 ---

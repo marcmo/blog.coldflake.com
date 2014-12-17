@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 future_categories: unix
 header-img: "img/rusty-cog.jpg"
 tags: [unix, osx, tool, git, ruby, bash]
+tag_weights: [20,30,20,10,10,15]
 redirect_from:
   - /posts/2013-12-07-The-Incredible-Brew.html
 ---

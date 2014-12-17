@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/brainless.jpg"
 tags: [testing, rant]
+tag_weights: [35,15]
 redirect_from:
   - /posts/2014-08-16-Testing-without-a-Brain.html
 credits_name: Ardinnnn :)

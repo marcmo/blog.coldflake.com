@@ -1,0 +1,6 @@
+{% strip %}[
+{% for tag in page.tagratio %}
+  {"label": "{{ tag[0] }}", "value": {{ tag[1] }}}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endstrip %}

@@ -5,6 +5,7 @@ subtitle: Intro to a Build Tool for C/C++ projects that is based on rake, the ru
 header-img: "img/blue-metal-rust.jpg"
 author:     "Oliver Mueller"
 tags: [C++, ruby, rake, dsl]
+tag_weights: [33,30,13,22]
 redirect_from:
   - /posts/2011-06-12-cxxproject.html
 ---

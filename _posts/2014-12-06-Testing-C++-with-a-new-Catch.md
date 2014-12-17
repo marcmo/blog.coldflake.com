@@ -4,6 +4,7 @@ title: Testing C++ With A New Catch
 subtitle: Most test-frameworks are kind of lame - this one is not
 author:     "Oliver Mueller"
 tags: [C++, testing]
+tag_weights: [15,25]
 header-img: "img/catch.jpg"
 credits_name: clappstar
 credits_url: https://www.flickr.com/photos/clappstar/

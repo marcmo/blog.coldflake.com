@@ -4,6 +4,7 @@ title: Lunch break coding - First Nonrepeating Character
 subtitle: Simple programming puzzle to find the first nonrepeating character in a string.
 header-img: "img/domino.jpg"
 tags: [haskell, puzzle, algorithm]
+tag_weights: [30,25,20]
 redirect_from:
   - /posts/2011-08-21-first-nonrepeating-char.html
 credits_name: Mikey Phillips

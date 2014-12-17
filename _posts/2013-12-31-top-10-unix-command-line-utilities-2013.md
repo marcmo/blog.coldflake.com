@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 header-img: "img/tools.jpg"
 future_categories: unix
 tags: [unix, bash]
+tag_weights: [20,30]
 redirect_from:
   - /posts/2013-12-31-top-10-unix-command-line-utilities-2013.html
 ---

@@ -3,7 +3,8 @@ layout:     post
 title: Lunch break coding - brainfuck
 subtitle: Implementing a brainfuck interpreter in haskell.
 header-img: "img/greenbrain.jpg"
-tags: [haskell, puzzle, algorithm]
+tags: [haskell, puzzle, algorithm, structure]
+tag_weights: [30,25,20,10]
 redirect_from:
   - /posts/2011-10-11-brainfuck.html
 credits_name: Zsolt Fila

@@ -4,6 +4,7 @@ title: Top 10 Unix Command Line Utilities 2011
 subtitle: A selection of the most useful bash commands I (re)-discovered this year.
 header-img: "img/wood_tools.jpg"
 tags: [unix, bash]
+tag_weights: [20,30]
 redirect_from:
   - /posts/2011-12-31-bash-features-of-the-year.html
 credits_name: Marco Ferracuti

@@ -5,6 +5,7 @@ subtitle: First results after introducing cxxproject on a large scale, quite pro
 future_categories: programming
 header-img: "img/lights.jpg"
 tags: [C++, ruby, rake, performance, dsl]
+tag_weights: [25,20,10,30,10]
 redirect_from:
   - /posts/2011-12-11-cxxproject-first-results.html
 ---

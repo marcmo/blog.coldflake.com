@@ -5,6 +5,7 @@ subtitle: Moving away from mum-style blogging to more hacker-style blogging.
 header-img: "img/typewriter.jpg"
 future_categories: programming
 tags: [blogging, git]
+tag_weights: [30,10]
 redirect_from:
   - /posts/2011-12-29-tumblr-no-more.html
 ---

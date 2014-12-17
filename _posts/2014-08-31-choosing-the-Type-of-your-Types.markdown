@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 header-img: "img/lights2.jpg"
 future_categories: programming
 tags:       [types,C++,lua,haskell,ruby]
+tag_weights: [35,10,10,10,10]
 redirect_from:
   - /posts/2014-08-31-Choosing-the-Type-of-your-Types.html
 ---

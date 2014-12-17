@@ -4,6 +4,7 @@ title: Lunch break coding
 subtitle: A small prolog problem solved in haskell
 header-img: "img/puzzle.jpg"
 tags: [haskell, puzzle, algorithm]
+tag_weights: [30,25,20]
 redirect_from:
   - /posts/2011-08-09-hettsProblem.html
 credits_name: boris drenec

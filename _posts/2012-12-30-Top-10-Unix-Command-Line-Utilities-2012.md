@@ -8,6 +8,7 @@ resource: true
 future_categories: unix
 header-img: "img/walltools.jpg"
 tags: [unix, bash]
+tag_weights: [20,30]
 redirect_from:
   - /posts/2012-12-30-Top-10-Unix-Command-Line-Utilities-2012.html
 ---

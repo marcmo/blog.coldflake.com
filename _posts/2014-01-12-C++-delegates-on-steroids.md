@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 header-img: "img/shuttlestart.jpg"
 future_categories: programming
 tags: [C++, templates, lua]
+tag_weights: [30,20,5]
 redirect_from:
   - /posts/2014-01-12-C++-delegates-on-steroids.html
 ---

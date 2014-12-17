@@ -4,6 +4,7 @@ title: The Wonders of xargs
 subtitle: Exploring the goodness of xargs, one of the most versatile unix utilities.
 header-img: "img/wood.jpg"
 tags: [unix, bash]
+tag_weights: [50,50]
 future_categories: bash
 redirect_from:
   - /posts/2011-07-31-the-wonders-of-xargs.html

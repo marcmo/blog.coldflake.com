@@ -7,6 +7,7 @@ author:     "Oliver Mueller"
 future_categories: programming
 header-img: "img/shuntingyard.jpg"
 tags: [haskell, puzzle, algorithm, lua]
+tag_weights: [30,30,20,10]
 redirect_from:
   - /posts/2013-01-09-happy-new-year-with-shunting-yard.html
 credits_name: Zruda
