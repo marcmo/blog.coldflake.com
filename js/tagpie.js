@@ -7,7 +7,7 @@ var svg = d3.select("#tagpie")
 	.append("g")
 
 svg.append("g")
-	.attr("class", "slices");
+  .attr("class", "slices");
 svg.append("g")
 	.attr("class", "labels");
 svg.append("g")
@@ -33,42 +33,18 @@ svg.attr("transform", "translate(" + tagpie_width / 2 + "," + tagpie_height / 2 
 
 var key = function(d){ return d.data.label; };
 
-var color = d3.scale.ordinal()
-
-  .domain(["C++", "haskell", "algorithm", "puzzle", "bash", "unix", "testing", "ruby", "lua", "git",
-           "dsl", "tool", "rake", "datastructure", "structure", "ghc", "performance", "blogging", "llvm", "clang",
-           "quickcheck", "gtest", "udp", "networking", "osx", "templates", "android", "concurrency", "ipc", "rant",
-           "types"])
-	.range ([ "#86E500",
-            "#85DE07",
-            "#84D70F",
-            "#83D016",
-            "#82C91E",
-            "#81C225",
-            "#80BC2D",
-            "#7FB534",
-            "#7FAE3C",
-            "#7EA743",
-            "#7DA04B",
-            "#7C9A52",
-            "#7B935A",
-            "#7A8C61",
-            "#798569",
-            "#787E70",
-            "#787878"]);
-var colors = [
-"#FF9F3D",
-"#E1E1E1",
-"#D2D2D2",
-"#C3C3C3",
-"#B4B4B4",
-"#A5A5A5",
-"#969696",
-"#878787",
-"#787878",
-"#84D70F",
-"#86E500"
-];
+var colors = ["#FF9F3D",
+              "#E1E1E1",
+              "#D2D2D2",
+              "#C3C3C3",
+              "#B4B4B4",
+              "#A5A5A5",
+              "#969696",
+              "#878787",
+              "#787878",
+              "#84D70F",
+              "#86E500"
+              ];
 
 d3.json("tag_ratio.json", function(error, tags) {
   change(tags);
@@ -91,7 +67,6 @@ function change(data) {
 	slice.enter()
 		.insert("path")
 		.style("fill", function(d) { return colorRotate(); })
-		// .style("fill", function(d) { return color(d.data.label); })
 		.attr("class", "slice");
 
 	slice
@@ -114,6 +89,8 @@ function change(data) {
 		.data(pie(data), key);
 
 	text.enter()
+    .append("a")
+      .attr("xlink:href", function(d) { return "../../tag/" + d.data.label;})
 		.append("text")
 		.attr("dy", ".35em")
 		.text(function(d) {
