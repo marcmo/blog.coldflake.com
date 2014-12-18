@@ -45,7 +45,7 @@ d3.json("dependencies.json", function(error, classes) {
       .attr("dy", ".31em")
       .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
     .append("a")
-      .attr("xlink:href", function(d) { return "{{ site.baseurl }}/tag/" + d.id;})
+      .attr("xlink:href", function(d) { return d.id;})
       .style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
       .text(function(d) { return d.key; })
       .on("mouseover", mouseovered)
