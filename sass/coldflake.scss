@@ -87,6 +87,32 @@ hr.small {
   border-color: white;
 }
 
+#tagpie {
+  @include breakpoint(max-width-small) {
+    visibility: hidden;
+    display: none;
+  }
+  svg {
+    display: block;
+    margin: auto;
+  }
+
+  path.slice{
+    stroke-width:2px;
+  }
+
+  polyline{
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+  }
+  .labels {
+    @include serif;
+    font-size: 16px;
+    font-style: italic;
+  }
+}
 #taglist {
   @include breakpoint(min-width-small) {
     visibility: hidden;
