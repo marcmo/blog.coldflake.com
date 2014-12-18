@@ -1,0 +1,9 @@
+[
+  {"label": "unix", "value": 20},
+  {"label": "osx", "value": 30},
+  {"label": "tool", "value": 20},
+  {"label": "git", "value": 10},
+  {"label": "ruby", "value": 10},
+  {"label": "bash", "value": 15}
+]
+

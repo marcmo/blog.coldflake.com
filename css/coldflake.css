@@ -65,6 +65,25 @@ hr.small {
   border-width: 4px;
   border-color: white; }
 
+@media only screen and (max-width: 767px) {
+  #tagpie {
+    visibility: hidden;
+    display: none; } }
+#tagpie svg {
+  display: block;
+  margin: auto; }
+#tagpie path.slice {
+  stroke-width: 2px; }
+#tagpie polyline {
+  opacity: .3;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none; }
+#tagpie .labels {
+  font-family: 'Bitter', 'Times New Roman', serif;
+  font-size: 16px;
+  font-style: italic; }
+
 @media only screen and (min-width: 768px) {
   #taglist {
     visibility: hidden;

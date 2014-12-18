@@ -1,0 +1,8 @@
+[
+  {"label": "haskell", "value": 25},
+  {"label": "C++", "value": 20},
+  {"label": "tool", "value": 15},
+  {"label": "algorithm", "value": 10},
+  {"label": "datastructure", "value": 30}
+]
+

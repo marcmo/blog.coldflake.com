@@ -87,9 +87,9 @@
                     <h2 class="subheading">The haskell testing framework which can be used quite beneficial to test C++ code</h2>
                     <span class="meta">Posted on October 11, 2012
                       <i class="icon-tags"></i> 
+                      <a href="/tag/quickcheck">quickcheck</a>, 
                       <a href="/tag/haskell">haskell</a>, 
                       <a href="/tag/C++">C++</a>, 
-                      <a href="/tag/quickcheck">quickcheck</a>, 
                       <a href="/tag/testing">testing</a>
                       .
                     </span>
@@ -103,6 +103,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div id="tagpie">
+            </div>
 				<p>A friend of mine pointed out a <a href="http://vimeo.com/42751120">recent talk</a> by John Hughes that describes a how <a href="http://www.volvo.com">Volvo</a> is using <a href="http://www.erlang.org">Erlang</a> and more in particular <a href="http://en.wikipedia.org/wiki/QuickCheck">Quickcheck</a> to find bugs in automotive software systems. While the talk is rather boring the topic is actually quite fascinating! And since I’m … let’s say acquainted with the automotive industry, it’s especially good to see a company like Volvo picking up on some modern software ideas.<br />
 I’ve long had a affection for Quickcheck as it is the testing tool of choice for testing haskell programs. But in my day job I mostly do embedded programming in C++, in an environment where errors are hardly tolerated. Having a solid suite of unit tests in place can go a long way in ensuring the expected program behavior. And since I like testing this is actually <a href="/posts/2011-07-11-gtest.html">fun to do</a>.
 Quickcheck allows for quite a different approach to testing: you need to formulate properties of a program and that Quickcheck can then verify them for you by generating valid but random input data and automatically checking the properties for this input. This is one of <strong><em>the</em></strong> reasons why I love programming in haskell. Once you get the hang of it you will not want to miss it anymore.</p>
@@ -233,6 +235,8 @@ Using the C-wrapper these events will end up triggering the C++ implementation. 
     </div>
 </article>
 <hr>
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
     <!-- Footer -->
 <footer>
     <div class="container">

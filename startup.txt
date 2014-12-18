@@ -1,0 +1,5 @@
+grunt watch
+cd _site
+pyweb 8888
+rake watch
+tail -f logfile.log

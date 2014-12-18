@@ -104,6 +104,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div id="tagpie">
+            </div>
 				<p>It has been a while since I was foolish enough to convince some of my colleagues to use Linux as their primary OS instead of Windows. By now it has become much easier to ensure everything important runs on the Linux boxes. But the development team of a recent project was quite large (&gt;80 devs!) and most of those still work in a Windows environment.<br />
 So it should be no surprise that there will be incompatibilities in the source code, namely the spelling. Why is it so difficult to accept that <code>flash/flashdriver.h</code> is <strong>not</strong> the same as <code>flash/FlashDriver.h</code>?? I got sick of manually correcting those glitches so I wrote a tool for myself that will correct this automatically.</p>
 <p>What the program basically does is it will go through each source file and correct any wrongly spelled include path it finds. To do that it will need to know of all available header files. Of course the include path itself can always be relative so it’s mandatory that an include line like <code>#include "testA.h"</code> will match against a header file <code>one/two/testA.h</code>. You get the idea. Kind of like matching up the suffixes of strings.</p>
@@ -208,6 +210,8 @@ $ find . -regex ".*\.\(cpp\|c\|h\|hpp\)" | xargs -n1 wc -l | cut -f1 -d'.' | pas
     </div>
 </article>
 <hr>
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
     <!-- Footer -->
 <footer>
     <div class="container">

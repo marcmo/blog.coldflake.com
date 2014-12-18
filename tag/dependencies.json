@@ -67,8 +67,8 @@
   "imports": [
     "languages.C++",
     "testing.gtest",
-    "languages.haskell",
     "testing.quickcheck",
+    "languages.haskell",
     "fun.rant"
   ]},
   {"name": "unix.unix",
@@ -94,6 +94,7 @@
   "imports": [
     "fun.puzzle",
     "cs.algorithm",
+    "unknown.structure",
     "unix.git",
     "languages.ghc",
     "languages.C++",
@@ -112,6 +113,7 @@
   "imports": [
     "languages.haskell",
     "cs.algorithm",
+    "unknown.structure",
     "languages.lua"
   ]},
   {"name": "cs.algorithm",
@@ -119,10 +121,18 @@
   "imports": [
     "languages.haskell",
     "fun.puzzle",
+    "unknown.structure",
     "languages.C++",
     "unix.tool",
     "cs.datastructure",
     "languages.lua"
+  ]},
+  {"name": "unknown.structure",
+  "id": "structure",
+  "imports": [
+    "languages.haskell",
+    "fun.puzzle",
+    "cs.algorithm"
   ]},
   {"name": "unix.git",
   "id": "git",
