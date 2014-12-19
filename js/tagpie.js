@@ -3,7 +3,7 @@ function render(json, tagpie_div, tagpie_width, tagpie_height)
   var svg = d3.select(tagpie_div)
     .append("svg")
     .attr("width", tagpie_width)
-    .attr("height", tagpie_height)
+    .attr("height", tagpie_height + 10)
     .append("g")
 
     svg.append("g")
