@@ -87,6 +87,11 @@ hr.small {
   border-color: white;
 }
 
+
+.tagpie {
+  margin-top: 30px;
+}
+.tagpie,
 #tagpie {
   @include breakpoint(max-width-small) {
     visibility: hidden;

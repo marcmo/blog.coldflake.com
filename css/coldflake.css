@@ -65,21 +65,24 @@ hr.small {
   border-width: 4px;
   border-color: white; }
 
+.tagpie {
+  margin-top: 30px; }
+
 @media only screen and (max-width: 767px) {
-  #tagpie {
+  .tagpie, #tagpie {
     visibility: hidden;
     display: none; } }
-#tagpie svg {
+.tagpie svg, #tagpie svg {
   display: block;
   margin: auto; }
-#tagpie path.slice {
+.tagpie path.slice, #tagpie path.slice {
   stroke-width: 2px; }
-#tagpie polyline {
+.tagpie polyline, #tagpie polyline {
   opacity: .3;
   stroke: black;
   stroke-width: 2px;
   fill: none; }
-#tagpie .labels {
+.tagpie .labels, #tagpie .labels {
   font-family: 'Bitter', 'Times New Roman', serif;
   font-size: 16px;
   font-style: italic; }
