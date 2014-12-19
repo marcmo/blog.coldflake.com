@@ -90,36 +90,126 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/top-10-unix-command-line-utilities-2013'>Top 10 Unix Command Line Utilities 2013</a></h3>
-          <time class="archive_list_post_date" datetime='2013-12-31'>12/31/2013</time>
-          <p class="summary">Summary: <em>Again a selection of the some useful unix commands.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/The-Incredible-Brew'>The Incredible Brew</a></h3>
-          <time class="archive_list_post_date" datetime='2013-12-07'>12/ 7/2013</time>
-          <p class="summary">Summary: <em>The missing package manager for OS X which solves a lot of headaches.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/Top-10-Unix-Command-Line-Utilities-2012'>Top 10 Unix Command Line Utilities 2012</a></h3>
-          <time class="archive_list_post_date" datetime='2012-12-30'>12/30/2012</time>
-          <p class="summary">Summary: <em>Another selection of the some useful unix commands which I found useful.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/bash-features-of-the-year'>Top 10 Unix Command Line Utilities 2011</a></h3>
-          <time class="archive_list_post_date" datetime='2011-12-31'>12/31/2011</time>
-          <p class="summary">Summary: <em>A selection of the most useful bash commands I (re)-discovered this year.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/the-wonders-of-xargs'>The Wonders of xargs</a></h3>
-          <time class="archive_list_post_date" datetime='2011-07-31'>07/31/2011</time>
-          <p class="summary">Summary: <em>Exploring the goodness of xargs, one of the most versatile unix utilities.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/top-10-unix-command-line-utilities-2013">
+                <h2 class="post-title">
+                  Top 10 Unix Command Line Utilities 2013
+                </h2>
+                <h3 class="post-subtitle">
+                  Again a selection of the some useful unix commands.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2013_00_31">
+              <script>
+                render("/posts/top-10-unix-command-line-utilities-2013/tag_ratio.json","#tagpie_2013_00_31", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/The-Incredible-Brew">
+                <h2 class="post-title">
+                  The Incredible Brew
+                </h2>
+                <h3 class="post-subtitle">
+                  The missing package manager for OS X which solves a lot of headaches.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2013_00_07">
+              <script>
+                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_00_07", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/Top-10-Unix-Command-Line-Utilities-2012">
+                <h2 class="post-title">
+                  Top 10 Unix Command Line Utilities 2012
+                </h2>
+                <h3 class="post-subtitle">
+                  Another selection of the some useful unix commands which I found useful.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2012-12-30 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2012_00_30">
+              <script>
+                render("/posts/Top-10-Unix-Command-Line-Utilities-2012/tag_ratio.json","#tagpie_2012_00_30", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/bash-features-of-the-year">
+                <h2 class="post-title">
+                  Top 10 Unix Command Line Utilities 2011
+                </h2>
+                <h3 class="post-subtitle">
+                  A selection of the most useful bash commands I (re)-discovered this year.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-12-31 00:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_31">
+              <script>
+                render("/posts/bash-features-of-the-year/tag_ratio.json","#tagpie_2011_00_31", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/the-wonders-of-xargs">
+                <h2 class="post-title">
+                  The Wonders of xargs
+                </h2>
+                <h3 class="post-subtitle">
+                  Exploring the goodness of xargs, one of the most versatile unix utilities.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-31 00:00:00 +0200"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_31">
+              <script>
+                render("/posts/the-wonders-of-xargs/tag_ratio.json","#tagpie_2011_00_31", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

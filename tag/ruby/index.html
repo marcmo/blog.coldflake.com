@@ -90,31 +90,103 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/choosing-the-Type-of-your-Types'>Choosing the Type of your Types</a></h3>
-          <time class="archive_list_post_date" datetime='2014-08-31'>08/31/2014</time>
-          <p class="summary">Summary: <em>Statically and dynamically typed languages both can be enjoyable</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/The-Incredible-Brew'>The Incredible Brew</a></h3>
-          <time class="archive_list_post_date" datetime='2013-12-07'>12/ 7/2013</time>
-          <p class="summary">Summary: <em>The missing package manager for OS X which solves a lot of headaches.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/cxxproject-first-results'>Encouraging performance results</a></h3>
-          <time class="archive_list_post_date" datetime='2011-12-11'>12/11/2011</time>
-          <p class="summary">Summary: <em>First results after introducing cxxproject on a large scale, quite promising.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/cxxproject'>Building C/C++ Projects with Cxxproject</a></h3>
-          <time class="archive_list_post_date" datetime='2011-06-12'>06/12/2011</time>
-          <p class="summary">Summary: <em>Intro to a Build Tool for C/C++ projects that is based on rake, the ruby task dependency DSL</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/choosing-the-Type-of-your-Types">
+                <h2 class="post-title">
+                  Choosing the Type of your Types
+                </h2>
+                <h3 class="post-subtitle">
+                  Statically and dynamically typed languages both can be enjoyable
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2014_00_31">
+              <script>
+                render("/posts/choosing-the-Type-of-your-Types/tag_ratio.json","#tagpie_2014_00_31", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/The-Incredible-Brew">
+                <h2 class="post-title">
+                  The Incredible Brew
+                </h2>
+                <h3 class="post-subtitle">
+                  The missing package manager for OS X which solves a lot of headaches.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2013_00_07">
+              <script>
+                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_00_07", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/cxxproject-first-results">
+                <h2 class="post-title">
+                  Encouraging performance results
+                </h2>
+                <h3 class="post-subtitle">
+                  First results after introducing cxxproject on a large scale, quite promising.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-12-11 00:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_11">
+              <script>
+                render("/posts/cxxproject-first-results/tag_ratio.json","#tagpie_2011_00_11", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/cxxproject">
+                <h2 class="post-title">
+                  Building C/C++ Projects with Cxxproject
+                </h2>
+                <h3 class="post-subtitle">
+                  Intro to a Build Tool for C/C++ projects that is based on rake, the ruby task dependency DSL
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-06-12 00:00:00 +0200"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_12">
+              <script>
+                render("/posts/cxxproject/tag_ratio.json","#tagpie_2011_00_12", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

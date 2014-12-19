@@ -90,21 +90,57 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/The-Incredible-Brew'>The Incredible Brew</a></h3>
-          <time class="archive_list_post_date" datetime='2013-12-07'>12/ 7/2013</time>
-          <p class="summary">Summary: <em>The missing package manager for OS X which solves a lot of headaches.</em>
-        </li>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/tool-for-a-fool'>A Tool for a Fool</a></h3>
-          <time class="archive_list_post_date" datetime='2011-11-22'>11/22/2011</time>
-          <p class="summary">Summary: <em>A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/The-Incredible-Brew">
+                <h2 class="post-title">
+                  The Incredible Brew
+                </h2>
+                <h3 class="post-subtitle">
+                  The missing package manager for OS X which solves a lot of headaches.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2013_00_07">
+              <script>
+                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_00_07", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/tool-for-a-fool">
+                <h2 class="post-title">
+                  A Tool for a Fool
+                </h2>
+                <h3 class="post-subtitle">
+                  A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-11-22 00:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_22">
+              <script>
+                render("/posts/tool-for-a-fool/tag_ratio.json","#tagpie_2011_00_22", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

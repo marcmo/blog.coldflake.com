@@ -90,16 +90,34 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/Android-style-Message-Passing'>Android Style Message Passing</a></h3>
-          <time class="archive_list_post_date" datetime='2014-02-01'>02/ 1/2014</time>
-          <p class="summary">Summary: <em>Communicating between Threads using Message Queues.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/Android-style-Message-Passing">
+                <h2 class="post-title">
+                  Android Style Message Passing
+                </h2>
+                <h3 class="post-subtitle">
+                  Communicating between Threads using Message Queues.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2014_00_01">
+              <script>
+                render("/posts/Android-style-Message-Passing/tag_ratio.json","#tagpie_2014_00_01", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

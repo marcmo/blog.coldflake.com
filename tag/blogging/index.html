@@ -90,16 +90,34 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/tumblr-no-more'>Good Bye Tumblr - Welcome Hakyll</a></h3>
-          <time class="archive_list_post_date" datetime='2011-12-29'>12/29/2011</time>
-          <p class="summary">Summary: <em>Moving away from mum-style blogging to more hacker-style blogging.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/tumblr-no-more">
+                <h2 class="post-title">
+                  Good Bye Tumblr - Welcome Hakyll
+                </h2>
+                <h3 class="post-subtitle">
+                  Moving away from mum-style blogging to more hacker-style blogging.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-12-29 00:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_29">
+              <script>
+                render("/posts/tumblr-no-more/tag_ratio.json","#tagpie_2011_00_29", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

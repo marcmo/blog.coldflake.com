@@ -90,16 +90,34 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/C++-delegates-on-steroids'>C++ Delegates On Steroids</a></h3>
-          <time class="archive_list_post_date" datetime='2014-01-12'>01/12/2014</time>
-          <p class="summary">Summary: <em>Generic version of impossibly fast delegate using C++11 variadic templates.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/C++-delegates-on-steroids">
+                <h2 class="post-title">
+                  C++ Delegates On Steroids
+                </h2>
+                <h3 class="post-subtitle">
+                  Generic version of impossibly fast delegate using C++11 variadic templates.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2014_00_12">
+              <script>
+                render("/posts/C++-delegates-on-steroids/tag_ratio.json","#tagpie_2014_00_12", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

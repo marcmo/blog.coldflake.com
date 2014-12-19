@@ -90,16 +90,34 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/gtest'>Testing is fun again</a></h3>
-          <time class="archive_list_post_date" datetime='2011-07-11'>07/11/2011</time>
-          <p class="summary">Summary: <em>Using gtest is by far nicer than cppunit. This is a brief overview of it's usage and some of it's features.</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/gtest">
+                <h2 class="post-title">
+                  Testing is fun again
+                </h2>
+                <h3 class="post-subtitle">
+                  Using gtest is by far nicer than cppunit. This is a brief overview of it's usage and some of it's features.
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-11 00:00:00 +0200"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2011_00_11">
+              <script>
+                render("/posts/gtest/tag_ratio.json","#tagpie_2011_00_11", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>

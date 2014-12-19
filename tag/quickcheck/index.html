@@ -90,16 +90,34 @@
     </div>
 </header>
 <!-- Main Content -->
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <ul>
-        <li class="archive_list">
-          <h3 class="archive_list_header"><a class="archive_list_article_link" href='/posts/quickcheck-testing-c++'>QuickChecking C++ Code</a></h3>
-          <time class="archive_list_post_date" datetime='2012-10-11'>10/11/2012</time>
-          <p class="summary">Summary: <em>The haskell testing framework which can be used quite beneficial to test C++ code</em>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-preview">
+              <a href="/posts/quickcheck-testing-c++">
+                <h2 class="post-title">
+                  QuickChecking C++ Code
+                </h2>
+                <h3 class="post-subtitle">
+                  The haskell testing framework which can be used quite beneficial to test C++ code
+                </h3>
+              </a>
+              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2012-10-11 00:00:00 +0200"></span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tagpie" id="tagpie_2012_00_11">
+              <script>
+                render("/posts/quickcheck-testing-c++/tag_ratio.json","#tagpie_2012_00_11", 350, 140);
+              </script>
+            </div>
+          </div>
+        </div>
+        <hr>
 		</div>
 	</div>
 </div>
