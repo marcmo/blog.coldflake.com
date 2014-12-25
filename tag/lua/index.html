@@ -106,13 +106,13 @@
                   Statically and dynamically typed languages both can be enjoyable
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-08-31 14:00:00 +0200">08/31/14</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2014_00_31">
+            <div class="tagpie" id="tagpie_2014_Aug_31">
               <script>
-                render("/posts/choosing-the-Type-of-your-Types/tag_ratio.json","#tagpie_2014_00_31", 350, 140);
+                render("/posts/choosing-the-Type-of-your-Types/tag_ratio.json","#tagpie_2014_Aug_31", 350, 140);
               </script>
             </div>
           </div>
@@ -129,13 +129,13 @@
                   Generic version of impossibly fast delegate using C++11 variadic templates.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-01-12 13:00:00 +0100">01/12/14</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2014_00_12">
+            <div class="tagpie" id="tagpie_2014_Jan_12">
               <script>
-                render("/posts/C++-delegates-on-steroids/tag_ratio.json","#tagpie_2014_00_12", 350, 140);
+                render("/posts/C++-delegates-on-steroids/tag_ratio.json","#tagpie_2014_Jan_12", 350, 140);
               </script>
             </div>
           </div>
@@ -152,13 +152,13 @@
                   Applying dijkstras shunting yard algorithm for expression evaluation.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-01-09 13:00:00 +0100">01/09/13</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2013_00_09">
+            <div class="tagpie" id="tagpie_2013_Jan_09">
               <script>
-                render("/posts/happy-new-year-with-shunting-yard/tag_ratio.json","#tagpie_2013_00_09", 350, 140);
+                render("/posts/happy-new-year-with-shunting-yard/tag_ratio.json","#tagpie_2013_Jan_09", 350, 140);
               </script>
             </div>
           </div>
@@ -222,8 +222,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

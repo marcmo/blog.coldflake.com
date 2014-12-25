@@ -106,13 +106,13 @@
                   A simple tool for correcting misspelled header file include lines that creep in when working with Windows users.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-11-22 00:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-11-22 00:00:00 +0100">11/22/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_22">
+            <div class="tagpie" id="tagpie_2011_Nov_22">
               <script>
-                render("/posts/tool-for-a-fool/tag_ratio.json","#tagpie_2011_00_22", 350, 140);
+                render("/posts/tool-for-a-fool/tag_ratio.json","#tagpie_2011_Nov_22", 350, 140);
               </script>
             </div>
           </div>
@@ -176,8 +176,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

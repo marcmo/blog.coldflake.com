@@ -106,13 +106,13 @@
                   The missing package manager for OS X which solves a lot of headaches.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-12-07 13:00:00 +0100">12/07/13</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2013_00_07">
+            <div class="tagpie" id="tagpie_2013_Dec_07">
               <script>
-                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_00_07", 350, 140);
+                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_Dec_07", 350, 140);
               </script>
             </div>
           </div>
@@ -129,13 +129,13 @@
                   Moving away from mum-style blogging to more hacker-style blogging.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-12-29 00:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-12-29 00:00:00 +0100">12/29/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_29">
+            <div class="tagpie" id="tagpie_2011_Dec_29">
               <script>
-                render("/posts/tumblr-no-more/tag_ratio.json","#tagpie_2011_00_29", 350, 140);
+                render("/posts/tumblr-no-more/tag_ratio.json","#tagpie_2011_Dec_29", 350, 140);
               </script>
             </div>
           </div>
@@ -152,13 +152,13 @@
                   Some examples that show the usage of haskell's evaluation mode.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-10-28 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-10-28 00:00:00 +0200">10/28/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_28">
+            <div class="tagpie" id="tagpie_2011_Oct_28">
               <script>
-                render("/posts/haskell-expression-mode-with-git/tag_ratio.json","#tagpie_2011_00_28", 350, 140);
+                render("/posts/haskell-expression-mode-with-git/tag_ratio.json","#tagpie_2011_Oct_28", 350, 140);
               </script>
             </div>
           </div>
@@ -222,8 +222,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

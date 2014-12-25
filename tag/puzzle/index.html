@@ -106,13 +106,13 @@
                   Applying dijkstras shunting yard algorithm for expression evaluation.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-01-09 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-01-09 13:00:00 +0100">01/09/13</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2013_00_09">
+            <div class="tagpie" id="tagpie_2013_Jan_09">
               <script>
-                render("/posts/happy-new-year-with-shunting-yard/tag_ratio.json","#tagpie_2013_00_09", 350, 140);
+                render("/posts/happy-new-year-with-shunting-yard/tag_ratio.json","#tagpie_2013_Jan_09", 350, 140);
               </script>
             </div>
           </div>
@@ -129,13 +129,13 @@
                   Implementing a brainfuck interpreter in haskell.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-10-11 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-10-11 00:00:00 +0200">10/11/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_11">
+            <div class="tagpie" id="tagpie_2011_Oct_11">
               <script>
-                render("/posts/brainfuck/tag_ratio.json","#tagpie_2011_00_11", 350, 140);
+                render("/posts/brainfuck/tag_ratio.json","#tagpie_2011_Oct_11", 350, 140);
               </script>
             </div>
           </div>
@@ -152,13 +152,13 @@
                   Simple programming puzzle to find the first nonrepeating character in a string.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-21 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-21 00:00:00 +0200">08/21/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_21">
+            <div class="tagpie" id="tagpie_2011_Aug_21">
               <script>
-                render("/posts/first-nonrepeating-char/tag_ratio.json","#tagpie_2011_00_21", 350, 140);
+                render("/posts/first-nonrepeating-char/tag_ratio.json","#tagpie_2011_Aug_21", 350, 140);
               </script>
             </div>
           </div>
@@ -175,13 +175,13 @@
                   Simple programming puzzle to break up words according to dictionary.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-15 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-15 00:00:00 +0200">08/15/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_15">
+            <div class="tagpie" id="tagpie_2011_Aug_15">
               <script>
-                render("/posts/word-break-problem/tag_ratio.json","#tagpie_2011_00_15", 350, 140);
+                render("/posts/word-break-problem/tag_ratio.json","#tagpie_2011_Aug_15", 350, 140);
               </script>
             </div>
           </div>
@@ -198,13 +198,13 @@
                   A small prolog problem solved in haskell
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-09 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-09 00:00:00 +0200">08/09/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_09">
+            <div class="tagpie" id="tagpie_2011_Aug_09">
               <script>
-                render("/posts/hettsProblem/tag_ratio.json","#tagpie_2011_00_09", 350, 140);
+                render("/posts/hettsProblem/tag_ratio.json","#tagpie_2011_Aug_09", 350, 140);
               </script>
             </div>
           </div>
@@ -268,8 +268,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

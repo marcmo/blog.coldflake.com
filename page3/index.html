@@ -103,8 +103,7 @@
             Some examples that show the usage of haskell's evaluation mode.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-10-28 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-10-28 00:00:00 +0200">10/28/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/haskell">haskell</a>, 
       <a href="/tag/git">git</a>, 
       <a href="/tag/ghc">ghc</a>
@@ -121,8 +120,7 @@
             Implementing a brainfuck interpreter in haskell.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-10-11 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-10-11 00:00:00 +0200">10/11/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/haskell">haskell</a>, 
       <a href="/tag/puzzle">puzzle</a>, 
       <a href="/tag/algorithm">algorithm</a>, 
@@ -140,8 +138,7 @@
             Simple programming puzzle to find the first nonrepeating character in a string.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-21 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-21 00:00:00 +0200">08/21/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/haskell">haskell</a>, 
       <a href="/tag/puzzle">puzzle</a>, 
       <a href="/tag/algorithm">algorithm</a>
@@ -158,8 +155,7 @@
             Simple programming puzzle to break up words according to dictionary.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-15 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-15 00:00:00 +0200">08/15/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/haskell">haskell</a>, 
       <a href="/tag/puzzle">puzzle</a>, 
       <a href="/tag/algorithm">algorithm</a>
@@ -176,8 +172,7 @@
             A small prolog problem solved in haskell
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-08-09 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-08-09 00:00:00 +0200">08/09/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/haskell">haskell</a>, 
       <a href="/tag/puzzle">puzzle</a>, 
       <a href="/tag/algorithm">algorithm</a>
@@ -194,8 +189,7 @@
             Exploring the goodness of xargs, one of the most versatile unix utilities.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-31 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-07-31 00:00:00 +0200">07/31/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/unix">unix</a>, 
       <a href="/tag/bash">bash</a>
       .
@@ -211,8 +205,7 @@
             Using gtest is by far nicer than cppunit. This is a brief overview of it's usage and some of it's features.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-11 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-07-11 00:00:00 +0200">07/11/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/gtest">gtest</a>, 
       <a href="/tag/testing">testing</a>
@@ -229,8 +222,7 @@
             Intro to a Build Tool for C/C++ projects that is based on rake, the ruby task dependency DSL
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-06-12 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-06-12 00:00:00 +0200">06/12/11 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/ruby">ruby</a>, 
       <a href="/tag/rake">rake</a>, 
@@ -303,8 +295,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

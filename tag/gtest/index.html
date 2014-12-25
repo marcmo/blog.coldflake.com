@@ -106,13 +106,13 @@
                   Using gtest is by far nicer than cppunit. This is a brief overview of it's usage and some of it's features.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-11 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-07-11 00:00:00 +0200">07/11/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_11">
+            <div class="tagpie" id="tagpie_2011_Jul_11">
               <script>
-                render("/posts/gtest/tag_ratio.json","#tagpie_2011_00_11", 350, 140);
+                render("/posts/gtest/tag_ratio.json","#tagpie_2011_Jul_11", 350, 140);
               </script>
             </div>
           </div>
@@ -176,8 +176,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

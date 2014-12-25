@@ -103,8 +103,7 @@
             Most test-frameworks are kind of lame - this one is not
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-12-06 00:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-12-06 00:00:00 +0100">12/06/14 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/testing">testing</a>
       .
@@ -120,8 +119,7 @@
             Statically and dynamically typed languages both can be enjoyable
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-31 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-08-31 14:00:00 +0200">08/31/14 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/types">types</a>, 
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/lua">lua</a>, 
@@ -140,8 +138,7 @@
             How much Testing is good for your Development Process?
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-08-16 14:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-08-16 14:00:00 +0200">08/16/14 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/testing">testing</a>, 
       <a href="/tag/rant">rant</a>
       .
@@ -157,8 +154,7 @@
             Communicating between Threads using Message Queues.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-02-01 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-02-01 13:00:00 +0100">02/01/14 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/android">android</a>, 
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/concurrency">concurrency</a>, 
@@ -176,8 +172,7 @@
             Generic version of impossibly fast delegate using C++11 variadic templates.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2014-01-12 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2014-01-12 13:00:00 +0100">01/12/14 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/C++">C++</a>, 
       <a href="/tag/templates">templates</a>, 
       <a href="/tag/lua">lua</a>
@@ -194,8 +189,7 @@
             Again a selection of the some useful unix commands.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-12-31 13:00:00 +0100">12/31/13 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/unix">unix</a>, 
       <a href="/tag/bash">bash</a>
       .
@@ -211,8 +205,7 @@
             The missing package manager for OS X which solves a lot of headaches.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-12-07 13:00:00 +0100">12/07/13 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/unix">unix</a>, 
       <a href="/tag/osx">osx</a>, 
       <a href="/tag/tool">tool</a>, 
@@ -232,8 +225,7 @@
             Communicating over UDP sockets in haskell.
         </h3>
     </a>
-    <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-08-25 00:00:00 +0200"></span>
-    <i class="icon-tags"></i> tagged
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-08-25 00:00:00 +0200">08/25/13 </span> <i class="icon-tags"></i> tagged
       <a href="/tag/udp">udp</a>, 
       <a href="/tag/networking">networking</a>, 
       <a href="/tag/haskell">haskell</a>, 
@@ -306,8 +298,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>

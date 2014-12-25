@@ -106,13 +106,13 @@
                   Again a selection of the some useful unix commands.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-31 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-12-31 13:00:00 +0100">12/31/13</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2013_00_31">
+            <div class="tagpie" id="tagpie_2013_Dec_31">
               <script>
-                render("/posts/top-10-unix-command-line-utilities-2013/tag_ratio.json","#tagpie_2013_00_31", 350, 140);
+                render("/posts/top-10-unix-command-line-utilities-2013/tag_ratio.json","#tagpie_2013_Dec_31", 350, 140);
               </script>
             </div>
           </div>
@@ -129,13 +129,13 @@
                   The missing package manager for OS X which solves a lot of headaches.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2013-12-07 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2013-12-07 13:00:00 +0100">12/07/13</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2013_00_07">
+            <div class="tagpie" id="tagpie_2013_Dec_07">
               <script>
-                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_00_07", 350, 140);
+                render("/posts/The-Incredible-Brew/tag_ratio.json","#tagpie_2013_Dec_07", 350, 140);
               </script>
             </div>
           </div>
@@ -152,13 +152,13 @@
                   Another selection of the some useful unix commands which I found useful.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2012-12-30 13:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2012-12-30 13:00:00 +0100">12/30/12</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2012_00_30">
+            <div class="tagpie" id="tagpie_2012_Dec_30">
               <script>
-                render("/posts/Top-10-Unix-Command-Line-Utilities-2012/tag_ratio.json","#tagpie_2012_00_30", 350, 140);
+                render("/posts/Top-10-Unix-Command-Line-Utilities-2012/tag_ratio.json","#tagpie_2012_Dec_30", 350, 140);
               </script>
             </div>
           </div>
@@ -175,13 +175,13 @@
                   A selection of the most useful bash commands I (re)-discovered this year.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-12-31 00:00:00 +0100"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-12-31 00:00:00 +0100">12/31/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_31">
+            <div class="tagpie" id="tagpie_2011_Dec_31">
               <script>
-                render("/posts/bash-features-of-the-year/tag_ratio.json","#tagpie_2011_00_31", 350, 140);
+                render("/posts/bash-features-of-the-year/tag_ratio.json","#tagpie_2011_Dec_31", 350, 140);
               </script>
             </div>
           </div>
@@ -198,13 +198,13 @@
                   Exploring the goodness of xargs, one of the most versatile unix utilities.
                 </h3>
               </a>
-              <p class="post-meta"><i class="icon-clock"></i> <span data-livestamp="2011-07-31 00:00:00 +0200"></span></p>
+              <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-07-31 00:00:00 +0200">07/31/11</span></p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="tagpie" id="tagpie_2011_00_31">
+            <div class="tagpie" id="tagpie_2011_Jul_31">
               <script>
-                render("/posts/the-wonders-of-xargs/tag_ratio.json","#tagpie_2011_00_31", 350, 140);
+                render("/posts/the-wonders-of-xargs/tag_ratio.json","#tagpie_2011_Jul_31", 350, 140);
               </script>
             </div>
           </div>
@@ -268,8 +268,12 @@
 </footer>
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
-<script src="/js/moment.min.js "></script>
-<script src="/js/livestamp.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
 </body>
