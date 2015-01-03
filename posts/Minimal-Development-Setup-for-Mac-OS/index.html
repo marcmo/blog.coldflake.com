@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploring software technologies">
+    <title>Minimal Development Setup for Mac OS - Coldflake Blog</title>
+    <link rel="canonical" href="http://blog.coldflake.com/posts/Minimal-Development-Setup-for-Mac-OS">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/coldflake.css">
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Ubuntu:400,500,700" rel="stylesheet" type="text/css">
+    <!-- iconfonts -->
+    <style type="text/css" media="screen, print">
+        @font-face {
+          font-family: 'icomoon';
+          src:url('/fonts/icomoon.eot');
+          src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/icomoon.woff') format('woff'),
+            url('/fonts/icomoon.ttf') format('truetype'),
+            url('/fonts/icomoon.svg#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-21532991-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar&#45;brand" href="/">Coldflake Blog</a> -->
+            <a class="navbar-brand" rel="home" href="/" title="home">
+              <img style="max-width:120px; margin-top: -7px;" src="/img/mountainBackgroundWhite.png">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/tag">Tags</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/macsetup.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Minimal Development Setup for Mac OS</h1>
+                    <h2 class="subheading">A small selection of non-commercial hacker tools that can make a programmers life easier</h2>
+                    <span class="meta">Posted on January 2, 2015
+                      <i class="icon-tags"></i> 
+                      <a href="/tag/osx">osx</a>, 
+                      <a href="/tag/tool">tool</a>, 
+                      <a href="/tag/unix">unix</a>, 
+                      <a href="/tag/ruby">ruby</a>
+                      .
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div id="tagpie">
+            </div>
+				<div class="table-of-contents">
+<h3 id="content">Content</h3>
+<ul>
+  <li><a href="#terminal">Terminal</a></li>
+  <li><a href="#brew-and-brew-cask">brew and brew-cask</a></li>
+  <li><a href="#some-basic-system-tools">Some basic system-tools</a></li>
+  <li><a href="#the-holy-cow---the-text-editor">The holy cow - The Text Editor</a></li>
+  <li><a href="#essential-command-line-utilities">Essential command line utilities</a></li>
+  <li><a href="#useful-apps">Useful Apps</a></li>
+  <li><a href="#ruby">Ruby</a></li>
+  <li><a href="#the-other-dotfiles">The other dotfiles</a></li>
+</ul>
+</div>
+<p>This time of the year I usually have a little time to go through the notes I made over the course of
+the last 12 month. Most of them are some <strong>howtos</strong> and write-ups of some of the things I learned or
+recipes I’d like to use again in the future. One of those write-ups cover some of the steps I
+undertake to setup a new box running Mac OS. This usually happens once or twice a year and I often
+forget some things that distract me on a later occasion. I think those notes could be useful to
+someone else as well so I’ll share them here.<br />
+A word of caution: The list is deliberately not extensive but is intended as a minimal setup that
+should get the average developer a long way on OS X. It’s also not meant to provide an automatic way
+to prepare the system. I rather use it as a reminder and to copy/paste some of the more verbose
+commands like the brew setup stuff. All programs listed should be free or at least provide a free
+version.</p>
+<h1 id="command-line-first">Command Line first</h1>
+<p>I’m not a fan of fancy Gui tools and <a href="/posts/bash-features-of-the-year">always</a>
+<a href="/posts/Top-10-Unix-Command-Line-Utilities-2012">prefer</a> <a href="/posts/top-10-unix-command-line-utilities-2013">issuing some
+commands</a> on a descent shell over
+clicking some buttons. So this setup will be mainly concerned with command line tools.</p>
+<h2 id="i-classfa-fa-terminali-terminal"><i class="fa fa-terminal"></i> Terminal</h2>
+<p>Let’s kick of with the tool every programmer needs every day: a descent terminal app. The terminal
+app that comes with OS X does the job but once you’ve tried <a href="http://iterm2.com/">iTerm 2</a> there is
+no going back again. It packs a lot of useful features into the bag like split panes, a very nice
+search and triggers that can react to arbitrary output.</p>
+<p><img class="img-responsive" src="/img/iterm2.jpg" alt="" /></p>
+<p>Once the terminal is covered everything else can be attacked.</p>
+<h2 id="i-classfa-fa-flaski-brew-and-brew-cask"><i class="fa fa-flask"></i> brew and brew-cask</h2>
+<p><a href="/posts/The-Incredible-Brew">brew</a> is a <em>very</em> convenient way to install
+command line tools and since some time you can use <a href="http://caskroom.io/">brew-cask</a> to install OS X
+applications. Astonishing how much more convenient it is to install applications that way!</p>
+<p>First install brew:</p>
+<pre class="terminal">
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</pre>
+<p>Then brew-cask:</p>
+<pre class="terminal">
+brew install caskroom/cask/brew-cask
+</pre>
+<p>When using <code>brew cask install</code> I like to add the <code>--appdir=/Application</code> option which will create a
+symlink to the newly installed app in the global application directory.</p>
+<h2 id="some-basic-system-tools">Some basic system tools</h2>
+<p><img class="img-responsive" src="/img/manuals.png" alt="" /></p>
+<h3 id="i-classfa-fa-dropboxi-dropbox"><i class="fa fa-dropbox"></i> Dropbox</h3>
+<p>Almost ridiculous how useful this app can be. Installable with brew-cask:</p>
+<pre class="terminal">
+brew cask install --appdir="/Applications" dropbox
+</pre>
+<p><em>Dropbox</em> helps me to make most of my profiles and projects available on every machine I work on.
+And since I mainly have text files in my dropbox, the free account is all I need. It’s a great way
+to share configuration-settings.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> <span class="o">[</span> -f ~/.bashrc_common <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+   . ~/.bashrc_common
+<span class="k">fi</span></code></pre></div>
+<p>My <code>.bashrc</code> for instance is split into a part that is portable
+across Mac and Linux systems (<code>.bashrc_common</code>) so that one is symlinked into my dropbox folder and
+included in the <code>.bashrc</code> files of every machine.</p>
+<pre class="terminal">
+<span class="prompt">~</span> &gt; .bashrc_common -&gt; Dropbox/dotfiles/.bashrc_common
+</pre>
+<h3 id="quicksilver">Quicksilver</h3>
+<p>An application launcher is essential, <strong>Quicksilver</strong> has been a worthy companion for many years.
+<a href="http://www.alfredapp.com/">Alfred</a> seems to be more fashionable these days but so far I never tried it.</p>
+<pre class="terminal">
+brew cask install --appdir="/Applications" quicksilver
+</pre>
+<h2 id="the-holy-cow---the-text-editor">The holy cow - The Text Editor</h2>
+<p>You probably will spend a <em>lot</em> of time using it, so better find a good fit for yourself. I’m a
+Vim-person, so that is what I install. And since some of the plugins I use need lua support, I
+enable this for the build.<br />
+I won’t get into vim configuations, that is too individual. But keeping your editors configuration
+in an easily accessible place is always a good thing (I keep my vim configuration on
+<a href="https://github.com/marcmo/vimfiles">github</a> so I just need to clone my repository and install my
+plugins with my plugin manager).</p>
+<pre class="terminal">
+brew install vim --with-luajit
+</pre>
+<p>If vim is not your thing, <em>emacs</em> and <em>Sublime Text</em> both are available on <em>brew-cask</em>.</p>
+<h2 id="essential-command-line-utilities">Essential command line utilities</h2>
+<p>All of the following utilities are best installed with <code>brew install</code>.</p>
+<p><i class="fa fa-check-square"></i> <strong>git</strong> – best version control system I’ve worked with<br />
+<i class="fa fa-check-square"></i> <a href="http://astyle.sourceforge.net/"><strong>astyle</strong></a> – Artistic Style, can format source code with a lot of options<br />
+<i class="fa fa-check-square"></i> <strong>cmake</strong> – often needed to build C/C++ libraries and projects<br />
+<i class="fa fa-check-square"></i> <a href="http://www.colordiff.org/"><strong>colordiff</strong></a> – just a wrapper for <code>diff</code> but does some nice highlighting<br />
+<i class="fa fa-check-square"></i> <a href="http://ctags.sourceforge.net/"><strong>ctags</strong></a> – Exuberant ctags, indispensable for vim and emacs users<br />
+<i class="fa fa-check-square"></i> <strong>htop-osx</strong> – A port of htop to OSX<br />
+<i class="fa fa-check-square"></i> <strong>luajit</strong> – a Just-In-Time Compiler for Lua<br />
+<i class="fa fa-check-square"></i> <strong>luarocks</strong> – a deployment and management system for Lua modules<br />
+<i class="fa fa-check-square"></i> <strong>mercurial</strong> – another distributed VCS<br />
+<i class="fa fa-check-square"></i> <a href="http://nodejs.org/"><strong>node</strong></a> – the NodeJS framework<br />
+<i class="fa fa-check-square"></i> <strong>p7zip</strong> – compression utility with very good compression ratio<br />
+<i class="fa fa-check-square"></i> <a href="https://code.google.com/p/picocom/"><strong>picocom</strong></a> – minimal terminal emulator<br />
+<i class="fa fa-check-square"></i> <strong>the_silver_searcher</strong> – ag is a grep replacement similar to ack, very fast<br />
+<i class="fa fa-check-square"></i> <a href="http://jonas.nitro.dk/tig/"><strong>tig</strong></a> – text mode interface for git<br />
+<i class="fa fa-check-square"></i> <strong>tree</strong> – quickly view a directory’s content<br />
+<i class="fa fa-check-square"></i> <strong>unrar</strong> – unpack rar files<br />
+<i class="fa fa-check-square"></i> <strong>watch</strong> – <a href="/posts/bash-features-of-the-year/#watch">periodically</a> execute command<br />
+<i class="fa fa-check-square"></i> <strong>wget</strong> – download files over HTTP/HTTPS/FTP<br />
+<i class="fa fa-check-square"></i> <a href="https://www.gnu.org/software/wget/"><strong>z</strong></a> – easily jump around between directory locations<br />
+<i class="fa fa-check-square"></i> <a href="https://github.com/junegunn/fzf"><strong>fzf</strong></a> – general-purpose fuzzy finder for your shell<br />
+<i class="fa fa-check-square"></i> <a href="http://tmux.sourceforge.net/"><strong>tmux</strong></a> – terminal multiplexer  </p>
+<p>All of the utilities from above can be installed with a single command.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">utilities</span><span class="o">=(</span> git astyle cmake colordiff ctags htop luajit luarocks mercurial <span class="se">\</span>
+node p7zip picocom the_silver_searcher tig tree unrar watch wget z fzf tmux <span class="o">)</span>
+brew install <span class="k">${</span><span class="nv">utilities</span><span class="p">[@]</span><span class="k">}</span>
+brew cleanup</code></pre></div>
+<h2 id="useful-apps">Useful Apps</h2>
+<p>All of the following apps can be installed with <code>brew cask install --appdir="/Applications"</code>.</p>
+<p><i class="fa fa-check-square"></i> <a href="https://www.wireshark.org/"><strong>wireshark</strong></a> – great tool to trace and analyze network traffic<br />
+<i class="fa fa-check-square"></i> <a href="http://ridiculousfish.com/hexfiend/"><strong>hex-fiend</strong></a> – very fast hex editor<br />
+<i class="fa fa-check-square"></i> <strong>google-chrome</strong> – has the best web development tools I know<br />
+<i class="fa fa-check-square"></i> <a href="https://code.google.com/p/qlcolorcode/"><strong>qlcolorcode</strong></a> – QuickLook plugin for source code with syntax highlighting<br />
+<i class="fa fa-check-square"></i> <a href="https://github.com/toland/qlmarkdown"><strong>qlmarkdown</strong></a> Quicklook plugin to preview markdown files.<br />
+<i class="fa fa-check-square"></i> <a href="http://whomwah.github.io/qlstephen/"><strong>qlstephen</strong></a> QuickLook plugin for plain text files without a file extension<br />
+<i class="fa fa-check-square"></i> <a href="http://www.sagtau.com/quickloon.html"><strong>quicklook-json</strong></a> QuickLook plugin for json highlighting<br />
+<i class="fa fa-check-square"></i> <a href="http://asepsis.binaryage.com/"><strong>Asepsis</strong></a> – prevents creation of <em>.DS_Store</em> files. It redirects their creation into a special folder<br />
+<i class="fa fa-check-square"></i> <strong>boot2docker</strong> – allows you to run docker (virtual environment) containers on OS X<br />
+<i class="fa fa-check-square"></i> <strong>vagrant</strong> – <em>virtual machine</em> manager<br />
+<i class="fa fa-check-square"></i> <strong>virtualbox</strong> – free, cross-platform consumer virtualization product supported by vagrant<br />
+<i class="fa fa-check-square"></i> <strong>omnidisksweeper</strong> – shows the files on your drive (in descending order by size)<br />
+<i class="fa fa-check-square"></i> <strong>vlc</strong> – plays every video format  </p>
+<p>Everything can be installed with a single command:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">apps</span><span class="o">=(</span> wireshark hex-fiend google-chrome qlcolorcode qlmarkdown qlstephen <span class="se">\</span>
+quicklook-json Asepsis boot2docker virtualbox omnidisksweeper vlc <span class="o">)</span>
+brew cask install <span class="k">${</span><span class="nv">apps</span><span class="p">[@]</span><span class="k">}</span>
+brew cask cleanup</code></pre></div>
+<h2 id="ruby">Ruby</h2>
+<p>Probably not for everyone but ruby is such an integral part of a lot of development tools it’s hard
+to ignore it even if you are not a ruby developer.</p>
+<h3 id="manage-ruby-version-with-rbenv">Manage ruby version with rbenv</h3>
+<p><code>rbenv</code> is a convenient way to switch between different ruby installations. On purpose it does a
+whole lot less than <a href="https://rvm.io/">rvm</a> but comes with a much lower impact for your system. Using
+it together with bundler is currently the way I set up my ruby environment.</p>
+<pre class="terminal">
+brew install rbenv ruby-build
+</pre>
+<p>Don’t forget to add the line <code>eval "$(rbenv init -)"</code> to your profile to enable rbenv.<br />
+This installs a ruby and sets it as the global default ruby version:</p>
+<pre class="terminal">
+rbenv install 2.2.0
+rbenv rehash
+rbenv global 2.2.0
+</pre>
+<h3 id="gemrc">.gemrc</h3>
+<p>Speed up gem installations by skipping documentation.</p>
+<pre class="terminal">
+<span class="prompt">tmp</span> &gt; echo &#39;gem: --no-rdoc --no-ri&#39; &gt;&gt; ~/.gemrc
+</pre>
+<h3 id="irbrc">.irbrc</h3>
+<p>Influences how <a href="http://en.wikipedia.org/wiki/Interactive_Ruby_Shell">irb</a>, the <em>Interactive Ruby
+Shell</em>, behaves. I really like to have the autocompletion of <a href="http://tagaholic.me/bond/">bond</a> in
+irb. Also nice: the ability to drop into vim to do edits in the editor
+(<a href="https://github.com/jberkel/interactive_editor">Interactive editor</a>).</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">require <span class="s1">&#39;rubygems&#39;</span>
+require <span class="s1">&#39;interactive_editor&#39;</span>
+require <span class="s1">&#39;bond&#39;</span>
+Bond.start</code></pre></div>
+<h2 id="the-other-dotfiles">The other dotfiles</h2>
+<p>Besides the usual <code>.profile</code> or <code>.bash*</code> files there are a couple of other interesting ones that I
+like to have setup. I keep most of them in my dropbox folder and just symlink them.</p>
+<h3 id="vimrc">.vimrc</h3>
+<p>The only one not in my dropbox. I check out my vim config into a separate folder (.vim) and source a
+<a href="https://github.com/marcmo/vimfiles/blob/master/_vimrc_universal">platform independent</a> and a
+<a href="https://github.com/marcmo/vimfiles/blob/master/_vimrc_mac">platform specific</a> part.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.vim/_vimrc_universal
+<span class="nb">source</span> ~/.vim/_vimrc_mac</code></pre></div>
+<h3 id="git-completion">.git-completion</h3>
+<p>I just take the <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">version from git’s git</a>,
+copy it to home under the name <code>~/.git-completion.sh</code> and add <code>source ~/.git-completion.sh</code> to my <code>.bashrc</code>.</p>
+<h3 id="gitconfig">.gitconfig</h3>
+<p>Most of the options I use globally:</p>
+<pre class="terminal">
+git config --global push.default current
+git config --global core.excludesfile ~/.gitignore
+git config --global user.name "myname"
+git config --global user.email myname@gmail.com
+git config --global color.branch auto
+git config --global color.diff auto
+git config --global color.interactive auto
+git config --global color.status auto
+git config --global core.editor "vim"
+git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative"
+</pre>
+<h3 id="editrc">.editrc</h3>
+<p>Defines various settings to be used by the editline library. This one binds all keys to the standard
+vi-like bindings:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">bind</span> -v</code></pre></div>
+<h3 id="inputrc">.inputrc</h3>
+<p>The readline init file. Since a lot of tools use the readline library, these settings can affect a
+whole range of applications.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># enable vi-mode</span>
+<span class="nb">set </span>editing-mode vi
+<span class="nb">set </span>keymap vi
+<span class="c"># Turn on case insensitivity for tab-completion</span>
+<span class="nb">set </span>completion-ignore-case on</code></pre></div>
+<h3 id="tmuxconf">.tmux.conf</h3>
+<p>Very individual again. Here is mine:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">unbind C-b
+<span class="nb">set</span> -g prefix C-a
+<span class="nb">bind</span> -n M-Left <span class="k">select</span>-pane -L
+<span class="nb">bind</span> -n M-Right <span class="k">select</span>-pane -R
+<span class="nb">bind</span> -n M-Up <span class="k">select</span>-pane -U
+<span class="nb">bind</span> -n M-Down <span class="k">select</span>-pane -D
+setw -g mode-mouse on
+<span class="nb">set</span> -g terminal-overrides <span class="s1">&#39;xterm*:smcup@:rmcup@&#39;</span>
+setw -g mode-mouse on
+setw -g mode-keys vi
+<span class="nb">set</span> -g default-terminal <span class="s2">&quot;xterm&quot;</span>
+<span class="nb">set</span> -g prefix C-a
+<span class="nb">bind</span>-key -r C-h <span class="k">select</span>-window -t :-
+<span class="nb">bind</span>-key -r C-l <span class="k">select</span>-window -t :+
+<span class="nb">bind</span>-key J resize-pane -D
+<span class="nb">bind</span>-key K resize-pane -U
+<span class="nb">bind</span>-key H resize-pane -L
+<span class="nb">bind</span>-key L resize-pane -R
+<span class="c"># quick pane cycling</span>
+unbind ^a
+<span class="nb">bind</span> ^a <span class="k">select</span>-pane -t :.+
+<span class="nb">bind </span>C-p run <span class="s2">&quot;tmux set-buffer \&quot;$(xclip -o)\&quot;; tmux paste-buffer&quot;</span>
+<span class="nb">bind </span>C-y run <span class="s2">&quot;tmux show-buffer | xclip -selection clipboard&quot;</span>
+<span class="nb">bind</span> -n C-k clear-history
+<span class="c"># pane movement</span>
+<span class="nb">bind</span>-key j <span class="nb">command</span>-prompt -p <span class="s2">&quot;join pane from:&quot;</span>  <span class="s2">&quot;join-pane -s &#39;%%&#39;&quot;</span></code></pre></div>
+<h1 id="ready-to-start">Ready to start</h1>
+<p>Once your machine has this kind of basic setup, most of the fundamental stuff should be out of the way.
+And adding additional tools and configurations that are more specific will be a lot quicker. Happy
+hacking <i class="fa fa-smile-o"></i>.</p>
+<hr />
+<p><small>xkcd-image: <a href="http://xkcd.com/1343/">http://xkcd.com/1343/</a></small></p>
+                <hr>
+                <ul class="pager">
+                    <li class="previous">
+                    <a href="/posts/Testing-C++-with-a-new-Catch" data-toggle="tooltip" data-placement="top" title="Testing C++ With A New Catch"><i class="fa fa-arrow-left"></i> Older</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+<hr>
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagpie.js"></script>
+<script>
+  render("tag_ratio.json","#tagpie", 600, 200);
+</script>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                      <a href="/about" title="About">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/marcontwit">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/marcmo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="mailto:&#111;&#108;&#105;&#118;&#101;&#114;&#046;&#109;&#117;&#101;&#108;&#108;&#101;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" title="drop me a line">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                      </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Coldflake Blog 2015
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+<script src="/js/jquery.timeago.js "></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery("span.timeago").timeago();
+});
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+</body>
+</html>
+

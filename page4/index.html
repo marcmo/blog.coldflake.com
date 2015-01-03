@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
-    <title>Lunch break coding - First Nonrepeating Character - Coldflake Blog</title>
-    <link rel="canonical" href="http://blog.coldflake.com/posts/first-nonrepeating-char">
+    <title>Coldflake Blog</title>
+    <link rel="canonical" href="http://blog.coldflake.com/page4/">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- Custom CSS -->
@@ -77,80 +77,51 @@
     </div>
     <!-- /.container -->
 </nav>
-    <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/domino.jpg')">
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/snow_lamp.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Lunch break coding - First Nonrepeating Character</h1>
-                    <h2 class="subheading">Simple programming puzzle to find the first nonrepeating character in a string.</h2>
-                    <span class="meta">Posted on August 21, 2011
-                      <i class="icon-tags"></i> 
-                      <a href="/tag/haskell">haskell</a>, 
-                      <a href="/tag/puzzle">puzzle</a>, 
-                      <a href="/tag/algorithm">algorithm</a>
-                      .
-                    </span>
+                <div class="site-heading">
+                    <h1>Coldflake Blog</h1>
+                    <span class="subheading">while !success = try_it do end</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div id="tagpie">
-            </div>
-				<p>Again a little programming task frome <a href="http://programmingpraxis.com/2011/08/19/first-non-repeating-character/">here</a>:</p>
-<blockquote>
-  <p>Write a function that takes an input string and returns the first character from the string that is not repeated later in the string. For instance, the two letters “d” and “f” in the input string “aabcbcdeef” are non-repeating, and the function should return “d” since “f” appears later in the string. The function should return some indication if there are no non-repeating characters in the string. </p>
-</blockquote>
-<p>Seems like <code>Data.List</code> should have everything we need for a simple solution.</p>
-<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">import</span> <span class="nn">Data.List</span><span class="p">(</span><span class="n">group</span><span class="p">,</span><span class="n">find</span><span class="p">,</span><span class="n">sort</span><span class="p">)</span></code></pre></div>
-<p>We are given a string of character and first filter out the characters that are unique.<br />
-Once those are assembled, we can recursively walk over the characters in the input string and find the first character that is unique:</p>
-<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="nf">firstNonRepeating</span> <span class="ow">::</span>  <span class="kt">Ord</span> <span class="n">a</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Maybe</span> <span class="n">a</span>
-<span class="nf">firstNonRepeating</span> <span class="n">xs</span> <span class="ow">=</span> <span class="n">walkTill</span> <span class="n">uniques</span> <span class="n">xs</span> <span class="kr">where</span>
-  <span class="n">uniques</span> <span class="ow">=</span> <span class="p">[</span><span class="n">head</span> <span class="n">ys</span> <span class="o">|</span> <span class="n">ys</span> <span class="ow">&lt;-</span> <span class="n">group</span> <span class="o">$</span> <span class="n">sort</span> <span class="n">xs</span>
-                     <span class="p">,</span> <span class="p">((</span><span class="o">==</span><span class="p">)</span> <span class="mi">1</span> <span class="o">.</span> <span class="n">length</span><span class="p">)</span> <span class="n">ys</span> <span class="p">]</span>
-  <span class="n">walkTill</span> <span class="kr">_</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="kt">Nothing</span>
-  <span class="n">walkTill</span> <span class="n">uniques</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span>
-    <span class="o">|</span> <span class="n">x</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="n">uniques</span> <span class="ow">=</span> <span class="kt">Just</span> <span class="n">x</span>
-    <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">walkTill</span> <span class="n">uniques</span> <span class="n">xs</span></code></pre></div>
-<p>A quick test to verify the algorithm:</p>
-<pre class="terminal">
-*Main&gt; firstNonRepeating "aabcbcdeef"
-Just 'd'
-*Main&gt; firstNonRepeating "a................b..................c...................d"
-Just 'a'
-*Main&gt; firstNonRepeating "aa....bb.....cc.....dd"
-Nothing
-</pre>
-<p>Full source-code is available <a href="/code/firstNonrepeating/algorithm.hs">here</a>.</p>
-              <hr>
-              <small>title-image by <a href="https://www.flickr.com/photos/mikeyphillips/">Mikey Phillips</a> (<a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">license</a>)</small>
-                <hr>
-                <ul class="pager">
-                    <li class="previous">
-                    <a href="/posts/word-break-problem" data-toggle="tooltip" data-placement="top" title="Lunch break coding - Word Break Problem"><i class="fa fa-arrow-left"></i> Older</a>
-                    </li>
-                    <li class="next">
-                    <a href="/posts/brainfuck" data-toggle="tooltip" data-placement="top" title="Lunch break coding - brainfuck">Newer <i class="fa fa-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</article>
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-preview">
+    <a href="/posts/cxxproject">
+        <h2 class="post-title">
+            Building C/C++ Projects with Cxxproject
+        </h2>
+        <h3 class="post-subtitle">
+            Intro to a Build Tool for C/C++ projects that is based on rake, the ruby task dependency DSL
+        </h3>
+    </a>
+    <p class="post-meta"><i class="icon-clock"></i> <span class="timeago" title="2011-06-12 00:00:00 +0200">06/12/11 </span> <i class="icon-tags"></i> tagged
+      <a href="/tag/C++">C++</a>, 
+      <a href="/tag/ruby">ruby</a>, 
+      <a href="/tag/rake">rake</a>, 
+      <a href="/tag/dsl">dsl</a>
+      .
+    </p>
+</div>
 <hr>
-<script src="/js/d3.min.js"></script>
-<script src="/js/tagpie.js"></script>
-<script>
-  render("tag_ratio.json","#tagpie", 600, 200);
-</script>
+<!-- Pager -->
+<ul class="pager">
+    <li class="previous">
+        <a href="/page3">&larr; Newer</a>
+    </li>
+</ul>
+		</div>
+	</div>
+</div>
+<hr>
     <!-- Footer -->
 <footer>
     <div class="container">
