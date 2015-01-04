@@ -180,6 +180,23 @@ included in the <code>.bashrc</code> files of every machine.</p>
 <pre class="terminal">
 brew cask install --appdir="/Applications" quicksilver
 </pre>
+<h3 id="asepsis">Asepsis</h3>
+<p>Ever wondered if there is a way to get rid of those stupid <code>.DS_Store</code> files Mac OS creates
+automatically? Those files are meant to serve as a general-purpose store for metadata, mostly used
+by Apple’s <em>Finder</em>. The are hidden by default, but developers notice them of course. And they can
+really be a problem when working with network drives.</p>
+<p><img class="img-responsive" src="/img/asepsis.png" alt="" /></p>
+<p>A rather smart solution to deal with them is implemented with <em>Asepsis</em>. It migrates all <code>.DS_Store</code>
+files to a separate folder (<code>/usr/local/.dscage/</code>) and keeps your folders clear of them.</p>
+<pre class="terminal">
+<span class="prompt">~</span> &gt; brew cask install --appdir="/Applications" quicksilver
+<span class="prompt">~</span> &gt; asepsisctl diagnose
+Your Asepsis installation seems to be OK
+<span class="prompt">~</span> &gt; asepsisctl migratein
+migrating all .DS_Store files from /Users/muellero into /usr/local/.dscage
+................................................................................................................................................................................................................
+moved 208 .DS_Store file(s) into the prefix folder
+</pre>
 <h2 id="the-holy-cow---the-text-editor">The holy cow - The Text Editor</h2>
 <p>You probably will spend a <em>lot</em> of time using it, so better find a good fit for yourself. I’m a
 Vim-person, so that is what I install. And since some of the plugins I use need lua support, I

@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Jan 2015 10:13:35 +0100</pubDate>
-    <lastBuildDate>Sun, 04 Jan 2015 10:13:35 +0100</lastBuildDate>
+    <pubDate>Sun, 04 Jan 2015 11:06:56 +0100</pubDate>
+    <lastBuildDate>Sun, 04 Jan 2015 11:06:56 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -117,6 +117,28 @@ included in the &lt;code&gt;.bashrc&lt;/code&gt; files of every machine.&lt;/p&g
 
 &lt;pre class=&quot;terminal&quot;&gt;
 brew cask install --appdir=&quot;/Applications&quot; quicksilver
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;asepsis&quot;&gt;Asepsis&lt;/h3&gt;
+
+&lt;p&gt;Ever wondered if there is a way to get rid of those stupid &lt;code&gt;.DS_Store&lt;/code&gt; files Mac OS creates
+automatically? Those files are meant to serve as a general-purpose store for metadata, mostly used
+by Apple’s &lt;em&gt;Finder&lt;/em&gt;. The are hidden by default, but developers notice them of course. And they can
+really be a problem when working with network drives.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/asepsis.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A rather smart solution to deal with them is implemented with &lt;em&gt;Asepsis&lt;/em&gt;. It migrates all &lt;code&gt;.DS_Store&lt;/code&gt;
+files to a separate folder (&lt;code&gt;/usr/local/.dscage/&lt;/code&gt;) and keeps your folders clear of them.&lt;/p&gt;
+
+&lt;pre class=&quot;terminal&quot;&gt;
+&lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; brew cask install --appdir=&quot;/Applications&quot; quicksilver
+&lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; asepsisctl diagnose
+Your Asepsis installation seems to be OK
+&lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; asepsisctl migratein
+migrating all .DS_Store files from /Users/muellero into /usr/local/.dscage
+................................................................................................................................................................................................................
+moved 208 .DS_Store file(s) into the prefix folder
 &lt;/pre&gt;
 
 &lt;h2 id=&quot;the-holy-cow---the-text-editor&quot;&gt;The holy cow - The Text Editor&lt;/h2&gt;
