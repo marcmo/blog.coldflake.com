@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Jan 2015 11:06:56 +0100</pubDate>
-    <lastBuildDate>Sun, 04 Jan 2015 11:06:56 +0100</lastBuildDate>
+    <pubDate>Mon, 05 Jan 2015 16:04:38 +0100</pubDate>
+    <lastBuildDate>Mon, 05 Jan 2015 16:04:38 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -50,16 +50,15 @@ version.&lt;/p&gt;
 commands&lt;/a&gt; on a descent shell over
 clicking some buttons. So this setup will be mainly concerned with command line tools.&lt;/p&gt;
 
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/terminal.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;i-classfa-fa-terminali-terminal&quot;&gt;&lt;i class=&quot;fa fa-terminal&quot;&gt;&lt;/i&gt; Terminal&lt;/h2&gt;
 
 &lt;p&gt;Let’s kick of with the tool every programmer needs every day: a descent terminal app. The terminal
 app that comes with OS X does the job but once you’ve tried &lt;a href=&quot;http://iterm2.com/&quot;&gt;iTerm 2&lt;/a&gt; there is
 no going back again. It packs a lot of useful features into the bag like split panes, a very nice
-search and triggers that can react to arbitrary output.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/iterm2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once the terminal is covered everything else can be attacked.&lt;/p&gt;
+search and triggers that can react to arbitrary output.&lt;br /&gt;
+Once the terminal is covered everything else can be attacked.&lt;/p&gt;
 
 &lt;h2 id=&quot;i-classfa-fa-flaski-brew-and-brew-cask&quot;&gt;&lt;i class=&quot;fa fa-flask&quot;&gt;&lt;/i&gt; brew and brew-cask&lt;/h2&gt;
 
