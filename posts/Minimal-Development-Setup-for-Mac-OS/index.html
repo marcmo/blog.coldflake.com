@@ -78,7 +78,7 @@
     <!-- /.container -->
 </nav>
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/macsetup.jpg')">
+<header class="intro-header" style="background-image: url('/img/macdev/macsetup.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -130,11 +130,11 @@ to prepare the system. I rather use it as a reminder and to copy/paste some of t
 commands like the brew setup stuff. All programs listed should be free or at least provide a free
 version.</p>
 <h1 id="command-line-first">Command Line first</h1>
+<p><img class="img-responsive" src="/img/macdev/terminal.png" alt="" /></p>
 <p>I’m not a fan of fancy Gui tools and <a href="/posts/bash-features-of-the-year">always</a>
 <a href="/posts/Top-10-Unix-Command-Line-Utilities-2012">prefer</a> <a href="/posts/top-10-unix-command-line-utilities-2013">issuing some
 commands</a> on a descent shell over
 clicking some buttons. So this setup will be mainly concerned with command line tools.</p>
-<p><img class="img-responsive" src="/img/terminal.png" alt="" /></p>
 <h2 id="i-classfa-fa-terminali-terminal"><i class="fa fa-terminal"></i> Terminal</h2>
 <p>Let’s kick of with the tool every programmer needs every day: a descent terminal app. The terminal
 app that comes with OS X does the job but once you’ve tried <a href="http://iterm2.com/">iTerm 2</a> there is
@@ -156,7 +156,7 @@ brew install caskroom/cask/brew-cask
 <p>When using <code>brew cask install</code> I like to add the <code>--appdir=/Application</code> option which will create a
 symlink to the newly installed app in the global application directory.</p>
 <h2 id="some-basic-system-tools">Some basic system tools</h2>
-<p><img class="img-responsive" src="/img/manuals.png" alt="" /></p>
+<p><img class="img-responsive center-block" src="/img/macdev/manuals.png" alt="" /></p>
 <h3 id="i-classfa-fa-dropboxi-dropbox"><i class="fa fa-dropbox"></i> Dropbox</h3>
 <p>Almost ridiculous how useful this app can be. Installable with brew-cask:</p>
 <pre class="terminal">
@@ -185,7 +185,7 @@ brew cask install --appdir="/Applications" quicksilver
 automatically? Those files are meant to serve as a general-purpose store for metadata, mostly used
 by Apple’s <em>Finder</em>. The are hidden by default, but developers notice them of course. And they can
 really be a problem when working with network drives.</p>
-<p><img class="img-responsive" src="/img/asepsis.png" alt="" /></p>
+<p><img class="img-responsive center-block" src="/img/macdev/asepsis.png" alt="" /></p>
 <p>A rather smart solution to deal with them is implemented with <em>Asepsis</em>. It migrates all <code>.DS_Store</code>
 files to a separate folder (<code>/usr/local/.dscage/</code>) and keeps your folders clear of them.</p>
 <pre class="terminal">
@@ -199,9 +199,10 @@ moved 208 .DS_Store file(s) into the prefix folder
 </pre>
 <h2 id="the-holy-cow---the-text-editor">The holy cow - The Text Editor</h2>
 <p>You probably will spend a <em>lot</em> of time using it, so better find a good fit for yourself. I’m a
-Vim-person, so that is what I install. And since some of the plugins I use need lua support, I
-enable this for the build.<br />
-I won’t get into vim configuations, that is too individual. But keeping your editors configuration
+<strong>Vim</strong>-person, so that is what I install. And since some of the plugins I use need lua support, I
+enable this for the build.  </p>
+<p><img class="img-responsive center-block" src="/img/macdev/vim.jpg" alt="" /></p>
+<p>I won’t get into vim configuations, that is too individual. But keeping your editors configuration
 in an easily accessible place is always a good thing (I keep my vim configuration on
 <a href="https://github.com/marcmo/vimfiles">github</a> so I just need to clone my repository and install my
 plugins with my plugin manager).</p>

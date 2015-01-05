@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Jan 2015 16:04:38 +0100</pubDate>
-    <lastBuildDate>Mon, 05 Jan 2015 16:04:38 +0100</lastBuildDate>
+    <pubDate>Mon, 05 Jan 2015 20:02:21 +0100</pubDate>
+    <lastBuildDate>Mon, 05 Jan 2015 20:02:21 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -45,12 +45,12 @@ version.&lt;/p&gt;
 
 &lt;h1 id=&quot;command-line-first&quot;&gt;Command Line first&lt;/h1&gt;
 
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/macdev/terminal.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;I’m not a fan of fancy Gui tools and &lt;a href=&quot;/posts/bash-features-of-the-year&quot;&gt;always&lt;/a&gt;
 &lt;a href=&quot;/posts/Top-10-Unix-Command-Line-Utilities-2012&quot;&gt;prefer&lt;/a&gt; &lt;a href=&quot;/posts/top-10-unix-command-line-utilities-2013&quot;&gt;issuing some
 commands&lt;/a&gt; on a descent shell over
 clicking some buttons. So this setup will be mainly concerned with command line tools.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/terminal.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;i-classfa-fa-terminali-terminal&quot;&gt;&lt;i class=&quot;fa fa-terminal&quot;&gt;&lt;/i&gt; Terminal&lt;/h2&gt;
 
@@ -83,7 +83,7 @@ symlink to the newly installed app in the global application directory.&lt;/p&gt
 
 &lt;h2 id=&quot;some-basic-system-tools&quot;&gt;Some basic system tools&lt;/h2&gt;
 
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/manuals.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; src=&quot;/img/macdev/manuals.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;i-classfa-fa-dropboxi-dropbox&quot;&gt;&lt;i class=&quot;fa fa-dropbox&quot;&gt;&lt;/i&gt; Dropbox&lt;/h3&gt;
 
@@ -125,7 +125,7 @@ automatically? Those files are meant to serve as a general-purpose store for met
 by Apple’s &lt;em&gt;Finder&lt;/em&gt;. The are hidden by default, but developers notice them of course. And they can
 really be a problem when working with network drives.&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/img/asepsis.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; src=&quot;/img/macdev/asepsis.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A rather smart solution to deal with them is implemented with &lt;em&gt;Asepsis&lt;/em&gt;. It migrates all &lt;code&gt;.DS_Store&lt;/code&gt;
 files to a separate folder (&lt;code&gt;/usr/local/.dscage/&lt;/code&gt;) and keeps your folders clear of them.&lt;/p&gt;
@@ -143,9 +143,12 @@ moved 208 .DS_Store file(s) into the prefix folder
 &lt;h2 id=&quot;the-holy-cow---the-text-editor&quot;&gt;The holy cow - The Text Editor&lt;/h2&gt;
 
 &lt;p&gt;You probably will spend a &lt;em&gt;lot&lt;/em&gt; of time using it, so better find a good fit for yourself. I’m a
-Vim-person, so that is what I install. And since some of the plugins I use need lua support, I
-enable this for the build.&lt;br /&gt;
-I won’t get into vim configuations, that is too individual. But keeping your editors configuration
+&lt;strong&gt;Vim&lt;/strong&gt;-person, so that is what I install. And since some of the plugins I use need lua support, I
+enable this for the build.  &lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; src=&quot;/img/macdev/vim.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I won’t get into vim configuations, that is too individual. But keeping your editors configuration
 in an easily accessible place is always a good thing (I keep my vim configuration on
 &lt;a href=&quot;https://github.com/marcmo/vimfiles&quot;&gt;github&lt;/a&gt; so I just need to clone my repository and install my
 plugins with my plugin manager).&lt;/p&gt;
