@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Jan 2015 20:05:16 +0100</pubDate>
-    <lastBuildDate>Mon, 05 Jan 2015 20:05:16 +0100</lastBuildDate>
+    <pubDate>Tue, 06 Jan 2015 07:38:19 +0100</pubDate>
+    <lastBuildDate>Tue, 06 Jan 2015 07:38:19 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -180,8 +180,8 @@ plugins with my plugin manager).&lt;/p&gt;
 &lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;strong&gt;tree&lt;/strong&gt; – quickly view a directory’s content&lt;br /&gt;
 &lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;strong&gt;unrar&lt;/strong&gt; – unpack rar files&lt;br /&gt;
 &lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;strong&gt;watch&lt;/strong&gt; – &lt;a href=&quot;/posts/bash-features-of-the-year/#watch&quot;&gt;periodically&lt;/a&gt; execute command&lt;br /&gt;
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;strong&gt;wget&lt;/strong&gt; – download files over HTTP/HTTPS/FTP&lt;br /&gt;
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;a href=&quot;https://www.gnu.org/software/wget/&quot;&gt;&lt;strong&gt;z&lt;/strong&gt;&lt;/a&gt; – easily jump around between directory locations&lt;br /&gt;
+&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;a href=&quot;https://www.gnu.org/software/wget/&quot;&gt;&lt;strong&gt;wget&lt;/strong&gt;&lt;/a&gt; – download files over HTTP/HTTPS/FTP&lt;br /&gt;
+&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;a href=&quot;https://github.com/rupa/z&quot;&gt;&lt;strong&gt;z&lt;/strong&gt;&lt;/a&gt; – easily jump around between directory locations&lt;br /&gt;
 &lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;&lt;strong&gt;fzf&lt;/strong&gt;&lt;/a&gt; – general-purpose fuzzy finder for your shell&lt;br /&gt;
 &lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; &lt;a href=&quot;http://tmux.sourceforge.net/&quot;&gt;&lt;strong&gt;tmux&lt;/strong&gt;&lt;/a&gt; – terminal multiplexer  &lt;/p&gt;
 
