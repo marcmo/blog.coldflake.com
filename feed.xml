@@ -5,8 +5,8 @@
     <description>Exploring software technologies</description>
     <link>http://blog.coldflake.com/</link>
     <atom:link href="http://blog.coldflake.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 06 Jan 2015 07:38:19 +0100</pubDate>
-    <lastBuildDate>Tue, 06 Jan 2015 07:38:19 +0100</lastBuildDate>
+    <pubDate>Mon, 12 Jan 2015 16:11:11 +0100</pubDate>
+    <lastBuildDate>Mon, 12 Jan 2015 16:11:11 +0100</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -131,7 +131,7 @@ really be a problem when working with network drives.&lt;/p&gt;
 files to a separate folder (&lt;code&gt;/usr/local/.dscage/&lt;/code&gt;) and keeps your folders clear of them.&lt;/p&gt;
 
 &lt;pre class=&quot;terminal&quot;&gt;
-&lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; brew cask install --appdir=&quot;/Applications&quot; quicksilver
+&lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; brew cask install --appdir=&quot;/Applications&quot; Asepsis
 &lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; asepsisctl diagnose
 Your Asepsis installation seems to be OK
 &lt;span class=&quot;prompt&quot;&gt;~&lt;/span&gt; &amp;gt; asepsisctl migratein

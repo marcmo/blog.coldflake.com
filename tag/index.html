@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Exploring software technologies">
-    <title>Posts Tagged &ldquo;all_tags&rdquo; - Coldflake Blog</title>
+    <title>Tags - Coldflake Blog</title>
     <link rel="canonical" href="http://blog.coldflake.com/tag/">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -83,22 +83,129 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading" style="text-shadow: 1px 1px 7px rgba(150, 150, 150, 1)">
-                    <h1>Posts Tagged &ldquo;all_tags&rdquo;</h1>
+                    <h1>Tags</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <!-- Main Content -->
-<script src="/js/d3.min.js"></script>
-<script src="/js/tagpie.js"></script>
 <div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div id="tagcloud">
+        <h2 class="post_title"><i class="fa fa-cloud"></i> Tag-Cloud</h2>
+      </div>
+      <hr>
+      <div id="tagdeps">
+        <h2 class="post_title"><i class="fa fa-sitemap"></i> Related Tags</h2>
+        <p>I thought it's a neat way to depict the relationships between tags. If there is a post that has multiple tags, those will be connected in the graph.</p>
+      </div>
+      <div id="taglist">
+        <h2 class="post_title"><i class="fa fa-tags"></i> Tags by frequency</h2>
+        <ul class="list-group">
+          <a href="/tag/C++" class="list-group-item">
+            <span class="badge">11</span>C++
+          </a>
+          <a href="/tag/haskell" class="list-group-item">
+            <span class="badge">10</span>haskell
+          </a>
+          <a href="/tag/algorithm" class="list-group-item">
+            <span class="badge">6</span>algorithm
+          </a>
+          <a href="/tag/unix" class="list-group-item">
+            <span class="badge">6</span>unix
+          </a>
+          <a href="/tag/ruby" class="list-group-item">
+            <span class="badge">5</span>ruby
+          </a>
+          <a href="/tag/puzzle" class="list-group-item">
+            <span class="badge">5</span>puzzle
+          </a>
+          <a href="/tag/bash" class="list-group-item">
+            <span class="badge">5</span>bash
+          </a>
+          <a href="/tag/testing" class="list-group-item">
+            <span class="badge">4</span>testing
+          </a>
+          <a href="/tag/git" class="list-group-item">
+            <span class="badge">3</span>git
+          </a>
+          <a href="/tag/lua" class="list-group-item">
+            <span class="badge">3</span>lua
+          </a>
+          <a href="/tag/tool" class="list-group-item">
+            <span class="badge">3</span>tool
+          </a>
+          <a href="/tag/dsl" class="list-group-item">
+            <span class="badge">2</span>dsl
+          </a>
+          <a href="/tag/osx" class="list-group-item">
+            <span class="badge">2</span>osx
+          </a>
+          <a href="/tag/rake" class="list-group-item">
+            <span class="badge">2</span>rake
+          </a>
+          <a href="/tag/datastructure" class="list-group-item">
+            <span class="badge">1</span>datastructure
+          </a>
+          <a href="/tag/ghc" class="list-group-item">
+            <span class="badge">1</span>ghc
+          </a>
+          <a href="/tag/performance" class="list-group-item">
+            <span class="badge">1</span>performance
+          </a>
+          <a href="/tag/blogging" class="list-group-item">
+            <span class="badge">1</span>blogging
+          </a>
+          <a href="/tag/llvm" class="list-group-item">
+            <span class="badge">1</span>llvm
+          </a>
+          <a href="/tag/clang" class="list-group-item">
+            <span class="badge">1</span>clang
+          </a>
+          <a href="/tag/quickcheck" class="list-group-item">
+            <span class="badge">1</span>quickcheck
+          </a>
+          <a href="/tag/structure" class="list-group-item">
+            <span class="badge">1</span>structure
+          </a>
+          <a href="/tag/udp" class="list-group-item">
+            <span class="badge">1</span>udp
+          </a>
+          <a href="/tag/networking" class="list-group-item">
+            <span class="badge">1</span>networking
+          </a>
+          <a href="/tag/gtest" class="list-group-item">
+            <span class="badge">1</span>gtest
+          </a>
+          <a href="/tag/templates" class="list-group-item">
+            <span class="badge">1</span>templates
+          </a>
+          <a href="/tag/android" class="list-group-item">
+            <span class="badge">1</span>android
+          </a>
+          <a href="/tag/concurrency" class="list-group-item">
+            <span class="badge">1</span>concurrency
+          </a>
+          <a href="/tag/ipc" class="list-group-item">
+            <span class="badge">1</span>ipc
+          </a>
+          <a href="/tag/rant" class="list-group-item">
+            <span class="badge">1</span>rant
+          </a>
+          <a href="/tag/types" class="list-group-item">
+            <span class="badge">1</span>types
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 <hr>
+<script src="/js/d3.min.js"></script>
+<script src="/js/tagcloud.js"></script>
+<script src="/js/tagdependencies.js"></script>
     <!-- Footer -->
 <footer>
     <div class="container">
